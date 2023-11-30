@@ -164,11 +164,17 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
     currentUserCart,
     setCurrentUserCart,
     setTotalCartItens,
+		setLoginPopUp
   } = useAppContext();
   const { data: session } = useSession();
   const { email } = session?.user || {};
 
 	function handleClick() {
+		if (!session) {
+			setLoginPopUp(true)
+			return;
+		} 
+
     setPopUp(true);
     setTimeout(() => {
       setPopUp(false);
@@ -176,7 +182,7 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
 
     const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
-    const findItem = currentUserCart!.itens.find(
+    const findItem = currentUserCart!.itens!.find(
       (item: any) => item.name === alt
     );
     if (findItem) {

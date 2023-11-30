@@ -13,11 +13,21 @@ type Props = {
 
 const AddBtn = ({ name, image, price, quantity }: Props) => {
 	const [popUp, setPopUp] = useState<boolean>(false);
-	const { currentUserCart, setCurrentUserCart, setTotalCartItens } = useAppContext();
+	const {
+    currentUserCart,
+    setCurrentUserCart,
+    setTotalCartItens,
+    setLoginPopUp,
+  } = useAppContext();
   const { data: session } = useSession();
   const { email } = session?.user || {};
 
 	function handleClick() {
+		if (!session) {
+      setLoginPopUp(true);
+      return;
+    } 
+
 		setPopUp(true);
 		setTimeout(() => {
 			setPopUp(false)
