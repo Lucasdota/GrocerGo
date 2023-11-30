@@ -25,7 +25,7 @@ This repository contains the source code for a professional and modern grocery s
 - src/: Contains the source code for the Next.js application.
 - src/components/: Reusable React components.
 - app/: Next.js page components.
-- app/styles/: Stylesheets using Tailwind CSS.
+- app/styles/: Stylesheets.
 - public/: Static assets such as images.
 
 **Dependencies**
