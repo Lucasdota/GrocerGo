@@ -2,7 +2,7 @@
 
 Website link: [Click Me](www.)
 
-**Overview**
+**Overview** <br />
 This repository contains the source code for a professional and modern grocery store website built with Next.js, Tailwind CSS, Framer Motion, Material-UI, Local Storage, Fetch API and more. This project aims to demonstrate my front-end skills providing a seamless online shopping experience for users looking to purchase groceries.
 
 **Features**
@@ -33,5 +33,5 @@ This repository contains the source code for a professional and modern grocery s
 - Framer Motion: ^10.16.1
 - Material-UI: ^5.14.9
 
-**License**
+**License** <br />
 This project is licensed under the MIT License - see the [license](https://en.wikipedia.org/wiki/MIT_License) webpage for details.
