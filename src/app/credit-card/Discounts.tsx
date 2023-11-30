@@ -1,11 +1,7 @@
 import React from 'react'
-import { CgMenuCheese } from "@react-icons/all-files/cg/CgMenuCheese";
-import { GiWineGlass } from "@react-icons/all-files/gi/GiWineGlass";
-import { BiBeer } from "@react-icons/all-files/bi/BiBeer";
-import { GiSwordBrandish } from "@react-icons/all-files/gi/GiSwordBrandish";
-import { BiAtom } from "@react-icons/all-files/bi/BiAtom";
-import { BiBulb } from "@react-icons/all-files/bi/BiBulb";
-import { BiCreditCardAlt } from "@react-icons/all-files/bi/biCreditCardAlt";
+import { CgMenuCheese } from "react-icons/cg"
+import { GiWineGlass, GiSwordBrandish } from "react-icons/gi";
+import { BiBeer, BiAtom, BiBulb, BiCreditCardAlt } from "react-icons/bi";
 
 const Discounts = () => {
 	return (
