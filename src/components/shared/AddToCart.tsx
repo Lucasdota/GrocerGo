@@ -26,7 +26,7 @@ const AddToCart = ({ text, className, name, image, price }: Props) => {
 
 		const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
-    const findItem = currentUserCart!.itens.find(
+    const findItem = currentUserCart!.itens!.find(
       (item: any) => item.name === name
     );
     if (findItem) {
