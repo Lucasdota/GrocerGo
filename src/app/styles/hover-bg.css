@@ -1,0 +1,27 @@
+/* NAVBAR - buttons hover effect */
+
+/* define for each usecase in the hover-bg-effect element with tailwind:  
+after:bg-color
+z-index in some cases if parent has superior z-index */
+.hover-bg-effect {
+	position: relative;
+	box-shadow: none;
+	overflow: hidden;
+}
+ 
+.hover-bg-effect::after {
+	position: absolute;
+	content: "";
+	width: 120%;
+	height: 120%;
+	border-radius: 25%;
+	opacity: 0;
+	z-index: -1;
+	transform: scale(0.1);
+	transition: transform 0.3s, opacity 0.3s
+}
+
+.hover-bg-effect:hover::after {
+	opacity: 1;
+	transform: scale(1)
+}

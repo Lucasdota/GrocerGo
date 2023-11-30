@@ -1,0 +1,56 @@
+/* CREDIT CARD PAGE - how it works buttons */
+
+/* define for each usecase in the hover-border-effect element with tailwind: 
+hover:text-color
+before:border-size
+before:border-color
+before:border-radius
+after:border-size
+after:border-color
+after:border-radius
+ */
+.hover-border-effect {
+	transition: color 0.5s, transform 0.2s, background-color 0.2s;
+	position: relative;
+}
+
+.hover-border-effect:hover {
+  box-shadow: none;
+}
+
+.hover-border-effect::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.3s, border 0.3s;
+ }
+  
+.hover-border-effect:hover::before {
+	opacity: 0
+}
+ 
+.hover-border-effect::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	opacity: 0;
+	z-index: -1;
+	transform: scaleX(1.1) scaleY(1.3);
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.hover-border-effect:hover::after {
+	opacity: 1;
+  transform: scaleX(1) scaleY(1)
+}
+
+.hover-border-effect:active {
+  transform: translateY(3px)
+}

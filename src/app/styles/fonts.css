@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'sansita';
+  src: url('/fonts/Sansita-Regular.woff2') format('woff2'),
+       url('/fonts/Sansita-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

@@ -22,6 +22,21 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/api/AppContext.tsx",
+    "src/app/specials/chefs/Chef.jsx",
+    "src/app/specials/delivery-rotisserie/page.jsx",
+    "src/app/specials/chefs/page.jsx",
+    "src/app/specials/space-you/page.jsx",
+    "src/components/navbar/Links.tsx",
+    "src/app/middleware.js",
+    "src/app/recipes/page.jsx",
+    "src/app/my-account/CopiedSnackbar.tsx",
+    "src/app/my-account/Dashboard.jsx"
+, "src/app/my-account/Billing.tsx", "src/app/[not-found]/page.jsx", "src/app/catalog/page.jsx", "src/app/contact-us/page.jsx", "src/app/credit-card/Callcenter.tsx", "src/app/credit-card/Discounts.tsx", "src/app/credit-card/page.jsx", "src/app/how-to-buy/page.jsx", "src/app/insurance/page.jsx", "src/app/my-favorites/page.jsx", "src/app/our-stores/page.jsx", "src/app/search/page.jsx", "src/app/sections/bakery/page.jsx", "src/app/sections/beverages/page.jsx", "src/app/sections/canneds/page.jsx", "src/app/sections/cheeses-and-dairy/page.jsx", "src/app/sections/cleaning/page.jsx", "src/app/sections/dietary/page.jsx", "src/app/sections/eggs/page.jsx", "src/app/sections/essentials/page.jsx", "src/app/sections/fishery/page.jsx", "src/app/sections/frozen/page.jsx", "src/app/sections/fruits/page.jsx", "src/app/sections/full-fridge/page.jsx", "src/app/sections/offers/page.jsx", "src/app/sections/petshop/page.jsx", "src/app/sections/rotisserie/page.jsx", "src/app/sections/seasoning/page.jsx", "src/app/sections/snacks/page.jsx", "src/app/sections/sweets/page.jsx", "src/app/sections/page.tsx", "src/app/selections/cheese-table/page.jsx", "src/app/selections/drink-selection/page.jsx", "src/app/selections/fruit-basket/page.jsx", "src/app/selections/meat-table/page.jsx", "src/app/specials/blog/page.jsx", "src/app/specials/page.jsx", "src/app/page.jsx", "src/app/layout.jsx", "src/components/footer/Footer.jsx"  ],
   "exclude": ["node_modules"]
 }

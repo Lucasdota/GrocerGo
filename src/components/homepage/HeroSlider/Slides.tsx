@@ -1,0 +1,86 @@
+import React from 'react'
+import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
+import images from "./images.js";
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+
+type Props = {
+	currentPage: number,
+	direction: number,
+	pages: number[],
+	setPage: (value: number, direction: number) => void
+}
+
+const variants = {
+  initial: (direction: number) => {
+    return {
+      x: direction > 0 ? 500 : -500,
+    };
+  },
+  animate: {
+    x: 0,
+  },
+  exit: (direction: number) => {
+    return {
+      x: direction < 0 ? 500 : -500, 
+    };
+  },
+};
+
+function Slides({ currentPage, direction, pages, setPage }: Props) {
+  return (
+    <div className="w-full relative aspect-[4/1.38] flex items-center">
+      {/* ARROW BUTTONS */}
+      <button
+        className="absolute active:scale-75 group-hover:opacity-100 opacity-0 transition duration-300 left-0 xl:opacity-100 py-10 px-5 lg:px-3 sm:px-0 z-10"
+        onClick={() => {
+          if (currentPage === 0) {
+            setPage(pages.length - 1, -1);
+          } else {
+            setPage(currentPage - 1, -1);
+          }
+        }}
+      >
+        <BsChevronLeft className="rounded-full h-12 w-12 xxl:h-12 xl:h-10 lg:h-8 md:h-6 xxs:h-5 xxs:w-5 text-white/90 drop-shadow-[0_3px_3px_rgb(0,0,0,.2)]" />
+      </button>
+      <button
+        className="absolute active:scale-75 group-hover:opacity-100 opacity-0 transition duration-300 right-0 xl:opacity-100 py-10 px-5 lg:px-3 sm:px-0 z-10"
+        onClick={() => {
+          if (currentPage === pages.length - 1) {
+            setPage(0, 1);
+          } else {
+            setPage(currentPage + 1, 1);
+          }
+        }}
+      >
+        <BsChevronRight className="rounded-full h-12 w-12 xxl:h-12 xl:h-10 lg:h-8 md:h-6 xxs:h-5 xxs:w-5 text-white/90 drop-shadow-[0_3px_3px_rgb(0,0,0,.2)]" />
+      </button>
+      {/* SLIDES */}
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          className="w-full absolute top-0"
+          variants={variants}
+          key={currentPage}
+          data-page={currentPage}
+          initial={"initial"}
+          animate={"animate"}
+					transition={{ type: "none" }}
+          exit={"exit"}
+          custom={direction}
+        >
+          <Image
+            src={images[currentPage]}
+            alt="slide"
+            className="w-full slides"
+            width={2550}
+            height={880}
+            priority
+            loading="eager"
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export default Slides

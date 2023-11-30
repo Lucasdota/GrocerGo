@@ -1,0 +1,92 @@
+/* NAVBAR - swipe left/right animations & custom scrollbar */
+
+/* SCROLLBARS */
+.modal::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+.modal::-webkit-scrollbar-track {
+	background: rgb(229,229,229);
+}
+
+.modal::-webkit-scrollbar-thumb {
+	background: #00652E;
+}
+
+.modal {/* FIREFOX */
+	scrollbar-width: thin;
+	scrollbar-color: #00652E rgb(229,229,229);
+}
+
+.mobile-modal::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+.mobile-modal::-webkit-scrollbar-track {
+	background: rgb(229,229,229);
+}
+
+.mobile-modal::-webkit-scrollbar-thumb {
+	background: #00652E;
+}
+
+.mobile-modal {/* FIREFOX */
+	scrollbar-width: thin;
+	scrollbar-color: #00652E rgb(229,229,229);
+}
+
+/* ANIMATIONS */
+.modal ul {
+	transition: transform .3s;
+}
+.modal ul ul{
+	position: absolute;
+	top: -15.5rem;
+	width: 100%;
+	transform: translateX(320px) translateZ(1px);
+	opacity: 0;
+	visibility: hidden;
+	transition: transform .3s, opacity .3s, visibility .3s;
+}
+.modal.show li.expand ul {
+	opacity: 1;
+	visibility: visible;
+}
+.modal.show > ul {
+	transform: translateX(-320px);
+}
+
+/* MOBILE DRAWER MENU ANIMATION */
+.mobile-modal ul {
+	transition: transform .3s;
+}
+.mobile-modal ul ul{
+	position: absolute;
+	top: -32.8rem;
+	width: 100%;
+	transform: translateX(320px) translateZ(1px);
+	opacity: 0;
+	visibility: hidden;
+	transition: transform .3s, opacity .3s, visibility .3s;
+}
+.mobile-modal.show li.expand ul {
+	opacity: 1;
+	visibility: visible;
+}
+.mobile-modal.show > ul {
+	transform: translateX(-320px);
+}
+
+/* cart drawer custom scrollbar */
+.cart-drawer::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+.cart-drawer::-webkit-scrollbar-thumb {
+	background: #429D5C;
+}
+
+.cart-drawer {/* FIREFOX */
+	scrollbar-width: thin;
+	scrollbar-color: #429D5C rgb(229,229,229);
+}

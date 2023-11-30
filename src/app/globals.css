@@ -1,27 +1,203 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./styles/fonts.css";
+@import "./styles/hover-border.css";
+@import "./styles/hover-bg.css";
+@import "./styles/hover-bg2.css";
+@import "./styles/drawer.css";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::selection {
+  color: aliceblue;
+  background-color: #00652e;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: rgb(240, 240, 240);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  text-wrap: balance;
+  min-width: 305px;
+}
+
+/* HOMEPAGE HERO SLIDER */
+.slides {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* OUR STORES PAGE - enhance keyboard navigation */
+.focused {
+  outline: 2px solid #409a3c;
+}
+
+/* HOW TO BUY PAGE - round image shadows */
+.shadow-images {
+  background: radial-gradient(
+    circle,
+    rgba(98, 98, 98, 0.3) 0%,
+    rgba(116, 116, 116, 0.3) 10%,
+    rgba(0, 212, 255, 0) 62%
+  );
+  border-radius: 200px;
+  transform: scaleY(0.2);
+  opacity: 1;
+}
+
+/* CREDIT CARD PAGE - ask now button */
+.shadow-btn {
+  background: radial-gradient(
+    circle,
+    rgba(98, 98, 98, 0.61) 0%,
+    rgba(116, 116, 116, 0.55) 10%,
+    rgba(0, 212, 255, 0) 62%
+  );
+  border-radius: 200px;
+  transform: scaleY(0.2);
+  animation: shadow 1s infinite;
+  opacity: 0.9;
+}
+
+@keyframes shadow {
+  50% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+/* CREDIT CARD PAGE - credit cards animations */
+.international-card-details {
+  animation: blur-international 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.platinum-card-details {
+  animation: blur-platinum 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.black-card-details {
+  animation: blur-black 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.black-card-h5 {
+  animation: hue-black 7s infinite cubic-bezier(0.68, 0.55, 0.265, 1.55);
+}
+
+@keyframes blur-international {
+  0% {
+    filter: blur(2px);
+  }
+}
+@keyframes blur-platinum {
+  0% {
+    filter: blur(2px);
+  }
+}
+@keyframes blur-black {
+  0% {
+    filter: blur(2px);
+  }
+}
+@keyframes hue-black {
+  50% {
+    filter: hue-rotate(360deg) brightness(150%);
+  }
+}
+
+/* HOMEPAGE THIRD CARDS - bg color transition */
+@property --color-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(184, 247, 184);
+}
+
+@property --color-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(245, 215, 215);
+}
+
+/* chrome, edge and safari */
+.bg-color-transition {
+  background-image: linear-gradient(to bottom, var(--color-1), var(--color-2));
+  transition: --color-1 500ms, --color-2 1000ms;
+}
+/* firefox */
+@-moz-document url-prefix() {
+  .bg-color-transition {
+    background-image: linear-gradient(
       to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(184, 247, 184),
+      rgb(245, 215, 215)
+    );
+  }
+}
+
+.bg-color-transition:hover {
+  --color-1: rgb(245, 215, 215);
+  --color-2: rgb(184, 247, 184);
+}
+
+.bg-blog-posts {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgb(245, 245, 245) 80%
+  );
+}
+
+/* HOMEPAGE - description text */
+.cool-border {
+  box-shadow: inset #143c27 0 0 0 5px, inset #00652e 0 0 0 1px,
+    inset #409a3c 0 0 0 10px, inset #429d5c 0 0 0 11px, inset #7ec200 0 0 0 16px,
+    inset #48e462 0 0 0 17px, inset #c3facb 0 0 0 21px, inset #bff7d6 0 0 0 22px;
+  text-shadow: 3px 3px 1px #48e4623d;
+}
+
+.free-delivery-banner-homepage {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* HOMEPAGE - moving blobs svg bg */
+.first-card-homepage {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='100%' height='100%' preserveAspectRatio='none' viewBox='0 0 100% 100%'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1023%26quot%3b)' fill='none'%3e%3crect width='100%' height='100%' x='0' y='0' fill='rgba(0%2c 40%2c 20%2c 1)'%3e%3c/rect%3e%3cpath d='M1178.162%2c164.81C1207.089%2c163.521%2c1229.808%2c143.841%2c1245.265%2c119.356C1262.158%2c92.595%2c1275.828%2c60.695%2c1261.793%2c32.33C1246.468%2c1.358%2c1212.716%2c-15.872%2c1178.162%2c-16.261C1142.906%2c-16.657%2c1108.228%2c-0.466%2c1091.208%2c30.412C1074.683%2c60.39%2c1081.239%2c97.097%2c1099.834%2c125.837C1116.813%2c152.079%2c1146.937%2c166.202%2c1178.162%2c164.81' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1537.809%2c489.004C1561.102%2c487.596%2c1583.397%2c478.787%2c1595.855%2c459.056C1609.225%2c437.881%2c1612.906%2c411.096%2c1600.863%2c389.139C1588.396%2c366.408%2c1563.72%2c352.376%2c1537.809%2c353.222C1513.186%2c354.026%2c1494.639%2c372.193%2c1481.506%2c393.037C1467.141%2c415.836%2c1452.555%2c443.65%2c1466.191%2c466.892C1479.741%2c489.988%2c1511.08%2c490.619%2c1537.809%2c489.004' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1543.899%2c217.432C1579.269%2c218.092%2c1618.938%2c218.246%2c1638.726%2c188.922C1660.295%2c156.96%2c1657.43%2c113.05%2c1635.947%2c81.03C1616.453%2c51.975%2c1578.792%2c44.995%2c1543.899%2c47.584C1513.82%2c49.816%2c1489.158%2c67.783%2c1472.818%2c93.135C1454.614%2c121.38%2c1438.333%2c156.322%2c1455.014%2c185.492C1471.765%2c214.784%2c1510.161%2c216.802%2c1543.899%2c217.432' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1841.722%2c530.4C1872.545%2c530.882%2c1895.917%2c504.655%2c1909.476%2c476.97C1921.378%2c452.668%2c1918.929%2c424.516%2c1904.917%2c401.366C1891.432%2c379.086%2c1867.752%2c365.869%2c1841.722%2c365.031C1814.02%2c364.139%2c1785.043%2c373.125%2c1771.063%2c397.057C1756.985%2c421.157%2c1764.47%2c450.248%2c1777.538%2c474.909C1791.731%2c501.694%2c1811.413%2c529.927%2c1841.722%2c530.4' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M610.799%2c474.569C635.76%2c476.15%2c662.99%2c470.686%2c676.125%2c449.402C689.764%2c427.3%2c683.953%2c399.44%2c671.082%2c376.881C658.077%2c354.086%2c637.037%2c335.463%2c610.799%2c334.903C583.694%2c334.324%2c557.808%2c349.86%2c545.887%2c374.209C535.066%2c396.31%2c545.028%2c421.28%2c558.392%2c441.943C570.37%2c460.462%2c588.788%2c473.174%2c610.799%2c474.569' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1411.402%2c515.03C1429.709%2c514.995%2c1445.153%2c502.82%2c1454.26%2c486.939C1463.316%2c471.147%2c1464.993%2c452.248%2c1456.699%2c436.043C1447.592%2c418.248%2c1431.376%2c402.394%2c1411.402%2c403.199C1392.293%2c403.97%2c1380.764%2c422.449%2c1372.019%2c439.458C1364.212%2c454.643%2c1360.372%2c471.961%2c1368.263%2c487.102C1376.748%2c503.384%2c1393.042%2c515.065%2c1411.402%2c515.03' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M241.694%2c583.07C264.818%2c582.45%2c280.747%2c562.154%2c291.463%2c541.654C301.248%2c522.935%2c304.099%2c501.264%2c294.217%2c482.596C283.671%2c462.674%2c264.235%2c447.704%2c241.694%2c447.638C219.055%2c447.572%2c199.764%2c462.571%2c188.64%2c482.289C177.724%2c501.638%2c176.728%2c524.796%2c187.077%2c544.454C198.209%2c565.601%2c217.805%2c583.711%2c241.694%2c583.07' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1334.548%2c593.147C1383.526%2c591.528%2c1412.201%2c542.053%2c1433.077%2c497.717C1450.39%2c460.949%2c1450.692%2c420.572%2c1433.046%2c383.963C1412.28%2c340.882%2c1382.353%2c294.684%2c1334.548%2c293.312C1285.306%2c291.898%2c1248.568%2c334.358%2c1225.741%2c378.012C1204.778%2c418.101%2c1203.635%2c464.256%2c1224.052%2c504.626C1246.881%2c549.763%2c1283.994%2c594.818%2c1334.548%2c593.147' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M923.304%2c38.031C944.031%2c37.895%2c967.52%2c36.023%2c977.749%2c17.996C987.9%2c0.107%2c977.569%2c-21.029%2c966.741%2c-38.517C956.658%2c-54.801%2c942.445%2c-69.265%2c923.304%2c-69.939C903.1%2c-70.651%2c884.975%2c-58.896%2c874.22%2c-41.777C862.654%2c-23.367%2c856.218%2c0.198%2c867.608%2c18.718C878.641%2c36.658%2c902.243%2c38.169%2c923.304%2c38.031' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M171.687%2c268.285C228.163%2c265.828%2c272.269%2c224.275%2c299.161%2c174.552C324.591%2c127.532%2c327.455%2c72.657%2c303.273%2c24.983C276.391%2c-28.013%2c231.107%2c-76.093%2c171.687%2c-76.755C111.424%2c-77.426%2c64.49%2c-30.521%2c34.922%2c21.994C6.009%2c73.346%2c-5.173%2c135.024%2c23.437%2c186.546C52.799%2c239.423%2c111.262%2c270.914%2c171.687%2c268.285' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1839.789%2c124.598C1870.047%2c126.017%2c1904.595%2c124.38%2c100%.488%2c98.593C1936.875%2c72.005%2c1926.727%2c37.781%2c1909.247%2c11.899C1893.888%2c-10.842%2c1867.193%2c-22.335%2c1839.789%2c-20.893C1814.798%2c-19.578%2c1794.962%2c-2.769%2c1781.935%2c18.599C1768.215%2c41.105%2c1758.587%2c68.456%2c1771.215%2c91.592C1784.241%2c115.458%2c1812.63%2c123.324%2c1839.789%2c124.598' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M454.241%2c377.038C485.242%2c374.497%2c508.831%2c351.221%2c522.873%2c323.466C535.47%2c298.567%2c532.787%2c270.607%2c520.848%2c245.386C506.417%2c214.902%2c487.966%2c178.875%2c454.241%2c178.485C420.21%2c178.091%2c401.938%2c214.346%2c384.912%2c243.814C367.871%2c273.307%2c347.174%2c306.364%2c362.898%2c336.579C379.375%2c368.24%2c418.668%2c379.954%2c454.241%2c377.038' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1772.743%2c185.039C1793.271%2c186.134%2c1816.144%2c185.279%2c1827.808%2c168.351C1840.745%2c149.576%2c1839.853%2c124.14%2c1828.216%2c104.532C1816.805%2c85.305%2c1795.1%2c75.334%2c1772.743%2c75.565C1750.808%2c75.792%2c1729.395%2c86.225%2c1719.223%2c105.66C1709.641%2c123.967%2c1715.441%2c145.84%2c1726.992%2c162.973C1737.137%2c178.02%2c1754.622%2c184.072%2c1772.743%2c185.039' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M829.89%2c843.354C893.639%2c846.187%2c952.902%2c807.596%2c982.954%2c751.304C1011.444%2c697.939%2c1002.913%2c632.725%2c969.128%2c582.544C938.987%2c537.776%2c883.831%2c525.701%2c829.89%2c523.955C771.574%2c522.067%2c704.531%2c523.204%2c674.112%2c572.994C642.915%2c624.057%2c668.833%2c686.823%2c698.707%2c738.671C728.642%2c790.625%2c769.988%2c840.692%2c829.89%2c843.354' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1848.908%2c699.298C1901.216%2c702.395%2c1946.085%2c665.731%2c1972.656%2c620.567C1999.655%2c574.675%2c2010.016%2c517.581%2c1982.707%2c471.873C1955.954%2c427.096%2c1901.067%2c413.098%2c1848.908%2c413.449C1797.494%2c413.795%2c1741.903%2c428.033%2c1718.195%2c473.655C1695.634%2c517.069%2c1723.658%2c564.94%2c1748.183%2c607.276C1772.616%2c649.453%2c1800.25%2c696.417%2c1848.908%2c699.298' fill='rgba(255%2c 255%2c 255%2c 0.11)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1023'%3e%3crect width='100%' height='100%' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+}
+
+/* RECIPES PAGE - transparent overlay in the cards */
+.gradient-recipe-overlay {
+	background-image: linear-gradient(to bottom, );
+}
+
+/* RECIPES PAGE - loading grid icon */
+@keyframes loading-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* RECIPES PAGE - loading bars */
+@keyframes loading-bars {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }

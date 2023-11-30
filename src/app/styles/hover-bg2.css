@@ -1,0 +1,40 @@
+/* CONTACT US PAGE & NO PRODUCTS FIND PAGE - buttons hover effect */
+
+/* define for each usecase in the hover-bg2-effect element with tailwind: 
+after:bg-color
+hover:text-color
+outline-size
+outline-color
+*/
+.hover-bg2-effect {
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+.hover-bg2-effect::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.hover-bg2-effect:hover::after {
+  transform: translate(0, 0);
+}
+
+.hover-bg2-effect:hover {
+  transform: scale(1.05);
+  will-change: transform;
+}
