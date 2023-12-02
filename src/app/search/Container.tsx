@@ -1,7 +1,7 @@
 "use client";
 import { catalog } from "@/components/shared/Catalog";
 import Interface from "./Interface";
-import NoResults from "../../../public/images/mini-pages/no_results.png";
+import NoResults from "../../../public/images/mini-pages/no_results.webp";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
