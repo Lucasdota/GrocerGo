@@ -8,7 +8,7 @@ import { useState } from 'react';
 const firstDivData = [
   {
     id: 1,
-    image: "/images/products/snacks/chips.png",
+    image: "/images/products/snacks/chips.webp",
     alt: "Potato Chips",
     first_title: "Potato",
     second_title: "Chips",
@@ -18,7 +18,7 @@ const firstDivData = [
   },
   {
     id: 2,
-    image: "/images/products/snacks/soft-drink.png",
+    image: "/images/products/snacks/soft-drink.webp",
     alt: "Soda",
     first_title: "Soft",
     second_title: "Soda",
@@ -28,7 +28,7 @@ const firstDivData = [
   },
   {
     id: 3,
-    image: "/images/products/cheeses-and-dairy/parmesan.png",
+    image: "/images/products/cheeses-and-dairy/parmesan.webp",
     alt: "Parmesan Cheese",
     first_title: "Parmesan",
     second_title: "Cheese",
@@ -38,7 +38,7 @@ const firstDivData = [
   },
   {
     id: 4,
-    image: "/images/products/full-fridge/prosciutto.png",
+    image: "/images/products/full-fridge/prosciutto.webp",
     alt: "Prosciutto Di Parma",
     first_title: "Prosciutto",
     second_title: "Di Parma",
@@ -48,7 +48,7 @@ const firstDivData = [
   },
   {
     id: 5,
-    image: "/images/products/canneds/peach.png",
+    image: "/images/products/canneds/peach.webp",
     alt: "Canned Peach",
     first_title: "Canned",
     second_title: "Peach",
@@ -61,7 +61,7 @@ const firstDivData = [
 const secondDivData = [
   {
     id: 1,
-    image: "/images/products/cheeses-and-dairy/gouda.png",
+    image: "/images/products/cheeses-and-dairy/gouda.webp",
     alt: "Gouda Cheese",
     first_title: "Gouda",
     second_title: "Cheese",
@@ -71,7 +71,7 @@ const secondDivData = [
   },
   {
     id: 2,
-    image: "/images/products/fishery/tilapia.png",
+    image: "/images/products/fishery/tilapia.webp",
     alt: "Tilapia",
     first_title: "Southern",
     second_title: "Tilapia",
@@ -81,7 +81,7 @@ const secondDivData = [
   },
   {
     id: 3,
-    image: "/images/products/frozen/yogurt.png",
+    image: "/images/products/frozen/yogurt.webp",
     alt: "Strawberry Yogurt",
     first_title: "Strawberry",
     second_title: "Yogurt",
@@ -91,7 +91,7 @@ const secondDivData = [
   },
   {
     id: 4,
-    image: "/images/products/beverages/grapes-juice.png",
+    image: "/images/products/beverages/grapes-juice.webp",
     alt: "100% Grape Juice",
     first_title: "100%",
     second_title: "Grape Juice",
@@ -101,7 +101,7 @@ const secondDivData = [
   },
   {
     id: 5,
-    image: "/images/products/rotisserie/peking-duck.png",
+    image: "/images/products/rotisserie/peking-duck.webp",
     alt: "Roasted Duck",
     first_title: "Roasted",
     second_title: "Duck",

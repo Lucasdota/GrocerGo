@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="beverages"
       subtitle="Sip & Savor: Quench Your Thirst with Delight."
-      imgLink="/images/sections/beverages.jpg"
+      imgLink="/images/sections/beverages.webp"
     />
   );
 };

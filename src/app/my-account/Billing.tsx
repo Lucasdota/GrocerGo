@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { FaRegCreditCard } from "react-icons/fa6";
 import Image from "next/image";
-import EletroLogo from "../../../public/images/others/electronics.png";
+import EletroLogo from "../../../public/images/others/electronics.webp";
 import { FaCircleInfo } from "react-icons/fa6";
 import Link from 'next/link';
 

@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="dietary"
       subtitle="Nourish your health journey with our dietary discoveries."
-      imgLink="/images/sections/dietary.jpg"
+      imgLink="/images/sections/dietary.webp"
     />
   );
 };

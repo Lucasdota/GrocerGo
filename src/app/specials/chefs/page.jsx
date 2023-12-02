@@ -1,5 +1,5 @@
 import Image from "next/image";
-import restaurant from "../../../../public/images/specials/restaurant3.jpg";
+import restaurant from "../../../../public/images/specials/restaurant3.webp";
 import Card from "./Card";
 
 export const metadata = {
@@ -13,6 +13,8 @@ const Page = () => {
       <Image
         src={restaurant}
         alt="restaurant"
+				width={1920}
+				height={800}
         className="w-full h-full opacity-50 object-cover absolute top-0"
         priority
       />

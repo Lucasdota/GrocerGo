@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Recipe } from "./recipeTypes";
 import { useEffect, useState, useCallback } from "react";
-import HappyFace from "../../../public/images/others/happy-face.png";
+import HappyFace from "../../../public/images/others/happy-face.webp";
 import BackBtn from "./Back-btn";
 import { useSearchParams } from "next/navigation";
 import ErrorMessage from './ErrorMessage';

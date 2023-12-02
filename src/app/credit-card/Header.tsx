@@ -1,7 +1,7 @@
 "use client"
 import { BsCardChecklist } from "@react-icons/all-files/bs/BsCardChecklist";
 import Image from "next/image";
-import CreditCard from "../../../public/images/mini-pages/credit-cards.png";
+import CreditCard from "../../../public/images/mini-pages/cards-header.webp";
 
 type Props = {};
 
@@ -47,11 +47,9 @@ const Header = (props: Props) => {
           <Image
             src={CreditCard}
             alt="credit cards"
-            width={2000}
-            height={2000}
-            placeholder="blur"
+            width={700}
+            height={700}
             priority
-            quality={100}
             className="w-[30rem] aspect-square -mt-28 -mb-10 lg:-mt-10"
           />
         </div>

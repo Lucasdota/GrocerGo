@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="rotisserie"
       subtitle="Irresistible rotisserie: Juicy, aromatic, and always ready."
-      imgLink="/images/sections/rotisserie.jpg"
+      imgLink="/images/sections/rotisserie.webp"
     />
   );
 };

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import LeafLine from '../../../../public/images/others/leaf-string.png';
-import Truck from "../../../../public/images/others/truck.png";
+import LeafLine from '../../../../public/images/others/leaf-string.webp';
+import Truck from "../../../../public/images/others/truck.webp";
 import DrawerItens from './DrawerItens';
 import { useAppContext } from '@/app/api/AppContext';
 import { IoMdClose } from "react-icons/io";

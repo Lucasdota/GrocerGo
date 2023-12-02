@@ -1,9 +1,9 @@
 'use client'
 import Image from 'next/image';
 import React, { useState } from 'react'
-import InternationalCard from '../../../public/images/mini-pages/internacional-card.png'
-import PlatinumCard from "../../../public/images/mini-pages/platinum-card.png";
-import BlackCard from "../../../public/images/mini-pages/black-card.png";
+import InternationalCard from '../../../public/images/mini-pages/internacional-card.webp'
+import PlatinumCard from "../../../public/images/mini-pages/platinum-card.webp";
+import BlackCard from "../../../public/images/mini-pages/black-card.webp";
 import { AiOutlinePercentage } from "@react-icons/all-files/ai/AiOutlinePercentage";
 import { FaCcMastercard } from "@react-icons/all-files/fa/FaCcMastercard";
 import { RiBillLine } from "@react-icons/all-files/ri/RiBillLine";

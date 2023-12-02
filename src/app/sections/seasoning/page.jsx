@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="seasoning"
       subtitle="Spice up your world with our seasonings."
-      imgLink="/images/sections/seasoning.jpg"
+      imgLink="/images/sections/seasoning.webp"
     />
   );
 };

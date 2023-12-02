@@ -4,7 +4,7 @@ export const snacks = {
     {
       id: 1,
       category: "salty",
-      image: "/images/products/snacks/chips.png",
+      image: "/images/products/snacks/chips.webp",
       name: "Potato Chips",
       old_price: 0,
       price: 1.99,
@@ -13,7 +13,7 @@ export const snacks = {
     {
       id: 2,
       category: "sweet",
-      image: "/images/products/snacks/chocolate-bar.png",
+      image: "/images/products/snacks/chocolate-bar.webp",
       name: "Chocolate Bar",
       old_price: 0,
       price: 2.29,
@@ -22,7 +22,7 @@ export const snacks = {
     {
       id: 3,
       category: "sweet",
-      image: "/images/products/snacks/cookie.png",
+      image: "/images/products/snacks/cookie.webp",
       name: "Cookies",
       old_price: 0,
       price: 2.09,
@@ -31,7 +31,7 @@ export const snacks = {
     {
       id: 4,
       category: "salty",
-      image: "/images/products/snacks/popcorn.png",
+      image: "/images/products/snacks/popcorn.webp",
       name: "Popcorn",
       old_price: 0,
       price: 1.99,
@@ -40,7 +40,7 @@ export const snacks = {
     {
       id: 5,
       category: "salty",
-      image: "/images/products/snacks/sandwich.png",
+      image: "/images/products/snacks/sandwich.webp",
       name: "Vegetarian Sandwich",
       old_price: 0,
       price: 1.89,
@@ -49,7 +49,7 @@ export const snacks = {
     {
       id: 6,
       category: "drink",
-      image: "/images/products/snacks/soft-drink.png",
+      image: "/images/products/snacks/soft-drink.webp",
       name: "Soda",
       old_price: 0,
       price: 1.80,
@@ -64,7 +64,7 @@ export const bakery = {
     {
       id: 1,
       category: "sweet",
-      image: "/images/products/full-fridge/cinnamon-roll.png",
+      image: "/images/products/full-fridge/cinnamon-roll.webp",
       name: "Cinnamon Rolls",
       old_price: 0,
       price: 3.99,
@@ -73,7 +73,7 @@ export const bakery = {
     {
       id: 2,
       category: "bread",
-      image: "/images/products/full-fridge/garlic-bread.png",
+      image: "/images/products/full-fridge/garlic-bread.webp",
       name: "Garlic Bread",
       old_price: 0,
       price: 2.79,
@@ -82,7 +82,7 @@ export const bakery = {
     {
       id: 3,
       category: "meat",
-      image: "/images/secondcards/original-sausage.png",
+      image: "/images/secondcards/original-sausage.webp",
       name: "Original Sausage",
       old_price: 0,
       price: 2.09,
@@ -91,7 +91,7 @@ export const bakery = {
     {
       id: 4,
       category: "meat",
-      image: "/images/products/full-fridge/prosciutto.png",
+      image: "/images/products/full-fridge/prosciutto.webp",
       name: "Prosciutto Di Parma",
       old_price: 0,
       price: 4.99,
@@ -100,7 +100,7 @@ export const bakery = {
     {
       id: 5,
       category: "meat",
-      image: "/images/products/full-fridge/salami.png",
+      image: "/images/products/full-fridge/salami.webp",
       name: "Spicy Salami",
       old_price: 0,
       price: 6.49,
@@ -109,7 +109,7 @@ export const bakery = {
     {
       id: 6,
       category: "parmesan",
-      image: "/images/products/cheeses-and-dairy/parmesan.png",
+      image: "/images/products/cheeses-and-dairy/parmesan.webp",
       name: "Parmesan Cheese",
       old_price: 0,
       price: 3.80,
@@ -124,7 +124,7 @@ export const canneds = {
     {
       id: 1,
       category: "fish",
-      image: "/images/products/canneds/tuna.png",
+      image: "/images/products/canneds/tuna.webp",
       name: "Canned Tuna",
       old_price: 0,
       price: 4.99,
@@ -133,7 +133,7 @@ export const canneds = {
     {
       id: 2,
       category: "vegetable",
-      image: "/images/products/canneds/tomato-sauce.png",
+      image: "/images/products/canneds/tomato-sauce.webp",
       name: "Tomato Sauce",
       old_price: 1.36,
       price: 0.96,
@@ -142,7 +142,7 @@ export const canneds = {
     {
       id: 3,
       category: "vegetable",
-      image: "/images/products/canneds/beans.png",
+      image: "/images/products/canneds/beans.webp",
       name: "Canned Beans",
       old_price: 0,
       price: 2.96,
@@ -151,7 +151,7 @@ export const canneds = {
     {
       id: 4,
       category: "fish",
-      image: "/images/products/canneds/sardines.png",
+      image: "/images/products/canneds/sardines.webp",
       name: "Canned Sardines",
       old_price: 0,
       price: 2.96,
@@ -160,7 +160,7 @@ export const canneds = {
     {
       id: 5,
       category: "fruit",
-      image: "/images/products/canneds/peach.png",
+      image: "/images/products/canneds/peach.webp",
       name: "Canned Peach",
       old_price: 0,
       price: 3.4,
@@ -169,7 +169,7 @@ export const canneds = {
     {
       id: 6,
       category: "fruit",
-      image: "/images/products/canneds/pineapple.png",
+      image: "/images/products/canneds/pineapple.webp",
       name: "Canned Pineapple",
       old_price: 0,
       price: 3.6,
@@ -184,7 +184,7 @@ export const cheesesAndDairy = {
     {
       id: 1,
       category: "american",
-      image: "/images/products/cheeses-and-dairy/cheese-slice.png",
+      image: "/images/products/cheeses-and-dairy/cheese-slice.webp",
       name: "Cheese Slices",
       old_price: 0,
       price: 4.89,
@@ -193,7 +193,7 @@ export const cheesesAndDairy = {
     {
       id: 2,
       category: "parmesan",
-      image: "/images/products/cheeses-and-dairy/parmesan.png",
+      image: "/images/products/cheeses-and-dairy/parmesan.webp",
       name: "Parmesan Cheese",
       old_price: 0,
       price: 3.8,
@@ -202,7 +202,7 @@ export const cheesesAndDairy = {
     {
       id: 3,
       category: "mozzarella",
-      image: "/images/products/cheeses-and-dairy/mozzarella.png",
+      image: "/images/products/cheeses-and-dairy/mozzarella.webp",
       name: "Mozzarella",
       old_price: 0,
       price: 2.19,
@@ -211,7 +211,7 @@ export const cheesesAndDairy = {
     {
       id: 4,
       category: "american",
-      image: "/images/products/cheeses-and-dairy/cream-cheese.png",
+      image: "/images/products/cheeses-and-dairy/cream-cheese.webp",
       name: "Cream Cheese",
       old_price: 0,
       price: 2.45,
@@ -220,7 +220,7 @@ export const cheesesAndDairy = {
     {
       id: 5,
       category: "gorgonzola",
-      image: "/images/products/cheeses-and-dairy/gorgonzola.png",
+      image: "/images/products/cheeses-and-dairy/gorgonzola.webp",
       name: "Gorgonzola",
       old_price: 0,
       price: 4.5,
@@ -229,7 +229,7 @@ export const cheesesAndDairy = {
     {
       id: 6,
       category: "gouda",
-      image: "/images/products/cheeses-and-dairy/gouda.png",
+      image: "/images/products/cheeses-and-dairy/gouda.webp",
       name: "Gouda Cheese",
       old_price: 0,
       price: 3.75,
@@ -244,7 +244,7 @@ export const dietary = {
     {
       id: 1,
       category: "protein",
-      image: "/images/products/dietary/protein.png",
+      image: "/images/products/dietary/protein.webp",
       name: "Protein Powder",
       old_price: 0,
       price: 31.9,
@@ -253,7 +253,7 @@ export const dietary = {
     {
       id: 2,
       category: "juice",
-      image: "/images/products/dietary/detox.png",
+      image: "/images/products/dietary/detox.webp",
       name: "Detox Juice",
       old_price: 0,
       price: 5.99,
@@ -262,7 +262,7 @@ export const dietary = {
     {
       id: 3,
       category: "vitamin",
-      image: "/images/products/dietary/vitamin-d3.png",
+      image: "/images/products/dietary/vitamin-d3.webp",
       name: "Vitamin D3",
       old_price: 0,
       price: 8.99,
@@ -271,7 +271,7 @@ export const dietary = {
     {
       id: 4,
       category: "vitamin",
-      image: "/images/products/dietary/vitamin-d.png",
+      image: "/images/products/dietary/vitamin-d.webp",
       name: "Vitamin D",
       old_price: 0,
       price: 7.99,
@@ -280,7 +280,7 @@ export const dietary = {
     {
       id: 5,
       category: "vitamin",
-      image: "/images/products/dietary/vitamin-b.png",
+      image: "/images/products/dietary/vitamin-b.webp",
       name: "Vitamin B",
       old_price: 0,
       price: 8.99,
@@ -289,7 +289,7 @@ export const dietary = {
     {
       id: 6,
       category: "vitamin",
-      image: "/images/products/dietary/vitamin-c.png",
+      image: "/images/products/dietary/vitamin-c.webp",
       name: "Vitamin C",
       old_price: 0,
       price: 7.99,
@@ -304,7 +304,7 @@ export const eggs = {
     {
       id: 1,
       category: "chicken",
-      image: "/images/products/eggs/brown-eggs.png",
+      image: "/images/products/eggs/brown-eggs.webp",
       name: "Large Brown Eggs",
       old_price: 0,
       price: 3.59,
@@ -313,7 +313,7 @@ export const eggs = {
     {
       id: 2,
       category: "chicken",
-      image: "/images/products/eggs/eggs.png",
+      image: "/images/products/eggs/eggs.webp",
       name: "Large White Eggs",
       old_price: 0,
       price: 3.99,
@@ -322,7 +322,7 @@ export const eggs = {
     {
       id: 3,
       category: "quail",
-      image: "/images/products/eggs/quail-eggs.png",
+      image: "/images/products/eggs/quail-eggs.webp",
       name: "Quail Eggs",
       old_price: 0,
       price: 2.99,
@@ -331,7 +331,7 @@ export const eggs = {
     {
       id: 4,
       category: "duck",
-      image: "/images/products/eggs/duck-eggs.png",
+      image: "/images/products/eggs/duck-eggs.webp",
       name: "Duck Eggs",
       old_price: 0,
       price: 5.99,
@@ -340,7 +340,7 @@ export const eggs = {
     {
       id: 2,
       category: "turkey",
-      image: "/images/products/eggs/turkey-egg.png",
+      image: "/images/products/eggs/turkey-egg.webp",
       name: "Turkey Egg",
       old_price: 0,
       price: 6.99,
@@ -349,7 +349,7 @@ export const eggs = {
     {
       id: 2,
       category: "ostrich",
-      image: "/images/products/eggs/ostrich-egg.png",
+      image: "/images/products/eggs/ostrich-egg.webp",
       name: "Ostrich Egg",
       old_price: 0,
       price: 9.99,
@@ -364,7 +364,7 @@ export const fishery = {
     {
       id: 1,
       category: "cartilaginous",
-      image: "/images/products/fishery/atlantic-salmon.png",
+      image: "/images/products/fishery/atlantic-salmon.webp",
       name: "Atlantic Salmon",
       old_price: 0,
       price: 9.99,
@@ -373,7 +373,7 @@ export const fishery = {
     {
       id: 2,
       category: "cartilaginous",
-      image: "/images/products/fishery/tuna.png",
+      image: "/images/products/fishery/tuna.webp",
       name: "Light Tuna",
       old_price: 0,
       price: 6.99,
@@ -382,7 +382,7 @@ export const fishery = {
     {
       id: 3,
       category: "cartilaginous",
-      image: "/images/products/fishery/tilapia.png",
+      image: "/images/products/fishery/tilapia.webp",
       name: "Tilapia",
       old_price: 0,
       price: 5.08,
@@ -391,7 +391,7 @@ export const fishery = {
     {
       id: 4,
       category: "cartilaginous",
-      image: "/images/products/fishery/herring.png",
+      image: "/images/products/fishery/herring.webp",
       name: "Herring",
       old_price: 0,
       price: 4.09,
@@ -400,7 +400,7 @@ export const fishery = {
     {
       id: 5,
       category: "cartilaginous",
-      image: "/images/products/fishery/sardines.png",
+      image: "/images/products/fishery/sardines.webp",
       name: "Sardines",
       old_price: 0,
       price: 2.19,
@@ -409,7 +409,7 @@ export const fishery = {
     {
       id: 6,
       category: "cartilaginous",
-      image: "/images/products/fishery/yellowfin-tuna.png",
+      image: "/images/products/fishery/yellowfin-tuna.webp",
       name: "Yellowfin Tuna",
       old_price: 0,
       price: 6.65,
@@ -424,7 +424,7 @@ export const frozen = {
     {
       id: 1,
       category: "sweet",
-      image: "/images/products/frozen/ice-cream.png",
+      image: "/images/products/frozen/ice-cream.webp",
       name: "Napolitano Gelati",
       old_price: 0,
       price: 4.99,
@@ -433,7 +433,7 @@ export const frozen = {
     {
       id: 2,
       category: "sweet",
-      image: "/images/products/frozen/peach-yogurt.png",
+      image: "/images/products/frozen/peach-yogurt.webp",
       name: "Peach Yogurt",
       old_price: 0,
       price: 0.65,
@@ -442,7 +442,7 @@ export const frozen = {
     {
       id: 3,
       category: "meat",
-      image: "/images/products/frozen/chicken-breast.png",
+      image: "/images/products/frozen/chicken-breast.webp",
       name: "Chicken Breast",
       old_price: 12.98,
       price: 11.08,
@@ -451,7 +451,7 @@ export const frozen = {
     {
       id: 4,
       category: "sweet",
-      image: "/images/products/frozen/yogurt.png",
+      image: "/images/products/frozen/yogurt.webp",
       name: "Strawberry Yogurt",
       old_price: 2.49,
       price: 2.09,
@@ -460,7 +460,7 @@ export const frozen = {
     {
       id: 5,
       category: "meat",
-      image: "/images/products/frozen/meatballs.png",
+      image: "/images/products/frozen/meatballs.webp",
       name: "Meatballs",
       old_price: 0,
       price: 7.19,
@@ -469,7 +469,7 @@ export const frozen = {
     {
       id: 6,
       category: "vegetable",
-      image: "/images/products/frozen/french-fries.png",
+      image: "/images/products/frozen/french-fries.webp",
       name: "French Fries",
       old_price: 0,
       price: 4.65,
@@ -484,7 +484,7 @@ export const cleaning = {
     {
       id: 1,
       category: "utensils",
-      image: "/images/products/cleaning/antiseptic.png",
+      image: "/images/products/cleaning/antiseptic.webp",
       name: "Antiseptic",
       old_price: 0,
       price: 2.65,
@@ -493,7 +493,7 @@ export const cleaning = {
     {
       id: 2,
       category: "utensils",
-      image: "/images/products/cleaning/broom.png",
+      image: "/images/products/cleaning/broom.webp",
       name: "Broom",
       old_price: 0,
       price: 9.90,
@@ -502,7 +502,7 @@ export const cleaning = {
     {
       id: 3,
       category: "utensils",
-      image: "/images/products/cleaning/bucket.png",
+      image: "/images/products/cleaning/bucket.webp",
       name: "Bucket",
       old_price: 0,
       price: 3.1,
@@ -511,7 +511,7 @@ export const cleaning = {
     {
       id: 4,
       category: "utensils",
-      image: "/images/products/cleaning/dustpan.png",
+      image: "/images/products/cleaning/dustpan.webp",
       name: "Dustpan",
       old_price: 0,
       price: 2.45,
@@ -520,7 +520,7 @@ export const cleaning = {
     {
       id: 5,
       category: "utensils",
-      image: "/images/products/cleaning/floor-cloth.png",
+      image: "/images/products/cleaning/floor-cloth.webp",
       name: "Floor Cloth",
       old_price: 0,
       price: 0.69,
@@ -529,7 +529,7 @@ export const cleaning = {
     {
       id: 6,
       category: "utensils",
-      image: "/images/products/cleaning/garbage-bag.png",
+      image: "/images/products/cleaning/garbage-bag.webp",
       name: "Garbage Bag",
       old_price: 0,
       price: 0.19,
@@ -538,7 +538,7 @@ export const cleaning = {
     {
       id: 7,
       category: "utensils",
-      image: "/images/products/cleaning/garbage.png",
+      image: "/images/products/cleaning/garbage.webp",
       name: "Trash Can",
       old_price: 0,
       price: 7.55,
@@ -547,7 +547,7 @@ export const cleaning = {
     {
       id: 8,
       category: "utensils",
-      image: "/images/products/cleaning/mop.png",
+      image: "/images/products/cleaning/mop.webp",
       name: "Mop",
       old_price: 0,
       price: 12.29,
@@ -556,7 +556,7 @@ export const cleaning = {
     {
       id: 9,
       category: "soap",
-      image: "/images/products/cleaning/soap.png",
+      image: "/images/products/cleaning/soap.webp",
       name: "Soap",
       old_price: 0,
       price: 0.61,
@@ -565,7 +565,7 @@ export const cleaning = {
     {
       id: 10,
       category: "utensils",
-      image: "/images/products/cleaning/sponge.png",
+      image: "/images/products/cleaning/sponge.webp",
       name: "Sponge",
       old_price: 0,
       price: 0.85,
@@ -574,7 +574,7 @@ export const cleaning = {
     {
       id: 11,
       category: "utensils",
-      image: "/images/products/cleaning/squeegee.png",
+      image: "/images/products/cleaning/squeegee.webp",
       name: "Squeegee",
       old_price: 0,
       price: 8.9,
@@ -583,7 +583,7 @@ export const cleaning = {
     {
       id: 12,
       category: "utensils",
-      image: "/images/products/cleaning/vacuum.png",
+      image: "/images/products/cleaning/vacuum.webp",
       name: "Vacuum",
       old_price: 0,
       price: 95.99,
@@ -598,7 +598,7 @@ export const essentials = {
     {
       id: 1,
       category: "seasoning",
-      image: "/images/products/essentials/salt2.png",
+      image: "/images/products/essentials/salt2.webp",
       name: "Iodized Salt",
       old_price: 0,
       price: 0.49,
@@ -607,7 +607,7 @@ export const essentials = {
     {
       id: 2,
       category: "seasoning",
-      image: "/images/products/essentials/sugar2.png",
+      image: "/images/products/essentials/sugar2.webp",
       name: "Granulated Sugar",
       old_price: 0,
       price: 2.49,
@@ -616,7 +616,7 @@ export const essentials = {
     {
       id: 3,
       category: "flour",
-      image: "/images/products/essentials/flour2.png",
+      image: "/images/products/essentials/flour2.webp",
       name: "All Purpose Flour",
       old_price: 0,
       price: 1.17,
@@ -625,7 +625,7 @@ export const essentials = {
     {
       id: 4,
       category: "oil",
-      image: "/images/products/essentials/oil.png",
+      image: "/images/products/essentials/oil.webp",
       name: "Vegetable Oil",
       old_price: 0,
       price: 3.75,
@@ -634,7 +634,7 @@ export const essentials = {
     {
       id: 5,
       category: "bean",
-      image: "/images/products/essentials/bean.png",
+      image: "/images/products/essentials/bean.webp",
       name: "Cannellini Beans",
       old_price: 0,
       price: 2.69,
@@ -643,7 +643,7 @@ export const essentials = {
     {
       id: 6,
       category: "rice",
-      image: "/images/products/essentials/rice.png",
+      image: "/images/products/essentials/rice.webp",
       name: "Enriched Long Rice",
       old_price: 0,
       price: 2.29,
@@ -652,7 +652,7 @@ export const essentials = {
     {
       id: 7,
       category: "utensil",
-      image: "/images/products/essentials/paper-towel.png",
+      image: "/images/products/essentials/paper-towel.webp",
       name: "Paper Towel",
       old_price: 0,
       price: 6.55,
@@ -661,7 +661,7 @@ export const essentials = {
     {
       id: 8,
       category: "oil",
-      image: "/images/products/essentials/olive-oil.png",
+      image: "/images/products/essentials/olive-oil.webp",
       name: "Olive Oil",
       old_price: 0,
       price: 3.4,
@@ -670,7 +670,7 @@ export const essentials = {
     {
       id: 9,
       category: "utensil",
-      image: "/images/products/essentials/toothpick.png",
+      image: "/images/products/essentials/toothpick.webp",
       name: "Toothpick",
       old_price: 0,
       price: 2.44,
@@ -679,7 +679,7 @@ export const essentials = {
     {
       id: 10,
       category: "water",
-      image: "/images/products/essentials/water.png",
+      image: "/images/products/essentials/water.webp",
       name: "Bottled Water",
       old_price: 0,
       price: 0.65,
@@ -688,7 +688,7 @@ export const essentials = {
     {
       id: 11,
       category: "coffee",
-      image: "/images/products/essentials/coffee-beans.png",
+      image: "/images/products/essentials/coffee-beans.webp",
       name: "Coffee",
       old_price: 0,
       price: 2.89,
@@ -697,7 +697,7 @@ export const essentials = {
     {
       id: 12,
       category: "egg",
-      image: "/images/products/essentials/egg.png",
+      image: "/images/products/essentials/egg.webp",
       name: "Large Brown Eggs",
       old_price: 0,
       price: 3.59,
@@ -712,7 +712,7 @@ export const fullFridge = {
     {
       id: 1,
       category: "bread",
-      image: "/images/products/full-fridge/garlic-bread.png",
+      image: "/images/products/full-fridge/garlic-bread.webp",
       name: "Garlic Bread",
       old_price: 0,
       price: 2.79,
@@ -721,7 +721,7 @@ export const fullFridge = {
     {
       id: 2,
       category: "meat",
-      image: "/images/products/full-fridge/ham.png",
+      image: "/images/products/full-fridge/ham.webp",
       name: "Black Forest Ham",
       old_price: 0,
       price: 3.19,
@@ -730,7 +730,7 @@ export const fullFridge = {
     {
       id: 3,
       category: "meat",
-      image: "/images/products/full-fridge/ravioli.png",
+      image: "/images/products/full-fridge/ravioli.webp",
       name: "Chicken & Prosciutto Ravioli",
       old_price: 0,
       price: 3.49,
@@ -739,7 +739,7 @@ export const fullFridge = {
     {
       id: 4,
       category: "sweet",
-      image: "/images/products/full-fridge/cinnamon-roll.png",
+      image: "/images/products/full-fridge/cinnamon-roll.webp",
       name: "Cinnamon Rolls",
       old_price: 0,
       price: 3.99,
@@ -748,7 +748,7 @@ export const fullFridge = {
     {
       id: 5,
       category: "sweet",
-      image: "/images/products/full-fridge/ice-cream.png",
+      image: "/images/products/full-fridge/ice-cream.webp",
       name: "Napolitano Gelati",
       old_price: 0,
       price: 4.99,
@@ -757,7 +757,7 @@ export const fullFridge = {
     {
       id: 6,
       category: "meat",
-      image: "/images/products/full-fridge/turkey.png",
+      image: "/images/products/full-fridge/turkey.webp",
       name: "Honey Smoked Turkey",
       old_price: 0,
       price: 13.49,
@@ -766,7 +766,7 @@ export const fullFridge = {
     {
       id: 7,
       category: "sauce",
-      image: "/images/products/full-fridge/salsa.png",
+      image: "/images/products/full-fridge/salsa.webp",
       name: "Medium Salsa",
       old_price: 0,
       price: 2.55,
@@ -775,7 +775,7 @@ export const fullFridge = {
     {
       id: 8,
       category: "meat",
-      image: "/images/products/full-fridge/prosciutto.png",
+      image: "/images/products/full-fridge/prosciutto.webp",
       name: "Prosciutto Di Parma",
       old_price: 0,
       price: 4.99,
@@ -784,7 +784,7 @@ export const fullFridge = {
     {
       id: 9,
       category: "milk",
-      image: "/images/products/full-fridge/milk.png",
+      image: "/images/products/full-fridge/milk.webp",
       name: "Organic Vanilla Soymilk",
       old_price: 0,
       price: 2.44,
@@ -793,7 +793,7 @@ export const fullFridge = {
     {
       id: 10,
       category: "sweet",
-      image: "/images/products/full-fridge/peach-yogurt.png",
+      image: "/images/products/full-fridge/peach-yogurt.webp",
       name: "Peach Yogurt",
       old_price: 0,
       price: 0.65,
@@ -802,7 +802,7 @@ export const fullFridge = {
     {
       id: 11,
       category: "pasta",
-      image: "/images/products/full-fridge/pizza.png",
+      image: "/images/products/full-fridge/pizza.webp",
       name: "Pepperoni Pizza",
       old_price: 0,
       price: 6.89,
@@ -811,7 +811,7 @@ export const fullFridge = {
     {
       id: 12,
       category: "meat",
-      image: "/images/products/full-fridge/salami.png",
+      image: "/images/products/full-fridge/salami.webp",
       name: "Spicy Salami",
       old_price: 0,
       price: 6.49,
@@ -826,7 +826,7 @@ export const beverages = {
     {
       id: 1,
       category: "juice",
-      image: "/images/products/beverages/coconut-water.png",
+      image: "/images/products/beverages/coconut-water.webp",
       name: "Coconut Juice",
       old_price: 0,
       price: 2.09,
@@ -835,7 +835,7 @@ export const beverages = {
     {
       id: 2,
       category: "juice",
-      image: "/images/products/beverages/grapes-juice.png",
+      image: "/images/products/beverages/grapes-juice.webp",
       name: "100% Grape Juice",
       old_price: 0,
       price: 2.79,
@@ -844,7 +844,7 @@ export const beverages = {
     {
       id: 3,
       category: "juice",
-      image: "/images/products/beverages/fruit-punch.png",
+      image: "/images/products/beverages/fruit-punch.webp",
       name: "Fruit Punch Juice",
       old_price: 0,
       price: 1.59,
@@ -853,7 +853,7 @@ export const beverages = {
     {
       id: 4,
       category: "juice",
-      image: "/images/products/beverages/green-lemon-juice.png",
+      image: "/images/products/beverages/green-lemon-juice.webp",
       name: "Green Lemon Juice",
       old_price: 0,
       price: 1.15,
@@ -862,7 +862,7 @@ export const beverages = {
     {
       id: 5,
       category: "juice",
-      image: "/images/products/beverages/mango-juice.png",
+      image: "/images/products/beverages/mango-juice.webp",
       name: "Mango Passion 100% Juice",
       old_price: 0,
       price: 3.19,
@@ -871,7 +871,7 @@ export const beverages = {
     {
       id: 6,
       category: "juice",
-      image: "/images/products/beverages/strawberry-juice.png",
+      image: "/images/products/beverages/strawberry-juice.webp",
       name: "Strawberry Juice",
       old_price: 0,
       price: 1.39,
@@ -880,7 +880,7 @@ export const beverages = {
     {
       id: 7,
       category: "juice",
-      image: "/images/products/beverages/mint-tea.png",
+      image: "/images/products/beverages/mint-tea.webp",
       name: "Mint Green Tea",
       old_price: 0,
       price: 1.38,
@@ -889,7 +889,7 @@ export const beverages = {
     {
       id: 8,
       category: "juice",
-      image: "/images/products/beverages/orange-juice.png",
+      image: "/images/products/beverages/orange-juice.webp",
       name: "Orange Pulp Free",
       old_price: 0,
       price: 3.98,
@@ -898,7 +898,7 @@ export const beverages = {
     {
       id: 9,
       category: "juice",
-      image: "/images/products/beverages/apple-juice.png",
+      image: "/images/products/beverages/apple-juice.webp",
       name: "Organic Apple Juice",
       old_price: 0,
       price: 2.49,
@@ -907,7 +907,7 @@ export const beverages = {
     {
       id: 10,
       category: "juice",
-      image: "/images/products/beverages/black-teas.png",
+      image: "/images/products/beverages/black-teas.webp",
       name: "Sweet Black Tea",
       old_price: 0,
       price: 0.99,
@@ -916,7 +916,7 @@ export const beverages = {
     {
       id: 11,
       category: "juice",
-      image: "/images/products/beverages/vegetable-juice.png",
+      image: "/images/products/beverages/vegetable-juice.webp",
       name: "Vegetable Juice",
       old_price: 0,
       price: 3.98,
@@ -925,7 +925,7 @@ export const beverages = {
     {
       id: 12,
       category: "juice",
-      image: "/images/products/beverages/watermelon-juice.png",
+      image: "/images/products/beverages/watermelon-juice.webp",
       name: "Watermelon Juice",
       old_price: 0,
       price: 3.19,
@@ -940,7 +940,7 @@ export const fruits = {
     {
       id: 1,
       category: "fruit",
-      image: "/images/products/fruits/avocados.png",
+      image: "/images/products/fruits/avocados.webp",
       name: "Avocado",
       old_price: 1.99,
       price: 1.69,
@@ -949,7 +949,7 @@ export const fruits = {
     {
       id: 2,
       category: "fruit",
-      image: "/images/products/fruits/apples.png",
+      image: "/images/products/fruits/apples.webp",
       name: "Fuji Apples",
       old_price: 2.69,
       price: 2.39,
@@ -958,7 +958,7 @@ export const fruits = {
     {
       id: 3,
       category: "fruit",
-      image: "/images/products/fruits/lemons.png",
+      image: "/images/products/fruits/lemons.webp",
       name: "Lemons",
       old_price: 0.68,
       price: 0.48,
@@ -967,7 +967,7 @@ export const fruits = {
     {
       id: 4,
       category: "fruit",
-      image: "/images/products/fruits/pineapple.png",
+      image: "/images/products/fruits/pineapple.webp",
       name: "Pineapple",
       old_price: 4.39,
       price: 4.09,
@@ -976,7 +976,7 @@ export const fruits = {
     {
       id: 5,
       category: "fruit",
-      image: "/images/products/fruits/watermelon.png",
+      image: "/images/products/fruits/watermelon.webp",
       name: "Watermelon",
       old_price: 5.69,
       price: 5.19,
@@ -985,7 +985,7 @@ export const fruits = {
     {
       id: 2,
       category: "fruit",
-      image: "/images/products/fruits/strawberry.png",
+      image: "/images/products/fruits/strawberry.webp",
       name: "Strawberry",
       old_price: 1.28,
       price: 0.88,
@@ -1000,7 +1000,7 @@ export const offers = {
     {
       id: 1,
       category: "juice",
-      image: "/images/products/offers/lemon-juice.png",
+      image: "/images/products/offers/lemon-juice.webp",
       name: "100% Lemon Juice",
       old_price: 2.39,
       price: 2.09,
@@ -1009,7 +1009,7 @@ export const offers = {
     {
       id: 2,
       category: "fruit",
-      image: "/images/products/offers/avocados.png",
+      image: "/images/products/offers/avocados.webp",
       name: "Avocado",
       old_price: 1.99,
       price: 1.69,
@@ -1018,7 +1018,7 @@ export const offers = {
     {
       id: 3,
       category: "meat",
-      image: "/images/products/offers/ribs.png",
+      image: "/images/products/offers/ribs.webp",
       name: "Baby Back Ribs",
       old_price: 2.89,
       price: 2.59,
@@ -1027,7 +1027,7 @@ export const offers = {
     {
       id: 4,
       category: "syrup",
-      image: "/images/products/offers/maple-syrup.png",
+      image: "/images/products/offers/maple-syrup.webp",
       name: "Butter Syrup",
       old_price: 2.09,
       price: 1.79,
@@ -1036,7 +1036,7 @@ export const offers = {
     {
       id: 5,
       category: "meat",
-      image: "/images/products/offers/chicken-breast.png",
+      image: "/images/products/offers/chicken-breast.webp",
       name: "Chicken Breast",
       old_price: 12.98,
       price: 11.08,
@@ -1045,7 +1045,7 @@ export const offers = {
     {
       id: 6,
       category: "pet",
-      image: "/images/products/offers/dog-treat.png",
+      image: "/images/products/offers/dog-treat.webp",
       name: "Dog Treats Bacon",
       old_price: 5.29,
       price: 4.79,
@@ -1054,7 +1054,7 @@ export const offers = {
     {
       id: 7,
       category: "meat",
-      image: "/images/products/offers/bacons.png",
+      image: "/images/products/offers/bacons.webp",
       name: "Hickory Smoked Bacon",
       old_price: 3.89,
       price: 3.39,
@@ -1063,7 +1063,7 @@ export const offers = {
     {
       id: 8,
       category: "meat",
-      image: "/images/products/offers/burger-patty.png",
+      image: "/images/products/offers/burger-patty.webp",
       name: "Ground Beef Patties",
       old_price: 4.24,
       price: 3.89,
@@ -1079,7 +1079,7 @@ export const offers = {
     {
       id: 9,
       category: "fruit",
-      image: "/images/products/offers/apples.png",
+      image: "/images/products/offers/apples.webp",
       name: "Fuji Apples",
       old_price: 2.69,
       price: 2.39,
@@ -1088,7 +1088,7 @@ export const offers = {
     {
       id: 10,
       category: "fruit",
-      image: "/images/products/offers/lemons.png",
+      image: "/images/products/offers/lemons.webp",
       name: "Lemons",
       old_price: 0.68,
       price: 0.48,
@@ -1097,7 +1097,7 @@ export const offers = {
     {
       id: 11,
       category: "pasta",
-      image: "/images/products/offers/macaroni.png",
+      image: "/images/products/offers/macaroni.webp",
       name: "Macaroni & Beef",
       old_price: 0.97,
       price: 0.57,
@@ -1106,7 +1106,7 @@ export const offers = {
     {
       id: 12,
       category: "cake",
-      image: "/images/products/offers/cheesecakes.png",
+      image: "/images/products/offers/cheesecakes.webp",
       name: "New York Cheese Cake",
       old_price: 12.98,
       price: 10.08,
@@ -1115,7 +1115,7 @@ export const offers = {
     {
       id: 13,
       category: "fruit",
-      image: "/images/products/offers/pineapple.png",
+      image: "/images/products/offers/pineapple.webp",
       name: "Pineapple",
       old_price: 4.39,
       price: 4.09,
@@ -1124,7 +1124,7 @@ export const offers = {
     {
       id: 14,
       category: "fruit",
-      image: "/images/products/offers/watermelon.png",
+      image: "/images/products/offers/watermelon.webp",
       name: "Watermelon",
       old_price: 5.69,
       price: 5.19,
@@ -1133,7 +1133,7 @@ export const offers = {
     {
       id: 15,
       category: "fruit",
-      image: "/images/products/offers/yogurt.png",
+      image: "/images/products/offers/yogurt.webp",
       name: "Strawberry Yogurt",
       old_price: 2.49,
       price: 2.09,
@@ -1142,7 +1142,7 @@ export const offers = {
     {
       id: 16,
       category: "broth",
-      image: "/images/products/offers/broth.png",
+      image: "/images/products/offers/broth.webp",
       name: "Beef Broth",
       old_price: 1.29,
       price: 0.99,
@@ -1151,7 +1151,7 @@ export const offers = {
     {
       id: 17,
       category: "fruit",
-      image: "/images/products/offers/strawberry.png",
+      image: "/images/products/offers/strawberry.webp",
       name: "Strawberry",
       old_price: 1.28,
       price: 0.88,
@@ -1160,7 +1160,7 @@ export const offers = {
     {
       id: 18,
       category: "sauce",
-      image: "/images/products/offers/tomato-sauce.png",
+      image: "/images/products/offers/tomato-sauce.webp",
       name: "Tomato Sauce",
       old_price: 1.36,
       price: 0.96,
@@ -1175,7 +1175,7 @@ export const sweets = {
     {
       id: 1,
       category: "dough",
-      image: "/images/products/sweets/donut.png",
+      image: "/images/products/sweets/donut.webp",
       name: "Donut",
       old_price: 0,
       price: 1.79,
@@ -1184,7 +1184,7 @@ export const sweets = {
     {
       id: 2,
       category: "chocolate",
-      image: "/images/products/sweets/chocolate-bar.png",
+      image: "/images/products/sweets/chocolate-bar.webp",
       name: "Chocolate Bar",
       old_price: 0,
       price: 2.29,
@@ -1193,7 +1193,7 @@ export const sweets = {
     {
       id: 3,
       category: "chocolate",
-      image: "/images/products/sweets/cookie.png",
+      image: "/images/products/sweets/cookie.webp",
       name: "Cookies",
       old_price: 0,
       price: 2.09,
@@ -1202,7 +1202,7 @@ export const sweets = {
     {
       id: 4,
       category: "dough",
-      image: "/images/products/sweets/cinnamon-roll.png",
+      image: "/images/products/sweets/cinnamon-roll.webp",
       name: "Cinnamon Rolls",
       old_price: 0,
       price: 3.99,
@@ -1211,7 +1211,7 @@ export const sweets = {
     {
       id: 5,
       category: "frozen",
-      image: "/images/products/sweets/ice-cream.png",
+      image: "/images/products/sweets/ice-cream.webp",
       name: "Napolitano Gelati",
       old_price: 0,
       price: 4.99,
@@ -1220,7 +1220,7 @@ export const sweets = {
     {
       id: 6,
       category: "frozen",
-      image: "/images/products/sweets/peach-yogurt.png",
+      image: "/images/products/sweets/peach-yogurt.webp",
       name: "Peach Yogurt",
       old_price: 0,
       price: 0.65,
@@ -1235,7 +1235,7 @@ export const rotisserie = {
     {
       id: 1,
       category: "meat",
-      image: "/images/products/rotisserie/chicken.png",
+      image: "/images/products/rotisserie/chicken.webp",
       name: "Roasted Chicken",
       old_price: 0,
       price: 10.79,
@@ -1244,7 +1244,7 @@ export const rotisserie = {
     {
       id: 2,
       category: "meat",
-      image: "/images/products/rotisserie/turkey.png",
+      image: "/images/products/rotisserie/turkey.webp",
       name: "Honey Smoked Turkey",
       old_price: 0,
       price: 13.49,
@@ -1253,7 +1253,7 @@ export const rotisserie = {
     {
       id: 3,
       category: "meat",
-      image: "/images/products/rotisserie/peking-duck.png",
+      image: "/images/products/rotisserie/peking-duck.webp",
       name: "Roasted Duck",
       old_price: 0,
       price: 16.09,
@@ -1262,7 +1262,7 @@ export const rotisserie = {
     {
       id: 4,
       category: "meat",
-      image: "/images/products/rotisserie/ribs.png",
+      image: "/images/products/rotisserie/ribs.webp",
       name: "Baby Back Ribs",
       old_price: 2.89,
       price: 2.59,
@@ -1271,7 +1271,7 @@ export const rotisserie = {
     {
       id: 5,
       category: "vegetable",
-      image: "/images/products/rotisserie/bell-pepper.png",
+      image: "/images/products/rotisserie/bell-pepper.webp",
       name: "Roasted Bell Pepper",
       old_price: 0,
       price: 2.99,
@@ -1280,7 +1280,7 @@ export const rotisserie = {
     {
       id: 6,
       category: "fruit",
-      image: "/images/products/rotisserie/pineapple.png",
+      image: "/images/products/rotisserie/pineapple.webp",
       name: "Roasted Pineapple",
       old_price: 0,
       price: 4.65,
@@ -1295,7 +1295,7 @@ export const seasoning = {
     {
       id: 1,
       category: "powder",
-      image: "/images/products/seasoning/salt2.png",
+      image: "/images/products/seasoning/salt2.webp",
       name: "Iodized Salt",
       old_price: 0,
       price: 0.49,
@@ -1304,7 +1304,7 @@ export const seasoning = {
     {
       id: 2,
       category: "leaves",
-      image: "/images/products/seasoning/basil.png",
+      image: "/images/products/seasoning/basil.webp",
       name: "Basil",
       old_price: 0,
       price: 0.89,
@@ -1313,7 +1313,7 @@ export const seasoning = {
     {
       id: 3,
       category: "leaves",
-      image: "/images/products/seasoning/oregano.png",
+      image: "/images/products/seasoning/oregano.webp",
       name: "Oregano",
       old_price: 0,
       price: 0.39,
@@ -1322,7 +1322,7 @@ export const seasoning = {
     {
       id: 4,
       category: "powder",
-      image: "/images/products/seasoning/paprika.png",
+      image: "/images/products/seasoning/paprika.webp",
       name: "Paprika",
       old_price: 0,
       price: 1.99,
@@ -1331,7 +1331,7 @@ export const seasoning = {
     {
       id: 5,
       category: "powder",
-      image: "/images/products/seasoning/pepper.png",
+      image: "/images/products/seasoning/pepper.webp",
       name: "Black Pepper",
       old_price: 0,
       price: 1.29,
@@ -1340,7 +1340,7 @@ export const seasoning = {
     {
       id: 6,
       category: "powder",
-      image: "/images/products/seasoning/turmeric.png",
+      image: "/images/products/seasoning/turmeric.webp",
       name: "Turmeric",
       old_price: 0,
       price: 1.65,
@@ -1355,7 +1355,7 @@ export const petshop = {
     {
       id: 1,
       category: "food",
-      image: "/images/products/petshop/dog-food.png",
+      image: "/images/products/petshop/dog-food.webp",
       name: "Dog Food",
       old_price: 0,
       price: 11.49,
@@ -1364,7 +1364,7 @@ export const petshop = {
     {
       id: 2,
       category: "food",
-      image: "/images/products/petshop/cat-food.png",
+      image: "/images/products/petshop/cat-food.webp",
       name: "Cat Food",
       old_price: 0,
       price: 8.89,
@@ -1373,7 +1373,7 @@ export const petshop = {
     {
       id: 3,
       category: "food",
-      image: "/images/products/petshop/dog-treat.png",
+      image: "/images/products/petshop/dog-treat.webp",
       name: "Dog Treats Bacon",
       old_price: 5.29,
       price: 4.79,
@@ -1382,7 +1382,7 @@ export const petshop = {
     {
       id: 4,
       category: "equipment",
-      image: "/images/products/petshop/dog-bowl.png",
+      image: "/images/products/petshop/dog-bowl.webp",
       name: "Dog Bowl",
       old_price: 0,
       price: 3.29,
@@ -1391,7 +1391,7 @@ export const petshop = {
     {
       id: 5,
       category: "equipment",
-      image: "/images/products/petshop/cat-bowl.png",
+      image: "/images/products/petshop/cat-bowl.webp",
       name: "Cat Bowl",
       old_price: 0,
       price: 2.29,
@@ -1400,7 +1400,7 @@ export const petshop = {
     {
       id: 6,
       category: "equipment",
-      image: "/images/products/petshop/dog-house.png",
+      image: "/images/products/petshop/dog-house.webp",
       name: "Dog House",
       old_price: 0,
       price: 21.65,

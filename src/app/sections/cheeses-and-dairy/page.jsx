@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="cheeses-and-dairy"
       subtitle="Say cheeeeese while eating our cheeses!"
-      imgLink="/images/sections/cheeses.jpg"
+      imgLink="/images/sections/cheeses.webp"
     />
   );
 };

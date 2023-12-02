@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Review1 from "../../../../public/images/specials/review1.png";
-import Review2 from "../../../../public/images/specials/review2.png";
-import Review3 from "../../../../public/images/specials/review3.png";
+import Review1 from "../../../../public/images/specials/review1.webp";
+import Review2 from "../../../../public/images/specials/review2.webp";
+import Review3 from "../../../../public/images/specials/review3.webp";
 import { motion } from "framer-motion";
 
 const staticReviews = [

@@ -8,47 +8,47 @@ type Props = {};
 const carouselImages = [
   {
     id: 1,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "medium salsa",
   },
   {
     id: 2,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "prosciutto Di Parma",
   },
   {
     id: 3,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Organic Vanilla Soymilk",
   },
   {
     id: 4,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Peach Yogurt",
   },
   {
     id: 5,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Pepperoni Pizza",
   },
   {
     id: 6,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Spicy Salami",
   },
   {
     id: 7,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Spicy Salami",
   },
   {
     id: 8,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Spicy Salami",
   },
   {
     id: 9,
-    image: "/images/mini-pages/appstore.png",
+    image: "/images/mini-pages/appstore.webp",
     alt: "Spicy Salami",
   },
 ];
@@ -163,7 +163,7 @@ const MobileCarousel = (props: Props) => {
             </h4>
           </div>
           <Image
-            src="/images/mini-pages/appstore.png"
+            src="/images/mini-pages/appstore.webp"
             alt="last item"
             width={255}
             height={470}
@@ -214,7 +214,7 @@ const MobileCarousel = (props: Props) => {
             </h4>
           </div>
           <Image
-            src="/images/mini-pages/appstore.png"
+            src="/images/mini-pages/appstore.webp"
             alt="first item"
             width={255}
             height={470}

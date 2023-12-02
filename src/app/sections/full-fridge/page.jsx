@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="full-fridge"
       subtitle="Fill up your entire fridge with our selections."
-      imgLink="/images/sections/fridge.jpg"
+      imgLink="/images/sections/fridge.webp"
     />
   );
 };

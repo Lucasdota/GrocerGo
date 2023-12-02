@@ -12,11 +12,13 @@ const Interface = () => {
   const [autoSlide, setAutoSlide] = useState(true);
 
   function setPage(newPage: number, newDirection?: number) {
+		//if there's no direction argument, new direction receives 1
     if (!newDirection) newDirection = newPage - currentPage;
     setCurrentPage([newPage, newDirection]);
   }
 
   useEffect(() => {
+		//auto slide functionality
     if (!autoSlide) return;
 
     function myTimer() {

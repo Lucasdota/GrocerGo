@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HeaderBG from "../../../public/images/others/catalog-header.jpg";
+import HeaderBG from "../../../public/images/others/catalog-header.webp";
 import Interface from './Interface';
 
 export const metadata = {

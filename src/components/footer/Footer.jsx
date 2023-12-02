@@ -13,9 +13,9 @@ import {
 import {
   FaTwitter
 } from "@react-icons/all-files/fa/FaTwitter";
-import Cart from '../../../public/images/footer/cart.png';
-import GooglePlay from '../../../public/images/footer/google-play.png';
-import Apple from '../../../public/images/footer/apple.png';
+import Cart from '../../../public/images/footer/cart.webp';
+import GooglePlay from '../../../public/images/footer/google-play.webp';
+import Apple from '../../../public/images/footer/apple.webp';
 
 const Footer = () => {
 	return (
@@ -373,69 +373,69 @@ const Footer = () => {
                 Grocer<span className="text-green-3">Go</span>
               </Link>
               <Image
-                src="/images/footer/alelo.png"
+                src="/images/footer/alelo.webp"
                 alt="alelo"
                 width={40}
                 height={40}
                 className=""
               />
               <Image
-                src="/images/footer/american-express.png"
+                src="/images/footer/american-express.webp"
                 alt="american express"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/card.png"
+                src="/images/footer/card.webp"
                 alt="mastercard"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/diners.png"
+                src="/images/footer/diners.webp"
                 alt="diners"
                 width={40}
                 height={40}
                 className="border"
               />
               <Image
-                src="/images/footer/discover.png"
+                src="/images/footer/discover.webp"
                 alt="discover"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/discover2.png"
+                src="/images/footer/discover2.webp"
                 alt="discover2"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/ideal.png"
+                src="/images/footer/ideal.webp"
                 alt="ideal"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/jcb.png"
+                src="/images/footer/jcb.webp"
                 alt="jcb"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/paypal.png"
+                src="/images/footer/paypal.webp"
                 alt="paypal"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/postepay.png"
+                src="/images/footer/postepay.webp"
                 alt="psotepay"
                 width={40}
                 height={40}
               />
               <Image
-                src="/images/footer/visa.png"
+                src="/images/footer/visa.webp"
                 alt="visa"
                 width={40}
                 height={40}
@@ -465,7 +465,7 @@ const Footer = () => {
               <div className=" bg-black flex flex-col items-center px-2 py-1">
                 <span className="text-[0.65rem]">EXCELENT</span>
                 <Image
-                  src="/images/footer/diamond.png"
+                  src="/images/footer/diamond.webp"
                   alt="diamond"
                   width={512}
                   height={512}

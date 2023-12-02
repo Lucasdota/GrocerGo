@@ -2,8 +2,8 @@ import { GiVibratingSmartphone } from '@react-icons/all-files/gi/GiVibratingSmar
 import { MdTouchApp } from '@react-icons/all-files/md/MdTouchApp';
 import { HiOutlineChatAlt2 } from "@react-icons/all-files/hi/HiOutlineChatAlt2";
 import Link from 'next/link';
-import GooglePlay from "../../../public/images/footer/google-play.png";
-import Apple from "../../../public/images/footer/apple.png";
+import GooglePlay from "../../../public/images/footer/google-play.webp";
+import Apple from "../../../public/images/footer/apple.webp";
 import Image from 'next/image';
 
 const Callcenter = () => {

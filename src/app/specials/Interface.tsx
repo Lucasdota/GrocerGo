@@ -1,10 +1,10 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import BG from "../../../public/images/specials/special-bg.jpg";
-import ChefIcon from "../../../public/images/specials/cooking.png";
-import BlogIcon from "../../../public/images/specials/blog.png";
-import RotisserieIcon from "../../../public/images/specials/rotisserie.png";
-import SpaceYouIcon from "../../../public/images/specials/spa.png";
+import BG from "../../../public/images/specials/special-bg.webp";
+import ChefIcon from "../../../public/images/specials/cooking.webp";
+import BlogIcon from "../../../public/images/specials/blog.webp";
+import RotisserieIcon from "../../../public/images/specials/rotisserie.webp";
+import SpaceYouIcon from "../../../public/images/specials/spa.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import UrlizeWords from "@/components/shared/UrlizeWords";

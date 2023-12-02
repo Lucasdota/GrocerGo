@@ -22,7 +22,7 @@ const Insurance = () => {
           </p>
         </div>
         <Image
-          src="/images/mini-pages/insurance-1.jpg"
+          src="/images/mini-pages/insurance-1.webp"
           alt="a happy family"
           width={1920}
           height={1080}
@@ -239,7 +239,7 @@ const Insurance = () => {
       </main>
       <div className="bg-green-5 h-80 xl:h-64 md:h-48 flex justify-between rounded-tr-[3rem] md:rounded-tr-none">
         <Image
-          src="/images/mini-pages/insurance-2.jpg"
+          src="/images/mini-pages/insurance-2.webp"
           alt="a happy family"
           width={1920}
           height={1080}

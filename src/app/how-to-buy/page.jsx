@@ -3,10 +3,10 @@ import React from 'react'
 import Carousel from './Carousel';
 import MobileCarousel from './MobileCarousel';
 import Delivery from './Delivery';
-import SmallCreditCard from '../../../public/images/mini-pages/small-cards.png'
-import Paypal from '../../../public/images/mini-pages/paypal.png'
-import Money from '../../../public/images/mini-pages/money.png'
-import Apple from '../../../public/images/mini-pages/apple-icon.png'
+import SmallCreditCard from '../../../public/images/mini-pages/small-cards.webp'
+import Paypal from '../../../public/images/mini-pages/paypal.webp'
+import Money from '../../../public/images/mini-pages/money.webp'
+import Apple from '../../../public/images/mini-pages/apple-icon.webp'
 
 export const metadata = {
   title: "GrocerGo | How To Buy",
@@ -20,7 +20,7 @@ const page = () => {
       <header className="flex sm:flex-col sm:items-center pt-16 lg:pt-8 justify-around md:pr-4 sm:px-4">
         <div className="relative">
           <Image
-            src="/images/mini-pages/grocery-bag.png"
+            src="/images/mini-pages/grocery-bag.webp"
             alt="bag full of vegetables"
             priority
             width={620}
@@ -54,7 +54,7 @@ const page = () => {
             <Carousel />
             <div className="relative">
               <Image
-                src="/images/mini-pages/laptop.png"
+                src="/images/mini-pages/laptop.webp"
                 alt="laptop with our website on"
                 width={500}
                 height={500}
@@ -69,7 +69,7 @@ const page = () => {
         <section className="flex justify-around items-center md:flex-col xxs:ml-4">
           <div className="relative">
             <Image
-              src="/images/mini-pages/smartphone.png"
+              src="/images/mini-pages/smartphone.webp"
               alt="smartphone with our website on"
               width={250}
               height={500}

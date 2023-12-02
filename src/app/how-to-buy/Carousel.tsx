@@ -8,47 +8,47 @@ type Props = {}
 const carouselImages = [
   {
     id: 1,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "medium salsa",
   },
   {
     id: 2,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "prosciutto Di Parma",
   },
   {
     id: 3,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Organic Vanilla Soymilk",
   },
   {
     id: 4,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Peach Yogurt",
   },
   {
     id: 5,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Pepperoni Pizza",
   },
   {
     id: 6,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Spicy Salami",
   },
   {
     id: 7,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Spicy Salami",
   },
   {
     id: 8,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Spicy Salami",
   },
   {
     id: 9,
-    image: "/images/mini-pages/carousel1.png",
+    image: "/images/mini-pages/carousel1.webp",
     alt: "Spicy Salami",
   },
 ];
@@ -162,7 +162,7 @@ const Carousel = (props: Props) => {
             </h4>
           </div>
           <Image
-            src="/images/mini-pages/carousel1.png"
+            src="/images/mini-pages/carousel1.webp"
             alt="last item"
             width={1920}
             height={1080}
@@ -208,7 +208,7 @@ const Carousel = (props: Props) => {
             </h4>
           </div>
           <Image
-            src="/images/mini-pages/carousel1.png"
+            src="/images/mini-pages/carousel1.webp"
             alt="first item"
             width={1920}
             height={1080}

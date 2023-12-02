@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
 type Props = {

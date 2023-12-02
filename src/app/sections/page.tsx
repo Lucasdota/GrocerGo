@@ -1,99 +1,98 @@
 "use client"
 import Image from 'next/image';
-import BG from '../../../public/images/sections/sections.jpg'
-import Sections from '@/components/homepage/Sections';
+import BG from '../../../public/images/sections/sections.webp'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const cardsData = [
   {
     id: 1,
-    image: "/images/sections-btns/cooking3.png",
+    image: "/images/sections-btns/cooking3.webp",
     title: "Essentials",
   },
   {
     id: 2,
-    image: "/images/sections-btns/sandwich2.png",
+    image: "/images/sections-btns/sandwich2.webp",
     title: "Snacks",
   },
   {
     id: 3,
-    image: "/images/sections-btns/meats2.png",
+    image: "/images/sections-btns/meats2.webp",
     title: "Meats",
   },
   {
     id: 4,
-    image: "/images/sections-btns/refrigerator.png",
+    image: "/images/sections-btns/refrigerator.webp",
     title: "Frozen",
   },
   {
     id: 5,
-    image: "/images/sections-btns/cake-slice.png",
+    image: "/images/sections-btns/cake-slice.webp",
     title: "Sweets",
   },
   {
     id: 6,
-    image: "/images/sections-btns/vitamin.png",
+    image: "/images/sections-btns/vitamin.webp",
     title: "Dietary",
   },
   {
     id: 7,
-    image: "/images/sections-btns/tuna2.png",
+    image: "/images/sections-btns/tuna2.webp",
     title: "Canneds",
   },
   {
     id: 8,
-    image: "/images/sections-btns/rotisserie.png",
+    image: "/images/sections-btns/rotisserie.webp",
     title: "Rotisserie",
   },
   {
     id: 9,
-    image: "/images/sections-btns/fruits.png",
+    image: "/images/sections-btns/fruits.webp",
     title: "Fruits",
   },
   {
     id: 10,
-    image: "/images/sections-btns/vegetable.png",
+    image: "/images/sections-btns/vegetable.webp",
     title: "Vegetables",
   },
   {
     id: 11,
-    image: "/images/sections-btns/spice.png",
+    image: "/images/sections-btns/spice.webp",
     title: "Seasoning",
   },
   {
     id: 12,
-    image: "/images/sections-btns/eggs.png",
+    image: "/images/sections-btns/eggs.webp",
     title: "Eggs",
   },
   {
     id: 13,
-    image: "/images/sections-btns/toast.png",
+    image: "/images/sections-btns/toast.webp",
     title: "Bakery",
   },
   {
     id: 14,
-    image: "/images/sections-btns/fish.png",
+    image: "/images/sections-btns/fish.webp",
     title: "Fishery",
   },
   {
     id: 15,
-    image: "/images/sections-btns/cheese.png",
+    image: "/images/sections-btns/cheese.webp",
     title: "Cheeses & Dairy",
   },
   {
     id: 16,
-    image: "/images/sections-btns/healthy-drink.png",
+    image: "/images/sections-btns/healthy-drink.webp",
     title: "Beverages",
   },
   {
     id: 17,
-    image: "/images/sections-btns/cleaning.png",
+    image: "/images/sections-btns/cleaning.webp",
     title: "Cleaning",
   },
   {
     id: 18,
-    image: "/images/sections-btns/pets.png",
+    image: "/images/sections-btns/pets.webp",
     title: "Petshop",
   },
 ];

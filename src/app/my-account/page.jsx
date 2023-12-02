@@ -1,6 +1,6 @@
 import Image from "next/image";
-import headerBG from "../../../public/images/others/settings.jpg";
-import pageBG from "../../../public/images/others/settings-bg.jpg";
+import headerBG from "../../../public/images/others/settings.webp";
+import pageBG from "../../../public/images/others/settings-bg.webp";
 import Content from "./Content";
 
 export const metadata = {
@@ -14,6 +14,8 @@ const myAccountPage = () => {
       <Image
         loading="eager"
         src={pageBG}
+				width={1920}
+				height={1280}
         alt="laptop white background"
         className="w-full h-full opacity-50 object-cover fixed top-0 left-0 -z-10"
       />
@@ -23,8 +25,8 @@ const myAccountPage = () => {
 					priority
           src={headerBG}
           alt="cogs image"
-          width={1920}
-          height={1080}
+          width={640}
+          height={427}
           className="w-[30rem] xl:w-[24rem] md:w-[18rem] xs:hidden"
         />
         <div className="m-16 md:m-8 text-right">

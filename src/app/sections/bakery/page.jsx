@@ -9,7 +9,7 @@ const page = () => {
   return <SectionPage
 					section="bakery"
 					subtitle="My bakery delights, taste the sweet difference!"
-					imgLink="/images/sections/bakery.jpg"
+					imgLink="/images/sections/bakery.webp"
       	/>
 };
 

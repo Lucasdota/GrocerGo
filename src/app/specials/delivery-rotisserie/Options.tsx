@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import RoastedChicken from "../../../../public/images/specials/roasted-chicken3.png";
-import RoastedDuck from "../../../../public/images/specials/roasted-duck.png";
-import Kebab from "../../../../public/images/specials/kebab.png";
+import RoastedChicken from "../../../../public/images/specials/roasted-chicken3.webp";
+import RoastedDuck from "../../../../public/images/specials/roasted-duck.webp";
+import Kebab from "../../../../public/images/specials/kebab.webp";
 
 type Props = {
   setOptions: (value: boolean) => void;

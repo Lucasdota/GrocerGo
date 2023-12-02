@@ -1,6 +1,6 @@
 import Posts from './Posts';
 import Image from "next/image";
-import Farm from "../../../../public/images/specials/farm.jpg";
+import Farm from "../../../../public/images/specials/farm.webp";
 
 const Interface = () => {
 	return (
@@ -9,6 +9,8 @@ const Interface = () => {
         <Image
           src={Farm}
           alt="beautiful farm"
+					width={1920}
+					height={1279}
           className="w-full h-full object-cover absolute top-0"
           priority
         />

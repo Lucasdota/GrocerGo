@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
-import BG from "../../../public/images/others/who-we-are-bg.jpg";
+import BG from "../../../public/images/others/who-we-are-bg.webp";
 import Image from "next/image";
 
 const About = () => {
@@ -10,6 +10,8 @@ const About = () => {
       <Image
         loading="eager"
         priority
+				width={1920}
+				height={1282}
         src={BG}
         alt="laptop white background"
         className="w-full h-full opacity-50 object-cover absolute top-0 left-0 -z-10"

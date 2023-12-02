@@ -4,7 +4,7 @@ import { AnimatePresence, easeIn, easeOut, motion } from "framer-motion";
 import Reviews from "./Reviews";
 import Options from "./Options";
 import MobileOptions from "./MobileOptions";
-import Chicken from "../../../../public/images/specials/roasted-chicken2.png";
+import Chicken from "../../../../public/images/specials/roasted-chicken2.webp";
 import Image from "next/image";
 
 const container = {

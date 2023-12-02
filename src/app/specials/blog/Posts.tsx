@@ -1,18 +1,18 @@
 "use client"
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import carrot1 from '../../../../public/images/specials/posts/carrot1.png';
-import carrot2 from '../../../../public/images/specials/posts/carrot2.png';
-import carrot3 from '../../../../public/images/specials/posts/carrot3.png';
-import avocado1 from '../../../../public/images/specials/posts/avocado1.png';
-import avocado2 from '../../../../public/images/specials/posts/avocado2.png';
-import avocado3 from '../../../../public/images/specials/posts/avocado3.png';
-import blueberry1 from '../../../../public/images/specials/posts/blueberry1.png';
-import blueberry2 from '../../../../public/images/specials/posts/blueberry2.png';
-import blueberry3 from '../../../../public/images/specials/posts/blueberry3.png';
-import carrotGinger from '../../../../public/images/specials/posts/carrot-ginger.png';
-import avocadoSalad from '../../../../public/images/specials/posts/avocado-salad.png';
-import blueberryOats from '../../../../public/images/specials/posts/blueberry-oats.png';
+import carrot1 from '../../../../public/images/specials/posts/carrot1.webp';
+import carrot2 from '../../../../public/images/specials/posts/carrot2.webp';
+import carrot3 from '../../../../public/images/specials/posts/carrot3.webp';
+import avocado1 from '../../../../public/images/specials/posts/avocado1.webp';
+import avocado2 from '../../../../public/images/specials/posts/avocado2.webp';
+import avocado3 from '../../../../public/images/specials/posts/avocado3.webp';
+import blueberry1 from '../../../../public/images/specials/posts/blueberry1.webp';
+import blueberry2 from '../../../../public/images/specials/posts/blueberry2.webp';
+import blueberry3 from '../../../../public/images/specials/posts/blueberry3.webp';
+import carrotGinger from '../../../../public/images/specials/posts/carrot-ginger.webp';
+import avocadoSalad from '../../../../public/images/specials/posts/avocado-salad.webp';
+import blueberryOats from '../../../../public/images/specials/posts/blueberry-oats.webp';
 import SinglePostPage from "./SinglePostPage";
 import GeneratePosts from "./GeneratePosts"
 

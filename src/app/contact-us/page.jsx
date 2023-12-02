@@ -13,7 +13,7 @@ const ContactUs = () => {
     <div className="w-full px-64 xxl:px-28 xl:px-20 lg:px-10 md:px-0 min-h-screen max-w-[2560px] mx-auto">
       <header className="bg-green-5 h-80 xl:h-64 md:h-48 flex justify-between xs:justify-center rounded-br-[3rem] md:rounded-br-none">
         <Image
-          src="/images/mini-pages/contactus-1.jpg"
+          src="/images/mini-pages/contactus-1.webp"
           alt="contact us"
           width={1920}
           height={1080}

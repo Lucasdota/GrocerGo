@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="essentials"
       subtitle="Everyday essentials, your one-stop shop for necessities."
-      imgLink="/images/sections/essentials.jpg"
+      imgLink="/images/sections/essentials.webp"
     />
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import images from "./images.js";
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
@@ -14,7 +14,7 @@ type Props = {
 const variants = {
   initial: (direction: number) => {
     return {
-      x: direction > 0 ? 500 : -500,
+      x: direction > 0 ? "95%" : "-95%",
     };
   },
   animate: {
@@ -22,12 +22,26 @@ const variants = {
   },
   exit: (direction: number) => {
     return {
-      x: direction < 0 ? 500 : -500, 
+      x: direction < 0 ? "95%" : "-95%", 
     };
   },
 };
 
 function Slides({ currentPage, direction, pages, setPage }: Props) {
+	const [nextImage, setNextImage] = useState<string | null | StaticImageData>(null);
+	const [prevImage, setPrevImage] = useState<string | null | StaticImageData>(null);
+
+	//preloads the next and previous image to create a smooth user experience
+	useEffect(() => {
+    const nextPageIndex =
+      (currentPage + direction + pages.length) % pages.length;
+    const prevPageIndex =
+      (currentPage - direction + pages.length) % pages.length;
+
+    setNextImage(images[nextPageIndex]);
+    setPrevImage(images[prevPageIndex]);
+  }, [currentPage, direction, pages]);
+
   return (
     <div className="w-full relative aspect-[4/1.38] flex items-center">
       {/* ARROW BUTTONS */}
@@ -57,6 +71,12 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
       </button>
       {/* SLIDES */}
       <AnimatePresence initial={false} custom={direction}>
+        {prevImage && (
+          <Image src={prevImage} alt="preloaded" className="hidden" />
+        )}
+        {nextImage && (
+          <Image src={nextImage} alt="preloaded" className="hidden" />
+        )}
         <motion.div
           className="w-full absolute top-0"
           variants={variants}
@@ -64,7 +84,7 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
           data-page={currentPage}
           initial={"initial"}
           animate={"animate"}
-					transition={{ type: "none" }}
+          transition={{ type: "none" }}
           exit={"exit"}
           custom={direction}
         >
@@ -72,8 +92,8 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
             src={images[currentPage]}
             alt="slide"
             className="w-full slides"
-            width={2550}
-            height={880}
+            width={1920}
+            height={663}
             priority
             loading="eager"
           />

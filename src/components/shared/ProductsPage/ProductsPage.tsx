@@ -2,14 +2,14 @@
 import Image from "next/image";
 import { catalog } from "@/components/shared/Catalog";
 import { useEffect, useState } from "react";
-import DummyImage from "../../../../public/images/others/more-images.png";
+import DummyImage from "../../../../public/images/others/more-images.webp";
 import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import GenerateCards from "./GenerateCards";
 import SnackbarComponent from "../SnackbarComponent";
 import AddToFav from "../AddToFav";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/navigation";
-import NoResults from "../../../../public/images/mini-pages/no_results.png";
+import NoResults from "../../../../public/images/mini-pages/no_results.webp";
 import AddBtn from "./AddBtn";
 
 type Product = {

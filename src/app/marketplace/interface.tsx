@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BG from "../../../public/images/others/marketplace-bg.jpg";
+import BG from "../../../public/images/others/marketplace-bg.webp";
 import Image from "next/image";
 
 const Interface = () => {
@@ -9,6 +9,8 @@ const Interface = () => {
         loading="eager"
         priority
         src={BG}
+				width={1920}
+				height={1440}
         alt="laptop white background"
         className="w-full h-full opacity-50 object-cover absolute top-0 left-0 -z-10"
       />

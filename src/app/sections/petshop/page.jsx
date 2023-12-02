@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="petshop"
       subtitle="Everything your pet needs, right here, right now."
-      imgLink="/images/sections/petshop.jpg"
+      imgLink="/images/sections/petshop.webp"
     />
   );
 };

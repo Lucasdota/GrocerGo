@@ -1,6 +1,6 @@
-import HeaderBG from '../../../public/images/others/favourite-header.jpg'
+import HeaderBG from '../../../public/images/others/favourite-header.webp'
 import Image from "next/image";
-import BG from '../../../public/images/others/favourite-bg.jpg';
+import BG from '../../../public/images/others/favourite-bg.webp';
 import Content from './Content';
 
 export const metadata = {

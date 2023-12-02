@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="frozen"
       subtitle="Chill out with our exciting frozen selection."
-      imgLink="/images/sections/frozen.jpg"
+      imgLink="/images/sections/frozen.webp"
     />
   );
 };

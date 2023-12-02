@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import rotisserie from "../../../../public/images/specials/rotisserie2.jpg";
+import rotisserie from "../../../../public/images/specials/rotisserie2.webp";
 import Card from './Card';
 
 export const metadata = {

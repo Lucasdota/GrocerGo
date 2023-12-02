@@ -45,11 +45,12 @@ const FirstCards = () => {
         </p>
       </div>
 
+			{/* FARM BG AND BANNER */}
       <div className="relative overflow-hidden flex items-center justify-center xs:bg-green-6">
         <Image
-          src="/images/firstcards/farm_bg.jpg"
-          width={2400}
-          height={1130}
+          src="/images/firstcards/farm-banner.webp"
+          width={1920}
+          height={904}
           alt="farm"
           className="w-full xs:bg-green-6"
 					loading="lazy"
@@ -64,7 +65,7 @@ const FirstCards = () => {
         </div>
       </div>
 
-      {/* BANNER */}
+      {/* BOTTOM TEXTS */}
       <div className="overflow-hidden flex md:flex-col items-center justify-center h-fit py-8 sm:py-6 xs:py-4 relative lg:tracking-normal mx-auto md:gap-4 bg-green-6 w-full">
         <div className="flex flex-col items-center justify-center xs:whitespace-normal w-fit mx-auto h-full text-neutral-100">
           <h3 className="font-bold text-3xl lg:text-2xl sm:text-lg antialiased font-sansita tracking-wide">

@@ -2,7 +2,6 @@ import { useAppContext } from "../api/AppContext";
 import { IoIosCloseCircle } from "react-icons/io";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useSession } from "next-auth/react";
-import { useEffect } from "react";
 
 type Props = {
   product: string;

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Chef1 from "../../../../public/images/specials/chef1.png";
-import Chef2 from "../../../../public/images/specials/chef2.png";
-import Chef3 from "../../../../public/images/specials/chef3.png";
+import Chef1 from "../../../../public/images/specials/chef1.webp";
+import Chef2 from "../../../../public/images/specials/chef2.webp";
+import Chef3 from "../../../../public/images/specials/chef3.webp";
 
 const MobileOptions = () => {
   return (

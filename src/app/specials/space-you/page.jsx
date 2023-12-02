@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import Icon from "../../../../public/images/specials/spa-icon.png";
-import Spa1 from '../../../../public/images/specials/spa1.jpg';
-import Spa2 from '../../../../public/images/specials/spa2.jpg';
-import Spa3 from '../../../../public/images/specials/spa-3.jpg';
-import Spa4 from '../../../../public/images/specials/spa4.jpg';
-import Spa5 from '../../../../public/images/specials/spa5.jpg';
-import Spa6 from '../../../../public/images/specials/spa6.jpg';
-import Spa7 from '../../../../public/images/specials/spa7.jpg';
-import BG from "../../../../public/images/specials/spa-bg.jpg";
+import Icon from "../../../../public/images/specials/spa-icon.webp";
+import Spa1 from '../../../../public/images/specials/spa1.webp';
+import Spa2 from '../../../../public/images/specials/spa2.webp';
+import Spa3 from '../../../../public/images/specials/spa-3.webp';
+import Spa4 from '../../../../public/images/specials/spa4.webp';
+import Spa5 from '../../../../public/images/specials/spa5.webp';
+import Spa6 from '../../../../public/images/specials/spa6.webp';
+import Spa7 from '../../../../public/images/specials/spa7.webp';
+import BG from "../../../../public/images/specials/spa-bg.webp";
 
 export const metadata = {
   title: "GrocerGo | Space You",
@@ -172,6 +172,8 @@ const page = () => {
       </section>
       <Image
         src={BG}
+				width={2400}
+				height={1600}
         alt="water background"
         className="w-full h-full opacity-50 object-cover absolute top-0"
         priority

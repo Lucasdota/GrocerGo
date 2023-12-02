@@ -10,7 +10,7 @@ const page = () => {
     <SectionPage
       section="snacks"
       subtitle="Snack attack and satisfy your cravings with delicious treats!"
-      imgLink="/images/sections/snacks.jpg"
+      imgLink="/images/sections/snacks.webp"
     />
   );
 };
