@@ -8,6 +8,7 @@ import { catalog } from "@/components/shared/Catalog";
 import { BiSolidOffer } from "react-icons/bi";
 import UrlizeWords from "../../shared/UrlizeWords";
 import AddToFav from "@/components/shared/AddToFav";
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 
 export default function Slider() {
   const carousel = useRef<HTMLUListElement>(null);
@@ -93,8 +94,9 @@ export default function Slider() {
                   width={300}
                   height={300}
                   loading="lazy"
+									onLoad={handleImageLoad}
                   className={`w-3/5 rounded-t-lg pt-3 xl:px-3
-          drop-shadow`}
+          drop-shadow transition-opacity opacity-0 duration-[.3s]`}
                 />
                 <div
                   className={`mt-4 sm:mt-2 sm:py-2 text-gray-700 font-bold w-full py-4 leading-6 flex flex-col items-center justify-center`}
@@ -202,8 +204,9 @@ const GenerateCards = ({ image, alt, title, old_price, price }: Props) => {
           width={300}
           height={300}
           loading="lazy"
+					onLoad={handleImageLoad}
           className={`w-3/5 rounded-t-lg pt-3 xl:px-3
-          drop-shadow`}
+          drop-shadow transition-opacity opacity-0 duration-[.3s]`}
         />
         <div
           className={`mt-4 sm:mt-2 sm:py-2 text-gray-700 font-bold w-full py-4 leading-6 flex flex-col items-center justify-center`}

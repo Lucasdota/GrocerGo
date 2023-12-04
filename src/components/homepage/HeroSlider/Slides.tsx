@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import images from "./images.js";
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
@@ -28,19 +28,14 @@ const variants = {
 };
 
 function Slides({ currentPage, direction, pages, setPage }: Props) {
-	const [nextImage, setNextImage] = useState<string | null | StaticImageData>(null);
-	const [prevImage, setPrevImage] = useState<string | null | StaticImageData>(null);
 
-	//preloads the next and previous image to create a smooth user experience
 	useEffect(() => {
-    const nextPageIndex =
-      (currentPage + direction + pages.length) % pages.length;
-    const prevPageIndex =
-      (currentPage - direction + pages.length) % pages.length;
-
-    setNextImage(images[nextPageIndex]);
-    setPrevImage(images[prevPageIndex]);
-  }, [currentPage, direction, pages]);
+    // Preload all images
+    images.forEach((image, index) => {
+      const imgElement = document.createElement("img");
+      imgElement.src = image.src;
+    });
+  }, []);
 
   return (
     <div className="w-full relative aspect-[4/1.38] flex items-center">
@@ -71,12 +66,6 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
       </button>
       {/* SLIDES */}
       <AnimatePresence initial={false} custom={direction}>
-        {prevImage && (
-          <Image src={prevImage} alt="preloaded" className="hidden" />
-        )}
-        {nextImage && (
-          <Image src={nextImage} alt="preloaded" className="hidden" />
-        )}
         <motion.div
           className="w-full absolute top-0"
           variants={variants}

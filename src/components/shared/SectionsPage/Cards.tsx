@@ -11,6 +11,7 @@ import PriceSlider from "@/components/shared/SectionsPage/PriceSlider";
 import AddToFav from "../AddToFav";
 import { BiSolidOffer } from "react-icons/bi";
 import UrlizeWords from "@/components/shared/UrlizeWords";
+import handleImageLoad from "../HandleImageLoad";
 
 interface CheckboxValues {
   [key: string]: boolean;
@@ -189,8 +190,7 @@ const Cards = ({
             </label>
             <select
               aria-labelledby="display-label"
-              id="display-select"
-              
+              id="display-select"            
               onChange={handlePerPage}
               aria-label="display-select"
               className="text-gray-600 w-full py-2.5 px-4 rounded-md focus:border-green-3 bg-white border-transparent focus:outline-neutral-700 appearance-none
@@ -429,11 +429,12 @@ const GenerateCards = ({
           alt={alt}
           width={300}
           height={300}
+					onLoad={handleImageLoad}
           className={`${
             uiGrid
               ? "w-3/5 rounded-t-lg pt-3 xl:px-3"
               : "w-36 md:w-24 ml-6 mr-10 md:ml-2 md:mr-6 xs:ml-0 xs:mr-0"
-          } drop-shadow`}
+          } drop-shadow transition-opacity opacity-0 duration-[.3s]`}
         />
         <div
           className={`${
@@ -506,9 +507,9 @@ const GenerateCards = ({
           $&nbsp;{price.toFixed(2)}
         </p>
         <AddToCart
-					name={title}
-					image={image}
-					price={price}	
+          name={title}
+          image={image}
+          price={price}
           text={"ADD TO CART"}
           className={`${
             uiGrid

@@ -1,3 +1,4 @@
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
@@ -29,7 +30,7 @@ const SinglePostPage = ({staticPosts, onPost, setOnPost}: Props) => {
       exit={{
         y: 50,
         opacity: 0,
-        transition: { ease: [0.22, 1, 0.36, 1], duration: .7 },
+        transition: { ease: [0.22, 1, 0.36, 1], duration: 0.7 },
       }}
     >
       <div className="w-full flex justify-between xs:gap-2">
@@ -59,7 +60,8 @@ const SinglePostPage = ({staticPosts, onPost, setOnPost}: Props) => {
               alt={"img" + index}
               width={300}
               height={300}
-              className="rounded-lg border-4 border-green-5/30"
+              onLoad={handleImageLoad}
+              className="rounded-lg border-4 border-green-5/30 transition-opacity opacity-0 duration-[.3s]"
             />
           </li>
         ))}
@@ -75,7 +77,8 @@ const SinglePostPage = ({staticPosts, onPost, setOnPost}: Props) => {
             alt="recipe-image"
             width={600}
             priority
-            className="rounded-full my-6 h-auto xs:my-1"
+						onLoad={handleImageLoad}
+            className="rounded-full my-6 h-auto xs:my-1 transition-opacity opacity-0 duration-[.3s]"
           />
           <div className="flex flex-col gap-6 items-center">
             <h6 className="font-semibold xs:text-sm">Ingredients:</h6>

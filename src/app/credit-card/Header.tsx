@@ -2,6 +2,7 @@
 import { BsCardChecklist } from "@react-icons/all-files/bs/BsCardChecklist";
 import Image from "next/image";
 import CreditCard from "../../../public/images/mini-pages/cards-header.webp";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 type Props = {};
 
@@ -50,7 +51,8 @@ const Header = (props: Props) => {
             width={700}
             height={700}
             priority
-            className="w-[30rem] aspect-square -mt-28 -mb-10 lg:-mt-10"
+						onLoad={HandleImageLoad}
+            className="w-[30rem] aspect-square -mt-28 -mb-10 lg:-mt-10 transition-opacity opacity-0 duration-[.3s]"
           />
         </div>
         <p className="absolute bottom-4 right-4 text-[.65rem] font-mono font-thin text-neutral-500">

@@ -6,6 +6,7 @@ import BackBtn from "./Back-btn";
 import { useSearchParams } from "next/navigation";
 import ErrorMessage from './ErrorMessage';
 import { motion } from "framer-motion";
+import HandleImageLoad from "@/components/shared/HandleImageLoad"
 
 type Props = {
   clicked: string;
@@ -80,11 +81,6 @@ const Details = ({
     searched
   ]);
 
-	function handleImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
-		//when image finishes loading, creates a smooth opacity initial animation
-    e.currentTarget.classList.remove("opacity-0");
-  }
-
   return (
     <div className="w-full min-h-screen">
       {recipe === undefined ? (
@@ -109,7 +105,7 @@ const Details = ({
 						height={500}
 						priority
 						loading="eager"
-						onLoad={handleImageLoad}
+						onLoad={HandleImageLoad}
 						className="h-auto w-auto rounded-[2rem] shadow mx-auto transition-opacity opacity-0 duration-[.3s]"
 					/>
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import RoastedChicken from "../../../../public/images/specials/roasted-chicken3.webp";
 import RoastedDuck from "../../../../public/images/specials/roasted-duck.webp";
 import Kebab from "../../../../public/images/specials/kebab.webp";
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 
 const MobileOptions = () => {
   return (
@@ -22,7 +23,8 @@ const MobileOptions = () => {
               alt={"roasted chicken"}
               width={177}
               height={150}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+              onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Roasted Chicken
@@ -50,7 +52,8 @@ const MobileOptions = () => {
               alt={"roasted duck"}
               width={189}
               height={150}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+              onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Roasted Duck
@@ -78,7 +81,8 @@ const MobileOptions = () => {
               alt={"kebab"}
               width={157}
               height={150}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+							onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Shish Kebab

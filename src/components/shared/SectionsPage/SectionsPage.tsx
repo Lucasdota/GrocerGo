@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import SnackbarComponent from "@/components/shared/SnackbarComponent";
 import Image from "next/image";
 import CapitalizeWords from "@/components/shared/CapitalizeWords";
+import handleImageLoad from "../HandleImageLoad";
 
 interface CheckboxValues {
   [key: string]: boolean;
@@ -110,7 +111,8 @@ const SectionPage = ({section, subtitle, imgLink} : Props) => {
           priority
           width={1920}
           height={1080}
-          className="w-[30rem] xl:w-[24rem] md:w-[18rem] xs:hidden"
+					onLoad={handleImageLoad}
+          className="w-[30rem] xl:w-[24rem] md:w-[18rem] xs:hidden transition-opacity opacity-0 duration-[.3s]"
         />
       </header>
       <section className="w-full flex mt-8 lg:px-4">

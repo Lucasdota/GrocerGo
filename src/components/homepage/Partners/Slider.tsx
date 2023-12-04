@@ -2,6 +2,7 @@ import {BsArrowUpRightSquare} from 'react-icons/bs'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import handleImageLoad from '@/components/shared/HandleImageLoad';
 
 const cardsData = [
   {
@@ -91,16 +92,21 @@ function GenerateCards({image, alt, title, price, partner}: CardsProps) {
         href=""
         className="border-b bg-white flex flex-col items-center justify-center"
       >
-        <h3 className="font-bold px-5 pt-8 h-32 line-clamp-4 md:text-sm md:h-20 sm:h-28 xs:h-fit text-gray-800">{title}</h3>
+        <h3 className="font-bold px-5 pt-8 h-32 line-clamp-4 md:text-sm md:h-20 sm:h-28 xs:h-fit text-gray-800">
+          {title}
+        </h3>
         <Image
           src={image}
           alt={alt}
           width={300}
           height={300}
-					loading="lazy"
-          className="p-10 md:p-6 xl:w-52 md:w-36 sm:w-44 xs:w-36 drop-shadow"
+          loading="lazy"
+					onLoad={handleImageLoad}
+          className="p-10 md:p-6 xl:w-52 md:w-36 sm:w-44 xs:w-36 drop-shadow transition-opacity opacity-0 duration-[.3s]"
         />
-        <span className="p-3 border-t font-extrabold text-gray-700">${price}</span>
+        <span className="p-3 border-t font-extrabold text-gray-700">
+          ${price}
+        </span>
         <div className="w-full flex items-center justify-center group bg-indigo-600 text-neutral-100 font-bold px-4 py-3">
           <span className="group-hover:-translate-x-[0.45rem] translate-x-[0.65rem] transition duration-200 group-active:scale-90">
             Visit

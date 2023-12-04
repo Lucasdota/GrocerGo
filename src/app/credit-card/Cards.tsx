@@ -10,6 +10,7 @@ import { RiBillLine } from "@react-icons/all-files/ri/RiBillLine";
 import { AiOutlineStar } from "@react-icons/all-files/ai/AiOutlineStar";
 import { AiOutlineCrown } from "@react-icons/all-files/ai/AiOutlineCrown";
 import { GiWineGlass } from "@react-icons/all-files/gi/GiWineGlass";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 const Cards = () => {
 	const [card, setCard] = useState<string>('international');
@@ -70,7 +71,8 @@ const Cards = () => {
               <Image
                 src={InternationalCard}
                 alt="internacional card"
-                className="-rotate-90 max-w-[18rem] lg:max-w-[15rem] md:rotate-0 md:max-w-[17rem] xxs:max-w-[12rem]"
+								onLoad={HandleImageLoad}
+                className="-rotate-90 max-w-[18rem] lg:max-w-[15rem] md:rotate-0 md:max-w-[17rem] xxs:max-w-[12rem] transition-opacity opacity-0 duration-[.3s]"
               />
               <button className=" px-4 py-2 w-full rounded-lg text-white z-10 bg-gradient-to-r from-green-4 to-green-5 mt-8 md:mt-0 active:translate-y-1 transition duration-100 ease-out">
                 Ask now!

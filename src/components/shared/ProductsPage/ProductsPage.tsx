@@ -11,6 +11,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import NoResults from "../../../../public/images/mini-pages/no_results.webp";
 import AddBtn from "./AddBtn";
+import handleImageLoad from "../HandleImageLoad";
 
 type Product = {
   product: string;
@@ -63,6 +64,8 @@ const ProductsPage = ({ product, section }: Product) => {
           alt="no results found"
           width={512}
           height={512}
+					onLoad={handleImageLoad}
+          className="transition-opacity opacity-0 duration-[.3s]"
         />
       </main>
     );
@@ -101,7 +104,8 @@ const ProductsPage = ({ product, section }: Product) => {
                   alt={obj.name}
                   width={500}
                   height={500}
-                  className="p-2"
+                  onLoad={handleImageLoad}
+                  className="p-2 transition-opacity opacity-0 duration-[.3s]"
                 />
               </div>
               <div className="h-24 xl:h-16 xs:h-12 cursor-pointer relative border-l border-b border-green-4/60">
@@ -117,6 +121,8 @@ const ProductsPage = ({ product, section }: Product) => {
                   alt={"dummy image"}
                   width={500}
                   height={500}
+                  onLoad={handleImageLoad}
+                  className="transition-opacity opacity-0 duration-[.3s]"
                 />
               </div>
             </div>
@@ -140,7 +146,8 @@ const ProductsPage = ({ product, section }: Product) => {
                       height={500}
                       priority
                       loading="eager"
-                      className="drop-shadow"
+											onLoad={handleImageLoad}
+                      className="drop-shadow transition-opacity opacity-0 duration-[.3s]"
                     />
                   ) : (
                     <Image
@@ -150,7 +157,8 @@ const ProductsPage = ({ product, section }: Product) => {
                       height={500}
                       priority
                       loading="eager"
-                      className="drop-shadow"
+											onLoad={handleImageLoad}
+                      className="drop-shadow transition-opacity opacity-0 duration-[.3s]"
                     />
                   )}
                 </motion.div>
@@ -216,12 +224,12 @@ const ProductsPage = ({ product, section }: Product) => {
               </div>
               <small className="text-gray-500 font-normal">Stock: 999</small>
             </div>
-						{/* add to cart */}
+            {/* add to cart */}
             <AddBtn
               name={obj.name}
               image={obj.image}
               price={obj.price}
-							quantity={quantity}
+              quantity={quantity}
             />
             <p className="leading-5 text-gray-800 xl:whitespace-normal sm:text-sm">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.

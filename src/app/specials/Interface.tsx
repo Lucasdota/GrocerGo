@@ -8,6 +8,7 @@ import SpaceYouIcon from "../../../public/images/specials/spa.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import UrlizeWords from "@/components/shared/UrlizeWords";
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 
 const specials = [
   {
@@ -103,7 +104,8 @@ function GenerateCards({ item }: CardsProps) {
           alt={item.name}
           height={256}
           width={256}
-          className="w-40 h-40"
+					onLoad={handleImageLoad}
+          className="w-40 h-40 transition-opacity opacity-0 duration-[.3s]"
         />
         <div className="space-y-8 flex flex-col items-start md:items-center">
           <h3 className="text-xl text-green-5 font-semibold">{item.name}</h3>

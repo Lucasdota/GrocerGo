@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import handleImageLoad from "../shared/HandleImageLoad";
 
 const cardsData = [
   {
@@ -151,8 +152,9 @@ function GenerateCards({ image, title }: CardsProps) {
           width={208}
           height={208}
           alt={title}
-					loading="lazy"
-          className="group-active:scale-90 transition ease-in-out duration-100 group-hover:scale-105 p-7 pb-4 gg:p-6 gg:pb-4 lg:p-4 xl:p-5 xl:pb-4 xxl:p-4 xxl:pb-4 xs:p-6 drop-shadow-sm"
+          loading="lazy"
+					onLoad={handleImageLoad}
+          className="group-active:scale-90 transition-all ease-in-out duration-100 group-hover:scale-105 p-7 pb-4 gg:p-6 gg:pb-4 lg:p-4 xl:p-5 xl:pb-4 xxl:p-4 xxl:pb-4 xs:p-6 drop-shadow-sm opacity-0"
         />
       </Link>
       <span className="gg:text-sm lg:text-[0.7rem] xl:text-sm xxl:text-[0.75rem] text-gray-600 text-center">

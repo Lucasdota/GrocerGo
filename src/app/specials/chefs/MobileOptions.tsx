@@ -3,6 +3,7 @@ import Image from "next/image";
 import Chef1 from "../../../../public/images/specials/chef1.webp";
 import Chef2 from "../../../../public/images/specials/chef2.webp";
 import Chef3 from "../../../../public/images/specials/chef3.webp";
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 
 const MobileOptions = () => {
   return (
@@ -12,7 +13,7 @@ const MobileOptions = () => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, transition: { delay: 0, duration: 0.2 } }}
       transition={{ delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-    >     
+    >
       {/* CHEF 1 */}
       <div className="basis-1/3 bg-neutral-50 drop-shadow">
         <div className="flex flex-col items-center gap-6 lg:gap-4 w-full p-4 h-full">
@@ -22,7 +23,8 @@ const MobileOptions = () => {
               alt={"chef 1"}
               width={200}
               height={200}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+              onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Isaac Poleskaz
@@ -51,7 +53,8 @@ const MobileOptions = () => {
               alt={"chef 2"}
               width={200}
               height={200}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+              onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Lin Park
@@ -80,7 +83,8 @@ const MobileOptions = () => {
               alt={"chef 3"}
               width={200}
               height={200}
-              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+							onLoad={handleImageLoad}
+              className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
               Jonathan Maxwell

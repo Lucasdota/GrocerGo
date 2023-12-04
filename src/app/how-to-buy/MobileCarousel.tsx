@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 type Props = {};
 
@@ -167,7 +168,8 @@ const MobileCarousel = (props: Props) => {
             alt="last item"
             width={255}
             height={470}
-            className="w-52 border rounded-lg shadow"
+            onLoad={HandleImageLoad}
+            className="w-52 border rounded-lg shadow transition-opacity opacity-0 duration-[.3s]"
           />
         </li>
         {carouselImages.map((item) => (
@@ -193,7 +195,8 @@ const MobileCarousel = (props: Props) => {
               alt={item.alt}
               width={255}
               height={470}
-              className="w-52 border rounded-lg shadow"
+              onLoad={HandleImageLoad}
+              className="w-52 border rounded-lg shadow transition-opacity opacity-0 duration-[.3s]"
             />
           </li>
         ))}
@@ -218,7 +221,8 @@ const MobileCarousel = (props: Props) => {
             alt="first item"
             width={255}
             height={470}
-            className="w-52 border rounded-lg shadow"
+            onLoad={HandleImageLoad}
+            className="w-52 border rounded-lg shadow transition-opacity opacity-0 duration-[.3s]"
           />
         </li>
       </ul>

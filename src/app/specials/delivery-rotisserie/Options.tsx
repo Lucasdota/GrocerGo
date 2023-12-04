@@ -3,6 +3,7 @@ import Image from "next/image";
 import RoastedChicken from "../../../../public/images/specials/roasted-chicken3.webp";
 import RoastedDuck from "../../../../public/images/specials/roasted-duck.webp";
 import Kebab from "../../../../public/images/specials/kebab.webp";
+import handleImageLoad from "@/components/shared/HandleImageLoad";
 
 type Props = {
   setOptions: (value: boolean) => void;
@@ -30,7 +31,8 @@ const Options = ({ setOptions }: Props) => {
                 alt={"roasted chicken"}
                 width={177}
                 height={150}
-                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+                onLoad={handleImageLoad}
+                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
                 Roasted Chicken
@@ -63,7 +65,8 @@ const Options = ({ setOptions }: Props) => {
                 alt={"roasted duck"}
                 width={189}
                 height={150}
-                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+                onLoad={handleImageLoad}
+                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
                 Roasted Duck
@@ -96,7 +99,8 @@ const Options = ({ setOptions }: Props) => {
                 alt={"kebab"}
                 width={157}
                 height={150}
-                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28"
+								onLoad={handleImageLoad}
+                className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
                 Shish Kebab
@@ -106,9 +110,8 @@ const Options = ({ setOptions }: Props) => {
               <span className="font-semibold">For:</span>&nbsp;3 people
             </p>
             <p className="leading-5 gg:text-sm grow">
-              Savor shish kebabs, expertly grilled
-              and delivered to your door. Experience a taste of authentic
-              Mediterranean culture and cuisine.
+              Savor shish kebabs, expertly grilled and delivered to your door.
+              Experience a taste of authentic Mediterranean culture and cuisine.
             </p>
             <button className="py-2 w-full h-7 gg:text-sm gg:h-6 border-t border-gray-200 bg-neutral-50 tracking-wide font-semibold grow-0">
               Order

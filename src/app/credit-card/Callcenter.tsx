@@ -5,6 +5,7 @@ import Link from 'next/link';
 import GooglePlay from "../../../public/images/footer/google-play.webp";
 import Apple from "../../../public/images/footer/apple.webp";
 import Image from 'next/image';
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 const Callcenter = () => {
 	return (
@@ -84,7 +85,8 @@ const Callcenter = () => {
                     alt="google play"
                     width={128}
                     height={128}
-                    className="w-10 h-10"
+                    onLoad={HandleImageLoad}
+                    className="w-10 h-10 transition-opacity opacity-0 duration-[.3s]"
                   />
                   <p className="text-[0.6rem] flex items-start justify-center flex-col leading-3">
                     Available on
@@ -100,7 +102,8 @@ const Callcenter = () => {
                     alt="apple"
                     width={128}
                     height={128}
-                    className="w-9 h-9"
+                    onLoad={HandleImageLoad}
+                    className="w-9 h-9 transition-opacity opacity-0 duration-[.3s]"
                   />
                   <p className="text-[0.6rem] flex items-start justify-center flex-col leading-3">
                     Available in the

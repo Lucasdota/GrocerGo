@@ -15,6 +15,7 @@ const FirstCards = () => {
     window.addEventListener("scroll", handleScroll);
 
     // Calculate translateY based on the scroll position
+		setScrollY(window.scrollY);
     const parallaxMultiplier = 0.3; // Adjust this value for the desired parallax effect
     const newTranslateY = scrollY * parallaxMultiplier;
     setTranslateY(newTranslateY);

@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 type Props = {}
 
@@ -166,7 +167,8 @@ const Carousel = (props: Props) => {
             alt="last item"
             width={1920}
             height={1080}
-            className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg shadow"
+            onLoad={HandleImageLoad}
+            className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg shadow transition-opacity opacity-0 duration-[.3s]"
           />
         </li>
         {carouselImages.map((item) => (
@@ -189,7 +191,8 @@ const Carousel = (props: Props) => {
               alt={item.alt}
               width={1920}
               height={1080}
-              className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg shadow"
+              onLoad={HandleImageLoad}
+              className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg shadow transition-opacity opacity-0 duration-[.3s]"
             />
           </li>
         ))}
@@ -212,7 +215,8 @@ const Carousel = (props: Props) => {
             alt="first item"
             width={1920}
             height={1080}
-            className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg drop-shadow"
+            onLoad={HandleImageLoad}
+            className="h-56 md:h-52 xs:h-44 xxs:h-36 w-[350px] xs:w-[285px] xxs:w-[221px] border rounded-lg drop-shadow transition-opacity opacity-0 duration-[.3s]"
           />
         </li>
       </ul>

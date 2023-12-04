@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AddToCart from "@/components/shared/AddToCart";
 import AddToFav from '@/components/shared/AddToFav';
+import handleImageLoad from '@/components/shared/HandleImageLoad';
 
 type Props = {
   uiGrid: boolean;
@@ -56,11 +57,12 @@ const GenerateCards = ({
           alt={alt}
           width={300}
           height={300}
+					onLoad={handleImageLoad}
           className={`${
             uiGrid
               ? "w-3/5 rounded-t-lg pt-3 xl:px-3"
               : "w-36 md:w-24 ml-6 mr-10 md:ml-2 md:mr-6 xs:ml-0 xs:mr-0"
-          } drop-shadow`}
+          } drop-shadow transition-opacity opacity-0 duration-[.3s]`}
         />
         <div
           className={`${
@@ -133,9 +135,9 @@ const GenerateCards = ({
           $&nbsp;{price?.toFixed(2)}
         </p>
         <AddToCart
-					name={title}
-					image={image}
-					price={price}
+          name={title}
+          image={image}
+          price={price}
           text={"ADD TO CART"}
           className={`${
             uiGrid

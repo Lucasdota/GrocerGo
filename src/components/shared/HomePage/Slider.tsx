@@ -1,7 +1,4 @@
 import { catalog } from "@/components/shared/Catalog";
-import { useAppContext } from "@/app/api/AppContext";
-import { BsHeart } from "@react-icons/all-files/bs/BsHeart";
-import { BsHeartFill } from "@react-icons/all-files/bs/BsHeartFill";
 import AddToCart from "@/components/shared/AddToCart";
 import ChevronButtons from "@/components/shared/HomePage/ChevronButtons";
 import SliderCards from "@/components/shared/HomePage/SliderCards";
@@ -10,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useMemo } from "react";
 import AddToFav from "../AddToFav";
+import handleImageLoad from "../HandleImageLoad";
 
 type Props = {
 	section: string
@@ -20,7 +18,6 @@ const Slider = ({ section }: Props) => {
   const firstcard = useRef<HTMLLIElement>(null);
   const firstDiv = useRef<HTMLDivElement>(null);
   const lastDiv = useRef<HTMLDivElement>(null);
-  const { currentUserFavs } = useAppContext();
 	const sectionCatalog = useMemo(() => catalog.find((item) => item.section === section)?.products, [section]);
 
   // Create a separate event listener function for the window's resize event
@@ -95,8 +92,9 @@ const Slider = ({ section }: Props) => {
                   width={300}
                   height={300}
                   loading="lazy"
+									onLoad={handleImageLoad}
                   className={`w-3/5 rounded-t-lg pt-3 xl:px-3
-          drop-shadow`}
+          drop-shadow transition-opacity opacity-0 duration-[.3s]`}
                 />
                 <div
                   className={`mt-4 sm:mt-2 sm:py-2 text-gray-700 font-bold w-full py-4 leading-6 flex flex-col items-center justify-center`}
