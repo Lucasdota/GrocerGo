@@ -23,7 +23,7 @@ const GenerateCards = ({
   uiGrid,
   section,
 }: Props) => {
-  //if the title has any space, replaces with dashes
+  //if the title has any space, replaces it with dashes
   const stringWithHyphens = title.toLocaleLowerCase().replace(/\s+/g, "-");
   const stringWithoutNumbersAndSpecialChars = stringWithHyphens.replace(
     /[^a-zA-Z-]/g,
