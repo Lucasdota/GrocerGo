@@ -3,7 +3,7 @@ import Review1 from "../../../../public/images/specials/review1.webp";
 import Review2 from "../../../../public/images/specials/review2.webp";
 import Review3 from "../../../../public/images/specials/review3.webp";
 import { motion } from "framer-motion";
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 const staticReviews = [
   {
@@ -45,7 +45,7 @@ const Reviews = () => {
               src={review.avatar}
               width={150}
               height={150}
-							onLoad={handleImageLoad}
+							onLoad={HandleImageLoad}
               className="rounded-full w-20 h-20 transition-opacity opacity-0 duration-[.3s]"
             />
             <div className="text-gray-800 flex flex-col gap-2">

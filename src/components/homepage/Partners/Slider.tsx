@@ -2,7 +2,7 @@ import {BsArrowUpRightSquare} from 'react-icons/bs'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import handleImageLoad from '@/components/shared/HandleImageLoad';
+import HandleImageLoad from '@/components/shared/HandleImageLoad';
 
 const cardsData = [
   {
@@ -101,7 +101,7 @@ function GenerateCards({image, alt, title, price, partner}: CardsProps) {
           width={300}
           height={300}
           loading="lazy"
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className="p-10 md:p-6 xl:w-52 md:w-36 sm:w-44 xs:w-36 drop-shadow transition-opacity opacity-0 duration-[.3s]"
         />
         <span className="p-3 border-t font-extrabold text-gray-700">

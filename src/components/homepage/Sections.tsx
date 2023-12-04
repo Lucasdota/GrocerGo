@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import handleImageLoad from "../shared/HandleImageLoad";
+import HandleImageLoad from "../shared/HandleImageLoad";
 
 const cardsData = [
   {
@@ -153,7 +153,7 @@ function GenerateCards({ image, title }: CardsProps) {
           height={208}
           alt={title}
           loading="lazy"
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className="group-active:scale-90 transition-all ease-in-out duration-100 group-hover:scale-105 p-7 pb-4 gg:p-6 gg:pb-4 lg:p-4 xl:p-5 xl:pb-4 xxl:p-4 xxl:pb-4 xs:p-6 drop-shadow-sm opacity-0"
         />
       </Link>

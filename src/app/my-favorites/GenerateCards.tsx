@@ -7,7 +7,7 @@ import UrlizeWords from "@/components/shared/UrlizeWords";
 import RemoveItem from "./RemoveItem";
 import { useAppContext } from "../api/AppContext";
 import { useEffect, useState } from "react";
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 const GenerateCards = () => {
 	const [reRender, setReRender] = useState<boolean>(false);
@@ -91,7 +91,7 @@ const Card = ({ section, obj, reRender, setReRender }: Props) => {
           alt={obj.name}
           width={300}
           height={300}
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className={`w-3/5 rounded-t-lg pt-3 xl:px-3 drop-shadow transition-opacity opacity-0 duration-[.3s]`}
         />
         <div

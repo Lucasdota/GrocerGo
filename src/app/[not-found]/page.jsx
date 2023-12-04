@@ -1,6 +1,6 @@
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 import NoResults from "../../../public/images/mini-pages/no_results.webp";
 import Image from "next/image";
-import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 export const metadata = {
   title: "GrocerGo | Not found"

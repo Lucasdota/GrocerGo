@@ -5,7 +5,7 @@ import NoResults from "../../../public/images/mini-pages/no_results.webp";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import handleImageLoad from "@/components/shared/handleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 
 type Product = {
@@ -105,7 +105,7 @@ function Container () {
                 alt="no results found"
                 width={512}
                 height={512}
-								onLoad={handleImageLoad}
+								onLoad={HandleImageLoad}
                 className="transition-opacity opacity-0 duration-[.3s]"
               />
             </div>

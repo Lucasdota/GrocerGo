@@ -1,4 +1,4 @@
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
@@ -60,7 +60,7 @@ const SinglePostPage = ({staticPosts, onPost, setOnPost}: Props) => {
               alt={"img" + index}
               width={300}
               height={300}
-              onLoad={handleImageLoad}
+              onLoad={HandleImageLoad}
               className="rounded-lg border-4 border-green-5/30 transition-opacity opacity-0 duration-[.3s]"
             />
           </li>
@@ -77,7 +77,7 @@ const SinglePostPage = ({staticPosts, onPost, setOnPost}: Props) => {
             alt="recipe-image"
             width={600}
             priority
-						onLoad={handleImageLoad}
+						onLoad={HandleImageLoad}
             className="rounded-full my-6 h-auto xs:my-1 transition-opacity opacity-0 duration-[.3s]"
           />
           <div className="flex flex-col gap-6 items-center">

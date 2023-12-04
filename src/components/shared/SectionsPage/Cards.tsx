@@ -11,7 +11,7 @@ import PriceSlider from "@/components/shared/SectionsPage/PriceSlider";
 import AddToFav from "../AddToFav";
 import { BiSolidOffer } from "react-icons/bi";
 import UrlizeWords from "@/components/shared/UrlizeWords";
-import handleImageLoad from "../HandleImageLoad";
+import HandleImageLoad from "../HandleImageLoad";
 
 interface CheckboxValues {
   [key: string]: boolean;
@@ -429,7 +429,7 @@ const GenerateCards = ({
           alt={alt}
           width={300}
           height={300}
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className={`${
             uiGrid
               ? "w-3/5 rounded-t-lg pt-3 xl:px-3"

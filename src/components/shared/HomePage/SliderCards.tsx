@@ -4,7 +4,7 @@ import React from "react";
 import AddToCart from "../AddToCart";
 import UrlizeWords from "../UrlizeWords";
 import AddToFav from "../AddToFav";
-import handleImageLoad from "../HandleImageLoad";
+import HandleImageLoad from "../HandleImageLoad";
 
 type Props = {
   image: string;
@@ -30,7 +30,7 @@ const SliderCards = ({ image, title, price, section }: Props) => {
           width={300}
           height={300}
           loading="lazy"
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className={`w-3/5 rounded-t-lg pt-3 xl:px-3
           drop-shadow transition-opacity opacity-0 duration-[.3s]`}
         />

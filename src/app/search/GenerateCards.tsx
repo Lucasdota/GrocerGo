@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AddToCart from "@/components/shared/AddToCart";
 import AddToFav from '@/components/shared/AddToFav';
-import handleImageLoad from '@/components/shared/handleImageLoad';
+import HandleImageLoad from '@/components/shared/HandleImageLoad';
 
 type Props = {
   uiGrid: boolean;
@@ -57,7 +57,7 @@ const GenerateCards = ({
           alt={alt}
           width={300}
           height={300}
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className={`${
             uiGrid
               ? "w-3/5 rounded-t-lg pt-3 xl:px-3"

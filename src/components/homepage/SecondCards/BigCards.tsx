@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { AnimatePresence } from 'framer-motion';
 import AddToCartPopUp from '@/components/shared/AddToCartPopUp';
 import { useState } from 'react';
-import handleImageLoad from '@/components/shared/HandleImageLoad';
+import HandleImageLoad from '@/components/shared/HandleImageLoad';
 
 const firstDivData = [
   {
@@ -265,7 +265,7 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
           height={500}
           alt={alt}
           loading="lazy"
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className="max-w-[160px] xgg:max-w-[170px] gg:p-8 gg:pt-0 px-6 xxl:p-8 lg:p-0 lg:w-20 lg:h-20 sm:w-14 sm:h-14 xs:w-10 xs:h-10 lg:absolute lg:right-12 xs:right-6 transition-all scale-90 group-hover:scale-100 ease-out drop-shadow opacity-0 duration-[.3s]"
         />
       </button>

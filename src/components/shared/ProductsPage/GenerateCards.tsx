@@ -4,7 +4,7 @@ import AddToCart from "../AddToCart";
 import AddToFav from "../AddToFav";
 import { BiSolidOffer } from "react-icons/bi";
 import UrlizeWords from "@/components/shared/UrlizeWords";
-import handleImageLoad from "../HandleImageLoad";
+import HandleImageLoad from "../HandleImageLoad";
 
 type Props = {
 	section: string;
@@ -43,7 +43,7 @@ const GenerateCards = ({
           alt={title}
           width={300}
           height={300}
-					onLoad={handleImageLoad}
+					onLoad={HandleImageLoad}
           className={`drop-shadow w-32 gg:p-4 transition-opacity opacity-0 duration-[.3s]`}
         />
         <div

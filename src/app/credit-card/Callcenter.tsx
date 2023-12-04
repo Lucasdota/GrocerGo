@@ -1,3 +1,4 @@
+"use client"
 import { GiVibratingSmartphone } from '@react-icons/all-files/gi/GiVibratingSmartphone';
 import { MdTouchApp } from '@react-icons/all-files/md/MdTouchApp';
 import { HiOutlineChatAlt2 } from "@react-icons/all-files/hi/HiOutlineChatAlt2";
@@ -5,7 +6,7 @@ import Link from 'next/link';
 import GooglePlay from "../../../public/images/footer/google-play.webp";
 import Apple from "../../../public/images/footer/apple.webp";
 import Image from 'next/image';
-import handleImageLoad from "@/components/shared/handleImageLoad";
+import HandleImageLoad from '@/components/shared/HandleImageLoad';
 
 const Callcenter = () => {
 	return (
@@ -85,7 +86,7 @@ const Callcenter = () => {
                     alt="google play"
                     width={128}
                     height={128}
-                    onLoad={handleImageLoad}
+                    onLoad={HandleImageLoad}
                     className="w-10 h-10 transition-opacity opacity-0 duration-[.3s]"
                   />
                   <p className="text-[0.6rem] flex items-start justify-center flex-col leading-3">
@@ -102,7 +103,7 @@ const Callcenter = () => {
                     alt="apple"
                     width={128}
                     height={128}
-                    onLoad={handleImageLoad}
+                    onLoad={HandleImageLoad}
                     className="w-9 h-9 transition-opacity opacity-0 duration-[.3s]"
                   />
                   <p className="text-[0.6rem] flex items-start justify-center flex-col leading-3">

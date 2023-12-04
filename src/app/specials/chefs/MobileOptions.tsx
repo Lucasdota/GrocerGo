@@ -3,7 +3,7 @@ import Image from "next/image";
 import Chef1 from "../../../../public/images/specials/chef1.webp";
 import Chef2 from "../../../../public/images/specials/chef2.webp";
 import Chef3 from "../../../../public/images/specials/chef3.webp";
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 const MobileOptions = () => {
   return (
@@ -23,7 +23,7 @@ const MobileOptions = () => {
               alt={"chef 1"}
               width={200}
               height={200}
-              onLoad={handleImageLoad}
+              onLoad={HandleImageLoad}
               className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
@@ -53,7 +53,7 @@ const MobileOptions = () => {
               alt={"chef 2"}
               width={200}
               height={200}
-              onLoad={handleImageLoad}
+              onLoad={HandleImageLoad}
               className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">
@@ -83,7 +83,7 @@ const MobileOptions = () => {
               alt={"chef 3"}
               width={200}
               height={200}
-							onLoad={handleImageLoad}
+							onLoad={HandleImageLoad}
               className="rounded-full brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
             />
             <h3 className="font-bold text-lg tracking-wide gg:text-base">

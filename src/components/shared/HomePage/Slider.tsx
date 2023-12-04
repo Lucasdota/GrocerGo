@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useMemo } from "react";
 import AddToFav from "../AddToFav";
-import handleImageLoad from "../HandleImageLoad";
+import HandleImageLoad from "../HandleImageLoad";
 
 type Props = {
 	section: string
@@ -92,7 +92,7 @@ const Slider = ({ section }: Props) => {
                   width={300}
                   height={300}
                   loading="lazy"
-									onLoad={handleImageLoad}
+									onLoad={HandleImageLoad}
                   className={`w-3/5 rounded-t-lg pt-3 xl:px-3
           drop-shadow transition-opacity opacity-0 duration-[.3s]`}
                 />

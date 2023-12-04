@@ -3,7 +3,7 @@ import Image from "next/image";
 import RoastedChicken from "../../../../public/images/specials/roasted-chicken3.webp";
 import RoastedDuck from "../../../../public/images/specials/roasted-duck.webp";
 import Kebab from "../../../../public/images/specials/kebab.webp";
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import HandleImageLoad from "@/components/shared/HandleImageLoad";
 
 type Props = {
   setOptions: (value: boolean) => void;
@@ -31,7 +31,7 @@ const Options = ({ setOptions }: Props) => {
                 alt={"roasted chicken"}
                 width={177}
                 height={150}
-                onLoad={handleImageLoad}
+                onLoad={HandleImageLoad}
                 className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
@@ -65,7 +65,7 @@ const Options = ({ setOptions }: Props) => {
                 alt={"roasted duck"}
                 width={189}
                 height={150}
-                onLoad={handleImageLoad}
+                onLoad={HandleImageLoad}
                 className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
@@ -99,7 +99,7 @@ const Options = ({ setOptions }: Props) => {
                 alt={"kebab"}
                 width={157}
                 height={150}
-								onLoad={handleImageLoad}
+								onLoad={HandleImageLoad}
                 className="rounded-xl brightness-125 w-32 h-32 gg:w-28 gg:h-28 transition-opacity opacity-0 duration-[.3s]"
               />
               <h3 className="font-bold text-lg tracking-wide gg:text-base">
