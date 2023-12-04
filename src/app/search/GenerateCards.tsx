@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AddToCart from "@/components/shared/AddToCart";
 import AddToFav from '@/components/shared/AddToFav';
-import handleImageLoad from '@/components/shared/HandleImageLoad';
+import handleImageLoad from '@/components/shared/handleImageLoad';
 
 type Props = {
   uiGrid: boolean;

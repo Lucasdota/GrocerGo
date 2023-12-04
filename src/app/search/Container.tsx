@@ -5,7 +5,8 @@ import NoResults from "../../../public/images/mini-pages/no_results.webp";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import handleImageLoad from "@/components/shared/HandleImageLoad";
+import handleImageLoad from "@/components/shared/handleImageLoad";
+
 
 type Product = {
   id: number;
