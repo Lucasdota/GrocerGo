@@ -14,7 +14,6 @@ import cooking from '../../../public/images/others/recipes-icons/cooking.png';
 import recipe from '../../../public/images/others/recipes-icons/recipe.png';
 import Image from "next/image";
 
-
 const Recipes = () => {
 	//attached to the search bar
   const [query, setQuery] = useState<string>("");

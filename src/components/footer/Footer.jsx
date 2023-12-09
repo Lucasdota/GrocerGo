@@ -46,10 +46,10 @@ const Footer = () => {
         </svg>
       </div>
       {/* TOP PART */}
-      <div className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8">
+      <nav className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8">
         <div className=" flex justify-between md:flex-col md:gap-12 md:justify-center max-w-[2560px] w-full mx-auto">
           {/* FIRST DIV */}
-          <div className="mt-10">
+          <section className="mt-10">
             <div className="flex flex-col mb-6 gap-1 md:mb-0">
               <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Institucional
@@ -112,10 +112,10 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </section>
           <div className="mt-10 md:mt-0 mb-14 w-[0.15rem] h-96 lg:h-80 bg-neutral-700 lg:hidden" />
           {/* SECOND DIV */}
-          <div className="mt-10 mb-10 md:mb-0 md:mt-0 lg:hidden md:block">
+          <section className="mt-10 mb-10 md:mb-0 md:mt-0 lg:hidden md:block">
             <div className="flex flex-col gap-1">
               <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Categories
@@ -231,10 +231,10 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </section>
           <div className="mt-10 md:mt-0 mb-14 w-[0.15rem] h-96 lg:h-80 md:h-64 sm:h-52 bg-neutral-700 md:hidden" />
           {/* THIRD DIV */}
-          <div className="mt-10 md:mt-0">
+          <section className="mt-10 md:mt-0">
             <div className="flex flex-col mb-6 gap-1">
               <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Callcenter
@@ -293,9 +293,9 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </section>
           {/* FOURTH DIV */}
-          <div className="w-1/4 gg:w-96 lg:w-80 md:w-96 sm:w-80 xs:w-64">
+          <section className="w-1/4 gg:w-96 lg:w-80 md:w-96 sm:w-80 xs:w-64">
             <Link target="_blank" href="https://play.google.com/store">
               <div className="bg-green-3 p-6 font-nunito w-full h-full text-white">
                 <div className="border-2 w-full h-full border-white flex flex-col lg:gap-6 items-center justify-between p-6 rounded-lg">
@@ -356,10 +356,10 @@ const Footer = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </section>
         </div>
         {/* FIRST DIV */}
-      </div>
+      </nav>
       {/* BOTTOM PART */}
       <div className="z-50 w-full bg-[rgb(18,18,18)] px-40 gg:px-32 xxl:px-24 xl:px-16 lg:px-4 md:px-10 xxs:px-4 md:py-8 py-7">
         <div className="w-full max-w-[2560px] mx-auto flex md:flex-col md:gap-8">
