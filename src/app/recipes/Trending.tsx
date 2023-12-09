@@ -16,7 +16,7 @@ const Trending = ({
   setTrending,
   setClicked
 }: Props) => {
-  const apiKey = "673a5479864c4c948dfe46fa530498f4";
+  const apiKey = process.env.SPOONACULAR_API_KEY;
   const router = useRouter();
 
 	//is there's already a trending item in the localStorage, grab it, otherwise, fetch 3 random recipes and store in it
@@ -32,7 +32,7 @@ const Trending = ({
       localStorage.setItem("trending", JSON.stringify(data.recipes));
       setTrending(data.recipes);
     }
-  }, [setTrending]);
+  }, [setTrending, apiKey]);
 
   useEffect(() => {
     getTrending();

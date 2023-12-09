@@ -29,13 +29,14 @@ const Menu = ({ session, setMenu }: Props) => {
 	}
 
   return (
-    <ul
+    <div
       id="basic-menu"
       aria-labelledby={"basic-button"}
       className={`w-full text-sm flex flex-col items-center absolute bottom-[-4.1rem] rounded-b-xl z-50 bg-white shadow text-green-5`}
     >
       {!session && (
-        <li
+        <button
+          aria-label="sign in"
           onClick={handleClick}
           className="py-1.5 hover:bg-slate-100 w-full cursor-pointer flex items-center pl-16 relative border-b border-slate-100"
         >
@@ -47,10 +48,11 @@ const Menu = ({ session, setMenu }: Props) => {
             className="absolute left-4 opacity-60"
           />
           <p>Sign In</p>
-        </li>
+        </button>
       )}
-      <li
-				onClick={handleMyAccount}
+      <button
+				aria-label="my account"
+        onClick={handleMyAccount}
         className={`py-1.5 hover:bg-slate-100 w-full flex items-center pl-16 cursor-pointer 
 				${session ? "border-b border-slate-100" : "rounded-b-xl"}
 				`}
@@ -63,9 +65,10 @@ const Menu = ({ session, setMenu }: Props) => {
           className="absolute left-4 opacity-60"
         />
         <p>My account</p>
-      </li>
+      </button>
       {session && (
-        <li
+        <button
+					aria-label="logout"
           onClick={() => signOut()}
           className="py-1.5 hover:bg-slate-100 w-full cursor-pointer flex items-center pl-16 relative rounded-b-xl"
         >
@@ -77,9 +80,9 @@ const Menu = ({ session, setMenu }: Props) => {
             className="absolute left-4 opacity-60"
           />
           <p>Sign Out</p>
-        </li>
+        </button>
       )}
-    </ul>
+    </div>
   );
 };
 

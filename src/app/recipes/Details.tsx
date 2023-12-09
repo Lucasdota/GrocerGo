@@ -24,7 +24,7 @@ const Details = ({
 	//store recipe find by its id
   const [recipe, setRecipe] = useState<Recipe | undefined>();
 	//guarantees the fetch method is only called once
-  const apiKey = "673a5479864c4c948dfe46fa530498f4";
+  const apiKey = process.env.SPOONACULAR_API_KEY;
 	//gets the id frmo the url to use in the fetch method
   const searchParams = useSearchParams();
 
@@ -44,7 +44,7 @@ const Details = ({
       console.error("Error fetching recipe:", error);
       throw error;
     }
-  }, []);
+  }, [apiKey]);
 
   useEffect(() => {	
       const details =

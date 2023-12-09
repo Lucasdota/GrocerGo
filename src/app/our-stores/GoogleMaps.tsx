@@ -31,14 +31,14 @@ export default function GoogleMaps({ selectedState, storeLocations }: MapsData) 
   const [selectedMarkerIndex, setSelectedMarkerIndex] = useState<number | null>(
     null
   );
-  const api = process.env.GOOGLE_MAPS_API_KEY;
   const zoomMap = selectedState === "all" ? 5 : 7;
   const defaultCenter = useMemo(() => ({ lat: 39.8283, lng: -98.5795 }), []); // center of USA
   const [center, setCenter] = useState<LatLng>(defaultCenter);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: api!,
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY!,
   });
+	
   const centerOfStates: [string, LatLng][] = useMemo(
     () => [
       ["AL", { lat: 33.5207, lng: -86.8025 }],

@@ -39,6 +39,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
+                  role="accordion"
+                  aria-expanded={firstIsOpen}
                   onClick={() => setFirstIsOpen(!firstIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
                     firstIsOpen ? "mb-3" : "mb-0"
@@ -89,6 +91,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
+                  role="accordion"
+                  aria-expanded={secondIsOpen}
                   onClick={() => setSecondIsOpen(!secondIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
                     secondIsOpen ? "mb-3" : "mb-0"
@@ -139,6 +143,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
+                  role="accordion"
+                  aria-expanded={thirdIsOpen}
                   onClick={() => setThirdIsOpen(!thirdIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
                     thirdIsOpen ? "mb-3" : "mb-0"
@@ -191,6 +197,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
+                  role="accordion"
+                  aria-expanded={fourthIsOpen}
                   onClick={() => setFourthIsOpen(!fourthIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
                     fourthIsOpen ? "mb-3" : "mb-0"

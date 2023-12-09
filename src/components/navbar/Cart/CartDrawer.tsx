@@ -8,15 +8,16 @@ import { useAppContext } from '@/app/api/AppContext';
 import { IoMdClose } from "react-icons/io";
 
 type Props = {
+	drawer: boolean;
   setDrawer: (value: boolean) => void;
 	email: string;
 };
 
-const CartDrawer = ({ setDrawer, email }: Props) => {
-	const [totalPrice, setTotalPrice] = useState<number>(0);
-	const [freeDeliveryPrice, setFreeDeliveryPrice] = useState<number>(0);
+const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [freeDeliveryPrice, setFreeDeliveryPrice] = useState<number>(0);
   const cart_drawer = useRef<HTMLElement>(null);
-	const { currentUserCart } = useAppContext();
+  const { currentUserCart } = useAppContext();
 
   //close drawer when clicking outside of it
   useEffect(() => {
@@ -26,19 +27,48 @@ const CartDrawer = ({ setDrawer, email }: Props) => {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+    let pressESC = (e: KeyboardEvent) => {
+      if (drawer && e.code === "Escape") {
+        setDrawer(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", handler);
+      document.removeEventListener("keydown", pressESC);
     };
   });
 
-	useEffect(() => {
+  useEffect(() => {
     setFreeDeliveryPrice(99 - totalPrice);
   }, [setFreeDeliveryPrice, totalPrice, currentUserCart]);
 
+  //trap the keyboard focus only in the drawer when it's on
+  useEffect(() => {
+    const handleFocus = (event: FocusEvent) => {
+      // Check if the target is a Node
+      if (event.target instanceof Node) {
+        if (cart_drawer.current && !cart_drawer.current.contains(event.target)) {
+          // Prevent focusing outside the drawer
+          cart_drawer.current.focus();
+        }
+      }
+    };
+
+    if (drawer) {
+      document.addEventListener("focusin", handleFocus);
+    }
+
+    return () => {
+      document.removeEventListener("focusin", handleFocus);
+    };
+  }, [drawer]);
+
   return (
     <motion.aside
+			tabIndex={-1}
       key={"cart-drawer"}
       ref={cart_drawer}
       className="fixed right-0 top-0 z-[70] h-full px-12 xs:px-8 pt-12 xs:py-8 pb-6 xs:pb-4 bg-white text-green-2 flex flex-col w-[27rem] xl:min-w-[25rem] xl:w-fit xs:min-w-full xs:w-full shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"

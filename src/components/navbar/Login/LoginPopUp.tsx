@@ -16,7 +16,7 @@ const LoginPopUp = ({}: Props) => {
 	const { loginPopUp, setLoginPopUp } = useAppContext();
 	const [blockScroll, allowScroll] = useScrollBlock();
 
-  //close menu when clicking outside of it
+  //close pop-up when clicking outside of it or by pressing ESC
   useEffect(() => {
     let handler = (e: MouseEvent) => {
       if (!menuRef.current?.contains(e.target as Node)) {
@@ -24,10 +24,17 @@ const LoginPopUp = ({}: Props) => {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+		let pressESC = (e: KeyboardEvent) => {
+      if (e.code === "Escape") {
+        setLoginPopUp(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handler);
+		document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", handler);
+			document.removeEventListener("keydown", pressESC);
     };
   });
 
@@ -39,13 +46,37 @@ const LoginPopUp = ({}: Props) => {
 		}   
   }, [loginPopUp, blockScroll, allowScroll]);
 
+	//trap the keyboard focus only in the pop-up when it's on
+	useEffect(() => {
+    const handleFocus = (event: FocusEvent) => {
+      // Check if the target is a Node
+      if (event.target instanceof Node) {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          // Prevent focusing outside the pop-up
+          menuRef.current.focus();
+        }
+      }
+    };
+
+    if (loginPopUp) {
+      document.addEventListener("focusin", handleFocus);
+    }
+
+    return () => {
+      document.removeEventListener("focusin", handleFocus);
+    };
+  }, [loginPopUp]);
+
   return (
     <section
+      role="dialog"
+      aria-modal="true"
       className={`fixed z-[60] top-0 left-0 w-full h-full min-w-[320px] bg-black/30 flex items-center filter backdrop-blur-sm justify-center ${
         loginPopUp ? null : "hidden"
       }`}
     >
-      <div
+      <div		
+				tabIndex={-1}		
         ref={menuRef}
         className="filter backdrop-blur-sm p-8 rounded-lg border border-neutral-500"
       >
@@ -60,6 +91,7 @@ const LoginPopUp = ({}: Props) => {
           <div className="w-60 xxs:w-40 space-y-3">
             {/* google */}
             <button
+              role="login"
               onClick={() => signIn("google")}
               className="flex w-full items-center justify-start p-3 drop-shadow gap-2 bg-neutral-100 hover:bg-neutral-200 active:translate-y-0.5 text-white rounded-lg relative"
             >
@@ -76,6 +108,7 @@ const LoginPopUp = ({}: Props) => {
             </button>
             {/* github */}
             <button
+              role="login"
               onClick={() => signIn("github")}
               className="flex w-full items-center justify-start p-3 drop-shadow gap-2 bg-[#24292F] hover:bg-gray-800 text-neutral-100 active:translate-y-0.5 rounded-lg relative"
             >

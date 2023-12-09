@@ -94,10 +94,17 @@ export default function Login()  {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+		let pressESC = (e: KeyboardEvent) => {
+      if (menu && e.code === "Escape") {
+        setMenu(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handler);
+		document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", handler);
+			document.removeEventListener("keydown", pressESC);
     };
   });
 

@@ -63,7 +63,7 @@ const Suggestions = ({ searchTerm, setSearchTerm, className }: Props) => {
 
   return (
     <>
-      {matchedWords.length > 0 ? (
+      {matchedWords.length > 0 && 
         <motion.ul
           variants={container}
           className={`${className} absolute w-full z-[60]`}
@@ -81,7 +81,7 @@ const Suggestions = ({ searchTerm, setSearchTerm, className }: Props) => {
             </motion.li>
           ))}
         </motion.ul>
-      ) : null}
+      }
     </>
   );
 };

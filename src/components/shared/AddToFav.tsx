@@ -10,6 +10,8 @@ type Props = {
 
 const AddToFav = ({ title }: Props) => {
   const {
+		loggedIn,
+		setLoginPopUp,
     currentUserFavs,
     setCurrentUserFavs,
 		setSnackbarSeverity, 
@@ -20,6 +22,11 @@ const AddToFav = ({ title }: Props) => {
 	const { email } = session?.user || {};
 
 	function handleClick() {
+		if (!loggedIn) {
+			setLoginPopUp(true);
+			return
+		}
+
 		setSnackbar(true);
 		const updatedCart = currentUserFavs;
     const jsonCart = localStorage.getItem("favorites");
@@ -67,7 +74,7 @@ const AddToFav = ({ title }: Props) => {
       onClick={handleClick}
       className={`${
         currentUserFavs?.itens.includes(title) ? "opacity-100" : null
-      } absolute top-4 right-4 opacity-0 transition-[opacity] duration-200 group-hover:opacity-100 lg:opacity-100`}
+      } absolute top-4 right-4 opacity-0 transition-[opacity] duration-200 group-hover:opacity-100 lg:opacity-100 focus:opacity-100`}
     >
       {currentUserFavs?.itens.includes(title) ? (
         <BsHeartFill className="fill-green-2/80 w-5 h-5 xxs:w-4 xxs:h-4" />

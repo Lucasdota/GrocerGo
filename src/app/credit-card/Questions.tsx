@@ -116,6 +116,8 @@ const Accordion = ({ i, isExpanded, toggleAccordion, question, answer}: Accordio
 	return (
     <>
       <button
+        role="accordion"
+        aria-expanded={isExpanded}
         onClick={() => toggleAccordion(i.id)}
         className={`p-5 w-full text-left border-none outline-none transition duration-400 ease-in flex justify-between items-center leading-6 sm:text-sm sm:whitespace-normal ${
           isExpanded ? "bg-[#ccc]" : "bg-neutral-200 hover:bg-[#ccc]"

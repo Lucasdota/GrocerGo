@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { BsFillTelephoneOutboundFill } from 'react-icons/bs';
 import Link from 'next/link';
+import Form from './form';
 
 export const metadata = {
   title: "GrocerGo | Contact Us",
@@ -40,63 +41,7 @@ const ContactUs = () => {
             the form below and we&apos;ll get back to you as soon as possible.
           </p>
         </section>
-        <section>
-          <h2 className="text-2xl font-semibold text-green-2 mb-4 lg:text-lg lg:mb-3">
-            Contact Form
-          </h2>
-          <form
-            action="/submit"
-            method="POST"
-            className="grid grid-cols-2 gap-6 font-mono"
-          >
-            <div>
-              <label htmlFor="name" className="lg:text-base">
-                Name:
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="john doe"
-                className="w-full border lg:text-base border-green-5 text-green-5 p-1 px-2 rounded-lg drop-shadow outline-none "
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="lg:text-base">
-                Email:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="johndoe@email.com"
-                className="w-full border lg:text-base border-green-5 text-green-5 p-1 px-2 rounded-lg drop-shadow outline-none"
-                required
-              />
-            </div>
-            <div className="col-span-2">
-              <label htmlFor="message" className="lg:text-base">
-                Message:
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Leave your message here"
-                className="w-full border lg:text-base border-green-5 text-green-5 p-1 px-2 rounded-lg min-h-[10rem] outline-none drop-shadow"
-                required
-              ></textarea>
-            </div>
-            <div className="col-span-2">
-              <button
-                type="submit"
-                className="py-2 px-4 rounded-lg lg:text-base text-green-5 w-fit mx-auto drop-shadow hover-bg2-effect outline outline-[1px] outline-green-5 active:translate-y-[3px] hover:text-white after:bg-green-5"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </section>
+        <Form />
       </main>
       <div
         className="flex flex-col items-center justify-center bg-green-5 h-80 xl:h-64 md:h-48 

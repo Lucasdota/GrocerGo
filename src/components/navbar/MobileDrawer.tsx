@@ -91,15 +91,35 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         }, 500);
       }
     };
+
+		let pressESC = (e: KeyboardEvent) => {
+      if (isOpen && e.code === "Escape") {
+        setIsOpen(false);
+        button.forEach(
+          (menu) =>
+            function () {
+              menu.parentElement?.classList.remove("expand");
+            }
+        );
+        setTimeout(() => {
+          modal?.classList.remove("show");
+        }, 500);
+      }
+    };
+
     document.addEventListener("mousedown", closeHandler);
+		document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", closeHandler);
+			document.removeEventListener("keydown", pressESC);
     };
   });
 
   return (
     <div className="z-50 hidden xl:block">
       <button
+        role="drawer"
+        aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className={`group w-[130px] xs:w-[50px] pb-2 group ${
           isOpen ? "pointer-events-none" : ""
@@ -112,7 +132,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         </div>
       </button>
       {/* DRAWER */}
-      <motion.nav
+			{isOpen && <motion.nav
         ref={navContainer}
         variants={swipeDown}
         animate={isOpen ? "open" : "closed"}
@@ -173,7 +193,8 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
             <MobileCategories setIsOpen={setIsOpen} />
           </ul>
         </motion.div>
-      </motion.nav>
+      </motion.nav>}
+      
     </div>
   );
 };

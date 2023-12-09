@@ -150,7 +150,7 @@ export default function Cart ()  {
           />
         )}
         {/* animated drawer */}
-        {drawer && <CartDrawer setDrawer={setDrawer} email={email!} />}
+        {drawer && <CartDrawer drawer={drawer} setDrawer={setDrawer} email={email!} />}
       </AnimatePresence>
     </>
   );

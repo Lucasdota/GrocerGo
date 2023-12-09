@@ -30,10 +30,22 @@ export default function SearchBar() {
 			}
 		}
 
-    document.addEventListener("mousedown", handler);
+		//if focus is not within the search bar, reset its value
+		let checkFocus = (e: FocusEvent) => {
+      // Check if the target is a Node
+      if (e.target instanceof Node) {
+        if (!searchBarRef.current?.contains(e.target)) {
+          setSearchTerm("")
+        }
+      }
+    }
 
+
+    document.addEventListener("mousedown", handler);
+		document.addEventListener("focusin", checkFocus);
 		return () => {
       document.removeEventListener("mousedown", handler);
+			document.removeEventListener("focusin", checkFocus);
     };
 	}, [])
 
@@ -42,10 +54,14 @@ export default function SearchBar() {
       ref={searchBarRef}
       className={`xl:hidden flex w-full rounded-l-sm my-4 mx-6 xl:my-3 xl:mx-0 min-w-[15rem]`}
     >
-      <div className="w-full h-full relative text-gray-600 text-sm">
+      <div
+        role="search"
+        className="w-full h-full relative text-gray-600 text-sm"
+      >
         <input
-					name="search-bar"
-          type="text"
+          name="search-bar"
+          type="search"
+          aria-describedby="search-help"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}
@@ -53,6 +69,9 @@ export default function SearchBar() {
           className="w-full h-full px-4 rounded-l-sm placeholder:text-sm outline-none decoration-none border border-black/10"
           placeholder="Search using comma, i.e.: beer, olive oil, milk, iogurt, wine"
         />
+        <div id="search-help" className="hidden">
+          Search using comma, i.e.: beer, olive oil, milk, iogurt, wine
+        </div>
         <Suggestions
           className={"top-10"}
           searchTerm={searchTerm}

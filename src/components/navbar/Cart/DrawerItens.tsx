@@ -181,11 +181,12 @@ const GenerateItens = ({
 
           <div className="flex items-center text-lg">
             <button
+							disabled={itemQuantity < 2}
               onClick={decreaseQuantity}
               className={`${
                 itemQuantity > 1
                   ? "text-green-2"
-                  : "pointer-events-none text-green-2/30"
+                  : "text-green-2/30"
               } px-1`}
             >
               -

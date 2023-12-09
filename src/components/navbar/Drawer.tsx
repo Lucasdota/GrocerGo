@@ -16,7 +16,7 @@ const swipeDown = {
 
 export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
   const navRef = useRef<HTMLElement>(null);
-	const [firstLoad, setFirstLoad] = useState<boolean>(true);
+  const [firstLoad, setFirstLoad] = useState<boolean>(true);
 
   //drawer animations with class
   useEffect(() => {
@@ -61,23 +61,65 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
       }
     };
 
-		document.addEventListener("mousedown", handler);
+    let pressESC = (e: KeyboardEvent) => {
+      if (isOpen && e.code === "Escape") {
+        setIsOpen(false);
+        button.forEach(
+          (menu) =>
+            function () {
+              menu.parentElement?.classList.remove("expand");
+            }
+        );
+        setTimeout(() => {
+          modal?.classList.remove("show");
+        }, 500);
+      }
+    };
 
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", handler);
+      document.removeEventListener("keydown", pressESC);
     };
   });
 
-	useEffect(() => {
+  useEffect(() => {
     //keeps drawer closed on first load due to framer-motion behavior
     setTimeout(() => {
       setFirstLoad(false);
     }, 300);
-  }, [])
+  }, []);
+
+  //trap the keyboard focus only in the drawer when it's on
+  useEffect(() => {
+    const handleFocus = (event: FocusEvent) => {
+      // Check if the target is a Node
+      if (event.target instanceof Node) {
+        if (
+          navRef.current &&
+          !navRef.current.contains(event.target)
+        ) {
+          // Prevent focusing outside the drawer
+          navRef.current.focus();
+        }
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("focusin", handleFocus);
+    }
+
+    return () => {
+      document.removeEventListener("focusin", handleFocus);
+    };
+  }, [isOpen]);
 
   return (
     <div className="relative z-50 select-none h-full">
       <button
+        role="drawer"
+        aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center group gap-3 px-8 h-full justify-center w-auto after:bg-neutral-300/50 hover-bg-effect ${
           isOpen ? "pointer-events-none after:opacity-100 after:scale-100" : ""
@@ -108,42 +150,46 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
         />
       </button>
       {/* DRAWER */}
-      <motion.nav
-        layout
-        ref={navRef}
-        variants={swipeDown}
-        animate={isOpen ? "open" : "closed"}
-        className={`absolute -left-8 top-[100%] w-64 z-50 bg-neutral-200 text-[0.95rem] py-4 overflow-y-auto overflow-x-hidden text-green-5 modal ${
-          firstLoad ? "hidden" : "block"
-        } ${isTop ? "h-[calc(100vh-9rem)]" : "h-[calc(100vh-7rem)]"}`}
-      >
-        <ul className="flex flex-col mb-6 xl:mt-6 ">
-          <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
-          <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
-            <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
-          </Link>
-          <Link
-            onClick={() => setIsOpen(false)}
-            href="/specials/delivery-rotisserie"
-          >
-            <li className="hover:bg-neutral-300 px-6 py-2">
-              Delivery Rotisserie
-            </li>
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/specials/blog">
-            <li className="hover:bg-neutral-300 px-6 py-2">GrocerGo Blog</li>
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
-            <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
-          </Link>
-        </ul>
+      {isOpen && (
+        <motion.nav
+					tabIndex={-1}
+          layout
+          ref={navRef}
+          variants={swipeDown}
+          animate={isOpen ? "open" : "closed"}
+          className={`absolute -left-8 top-[100%] w-64 z-50 bg-neutral-200 text-[0.95rem] py-4 overflow-y-auto overflow-x-hidden text-green-5 modal ${
+            firstLoad ? "hidden" : "block"
+          } ${isTop ? "h-[calc(100vh-9rem)]" : "h-[calc(100vh-7rem)]"}
+			`}
+        >
+          <ul className="flex flex-col mb-6 xl:mt-6 ">
+            <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
+            <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
+              <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
+            </Link>
+            <Link
+              onClick={() => setIsOpen(false)}
+              href="/specials/delivery-rotisserie"
+            >
+              <li className="hover:bg-neutral-300 px-6 py-2">
+                Delivery Rotisserie
+              </li>
+            </Link>
+            <Link onClick={() => setIsOpen(false)} href="/specials/blog">
+              <li className="hover:bg-neutral-300 px-6 py-2">GrocerGo Blog</li>
+            </Link>
+            <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
+              <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
+            </Link>
+          </ul>
 
-        {/* CATEGORIES */}
-        <ul className="flex flex-col text-green-5">
-          <h2 className="text-xl font-semibold mb-6 ml-6 ">Categories</h2>
-          <Categories setIsOpen={setIsOpen} />
-        </ul>
-      </motion.nav>
+          {/* CATEGORIES */}
+          <ul className="flex flex-col text-green-5">
+            <h2 className="text-xl font-semibold mb-6 ml-6 ">Categories</h2>
+            <Categories setIsOpen={setIsOpen} />
+          </ul>
+        </motion.nav>
+      )}
     </div>
   );
 };

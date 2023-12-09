@@ -30,7 +30,7 @@ const Recipes = () => {
 	const [urlHasId, setUrlHasId] = useState<string|null>(null);
 	//used to set the delay in the motion.div animation due to the direct shared url behavior
 	const [timesRendered, setTimesRendered] = useState<number>(0);
-  const apiKey = "673a5479864c4c948dfe46fa530498f4";
+  const apiKey = process.env.SPOONACULAR_API_KEY;
 	const search = useSearchParams();
 
   const handleSearch = useCallback(async () => {
@@ -50,7 +50,7 @@ const Recipes = () => {
       console.error("Error fetching recipes:", error);
     }
     setLoading(false);
-  }, [query]);
+  }, [query, apiKey]);
 
 	useEffect(() => {
 		setTimesRendered(1);
