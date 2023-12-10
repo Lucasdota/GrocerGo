@@ -19,7 +19,7 @@ export default function TodaysOffers(props: Props) {
       }}
     >
       <Link href="/sections/offers" className="self-start">
-        <h3 className="text-5xl mb-3 md:text-3xl lg:px-2  font-sansita tracking-wide text-gray-800 font-bold">
+        <h3 className="text-5xl mb-3 md:text-3xl lg:px-2 v font-sansita tracking-wide text-gray-800 font-bold">
           Today&apos;s Offers{" "}
           <span className="font-bold text-red-500 text-4xl md:text-3xl">
             -%

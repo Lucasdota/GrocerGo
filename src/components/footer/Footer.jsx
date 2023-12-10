@@ -46,7 +46,7 @@ const Footer = () => {
         </svg>
       </div>
       {/* TOP PART */}
-      <nav role="social" className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8">
+      <nav aria-label="footer navigation" role="social" className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8">
         <div className=" flex justify-between md:flex-col md:gap-12 md:justify-center max-w-[2560px] w-full mx-auto">
           {/* FIRST DIV */}
           <section className="mt-10">

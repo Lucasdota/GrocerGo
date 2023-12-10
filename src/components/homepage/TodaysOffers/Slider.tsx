@@ -89,7 +89,7 @@ export default function Slider() {
                 className={`rounded-t-lg flex-col flex items-center justify-center`}
               >
                 <Image
-                  src="/images/products/offers/lemon-juice.png"
+                  src="/images/products/offers/lemon-juice.webp"
                   alt="lemon juice"
                   width={300}
                   height={300}

@@ -9,7 +9,7 @@ const ThirdCards = () => {
         <div className="h-full drop-shadow-lg w-1/2 md:w-full rounded-lg lg:rounded overflow-hidden relative transition duration-500">
           <Image
             src="/images/thirdcards/propa1.webp"
-            alt="Best Quality"
+            alt="prime cattle, nurtured in optimal environments"
             width={900}
             height={506}
             loading="lazy"
@@ -20,7 +20,7 @@ const ThirdCards = () => {
         <div className="h-full drop-shadow-lg w-1/2 md:w-full transition duration-500 rounded-lg lg:rounded overflow-hidden relative">
           <Image
             src="/images/thirdcards/propa2.webp"
-            alt="Best Quality"
+            alt="don't forget to eat, your grocery haven for quality and savings"
             width={900}
             height={506}
             loading="lazy"
@@ -34,7 +34,7 @@ const ThirdCards = () => {
         <div className="drop-shadow-lg h-full w-1/2 md:w-full transition duration-500 rounded-lg lg:rounded overflow-hidden relative">
           <Image
             src="/images/thirdcards/propa3.webp"
-            alt="Best Quality"
+            alt="spice up your table, embark on a jorney through our hand-raised spices"
             width={900}
             height={506}
             loading="lazy"
@@ -45,7 +45,7 @@ const ThirdCards = () => {
         <div className="h-full drop-shadow-lg w-1/2 md:w-full transition duration-500 rounded-lg lg:rounded overflow-hidden relative">
           <Image
             src="/images/thirdcards/propa4.webp"
-            alt="Best Quality"
+            alt="to do list, go to grocergo, cook my favorite meal, be happy"
             width={900}
             height={506}
             loading="lazy"

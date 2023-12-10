@@ -118,6 +118,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   return (
     <div className="z-50 hidden xl:block">
       <button
+        aria-label="open menu"
         role="drawer"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
@@ -132,69 +133,72 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         </div>
       </button>
       {/* DRAWER */}
-			{isOpen && <motion.nav
-        ref={navContainer}
-        variants={swipeDown}
-        animate={isOpen ? "open" : "closed"}
-        layout
-        className={`w-64 h-[100vh] absolute left-0 top-0 select-none ${
-          firstLoad ? "hidden" : "block"
-        }`}
-      >
-        <MobileLogin setIsOpen={setIsOpen} />
-        <motion.div
-          ref={mobileNavRef}
-          className={`w-full z-50 bg-neutral-200 text-[0.95rem] py-4 xl:py-0 xl:pb-4 overflow-y-auto overflow-x-hidden text-green-5 mobile-modal h-[calc(100vh-7rem)]`}
+      {isOpen && (
+        <motion.nav
+          ref={navContainer}
+          variants={swipeDown}
+          animate={isOpen ? "open" : "closed"}
+          layout
+          className={`w-64 h-[100vh] absolute left-0 top-0 select-none ${
+            firstLoad ? "hidden" : "block"
+          }`}
         >
-          <ul className="flex flex-col mb-6 xl:mt-6">
-            <h2 className="text-xl font-semibold mb-6 ml-6">Menu</h2>
-            <Link onClick={() => setIsOpen(false)} href="/insurance">
-              <li className="hover:bg-neutral-300 px-6 py-2">Insurance</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/contact-us">
-              <li className="hover:bg-neutral-300 px-6 py-2">Contact Us</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/our-stores">
-              <li className="hover:bg-neutral-300 px-6 py-2">Our Stores</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/how-to-buy">
-              <li className="hover:bg-neutral-300 px-6 py-2">How To Buy</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/credit-card">
-              <li className="hover:bg-neutral-300 px-6 py-2">
-                GrocerGo Credit Card
-              </li>
-            </Link>
-          </ul>
-          <ul className="flex flex-col mb-6 xl:mt-6">
-            <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
-            <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
-              <li className="hover:bg-neutral-300 px-6 py-2">Chef</li>
-            </Link>
-            <Link
-              onClick={() => setIsOpen(false)}
-              href="/specials/delivery-rotisserie"
-            >
-              <li className="hover:bg-neutral-300 px-6 py-2">
-                Delivery Rotisserie
-              </li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/specials/blog">
-              <li className="hover:bg-neutral-300 px-6 py-2">GrocerGo Blog</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
-              <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
-            </Link>
-          </ul>
+          <MobileLogin setIsOpen={setIsOpen} />
+          <motion.div
+            ref={mobileNavRef}
+            className={`w-full z-50 bg-neutral-200 text-[0.95rem] py-4 xl:py-0 xl:pb-4 overflow-y-auto overflow-x-hidden text-green-5 mobile-modal h-[calc(100vh-7rem)]`}
+          >
+            <ul className="flex flex-col mb-6 xl:mt-6">
+              <h2 className="text-xl font-semibold mb-6 ml-6">Menu</h2>
+              <Link onClick={() => setIsOpen(false)} href="/insurance">
+                <li className="hover:bg-neutral-300 px-6 py-2">Insurance</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/contact-us">
+                <li className="hover:bg-neutral-300 px-6 py-2">Contact Us</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/our-stores">
+                <li className="hover:bg-neutral-300 px-6 py-2">Our Stores</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/how-to-buy">
+                <li className="hover:bg-neutral-300 px-6 py-2">How To Buy</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/credit-card">
+                <li className="hover:bg-neutral-300 px-6 py-2">
+                  GrocerGo Credit Card
+                </li>
+              </Link>
+            </ul>
+            <ul className="flex flex-col mb-6 xl:mt-6">
+              <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
+              <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
+                <li className="hover:bg-neutral-300 px-6 py-2">Chef</li>
+              </Link>
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/specials/delivery-rotisserie"
+              >
+                <li className="hover:bg-neutral-300 px-6 py-2">
+                  Delivery Rotisserie
+                </li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/specials/blog">
+                <li className="hover:bg-neutral-300 px-6 py-2">
+                  GrocerGo Blog
+                </li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
+                <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
+              </Link>
+            </ul>
 
-          {/* CATEGORIES */}
-          <ul className="flex flex-col text-green-5">
-            <h2 className="text-xl font-semibold mb-6 ml-6">Categories</h2>
-            <MobileCategories setIsOpen={setIsOpen} />
-          </ul>
-        </motion.div>
-      </motion.nav>}
-      
+            {/* CATEGORIES */}
+            <ul className="flex flex-col text-green-5">
+              <h2 className="text-xl font-semibold mb-6 ml-6">Categories</h2>
+              <MobileCategories setIsOpen={setIsOpen} />
+            </ul>
+          </motion.div>
+        </motion.nav>
+      )}
     </div>
   );
 };

@@ -198,12 +198,15 @@ const Form = () => {
             id="insurance_name"
             name="insurance_name"
             placeholder="john doe"
+            autoComplete="name"
             className="px-2 outline-none w-full"
           />
           <div className="h-4 flex">
             <AnimatePresence>
               {nameError && (
                 <motion.span
+                  role="alert"
+                  aria-label="name field error"
                   key="nameError-span"
                   className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                   initial={{ opacity: 0 }}
@@ -225,6 +228,7 @@ const Form = () => {
             onChange={validateEmail}
             id="insurance_email"
             name="insurance_email"
+            autoComplete="email"
             placeholder="johndoe@email.com"
             className="px-2 outline-none w-full"
           />
@@ -232,6 +236,8 @@ const Form = () => {
             <AnimatePresence>
               {emailError && (
                 <motion.span
+                  role="alert"
+                  aria-label="email field error"
                   key="emailError-span"
                   className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                   initial={{ opacity: 0 }}
@@ -261,6 +267,8 @@ const Form = () => {
             <AnimatePresence>
               {socialError && (
                 <motion.span
+                  role="alert"
+                  aria-label="social number field error"
                   className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                   key="socialError-span"
                   initial={{ opacity: 0 }}
@@ -285,11 +293,14 @@ const Form = () => {
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="123-456-7890"
             className="px-2 outline-none w-full"
+            autoComplete="tel"
           />
           <div className="h-4 flex">
             <AnimatePresence>
               {cellphoneError && (
                 <motion.span
+                  role="alert"
+                  aria-label="cellphone field error"
                   className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                   key="cellphoneError-span"
                   initial={{ opacity: 0 }}
@@ -395,6 +406,8 @@ const Form = () => {
             <AnimatePresence>
               {!plan && (
                 <motion.span
+                  role="alert"
+                  aria-label="plan field error"
                   className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                   key="planError-span"
                   initial={{ opacity: 0 }}
@@ -438,6 +451,8 @@ const Form = () => {
               <AnimatePresence>
                 {!agreed && (
                   <motion.span
+                    role="alert"
+                    aria-label="agreement field error"
                     className="text-red-400 text-[0.75rem]"
                     key="agreementError-span"
                     initial={{ opacity: 0 }}
@@ -454,6 +469,7 @@ const Form = () => {
 
         {/* SUBMIT BUTTON */}
         <button
+          aria-label="submit form"
           type="submit"
           className="bg-green-5 lg:text-base px-4 py-1 text-white w-fit mx-auto hover:brightness-150 transition duration-300 focus:outline-none focus:ring focus:border-green-2 active:bg-green-6 block"
         >

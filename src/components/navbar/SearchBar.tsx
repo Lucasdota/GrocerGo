@@ -59,9 +59,9 @@ export default function SearchBar() {
         className="w-full h-full relative text-gray-600 text-sm"
       >
         <input
+          aria-label="Search using comma, i.e.: beer, olive oil, milk, iogurt, wine"
           name="search-bar"
           type="search"
-          aria-describedby="search-help"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}
@@ -69,9 +69,6 @@ export default function SearchBar() {
           className="w-full h-full px-4 rounded-l-sm placeholder:text-sm outline-none decoration-none border border-black/10"
           placeholder="Search using comma, i.e.: beer, olive oil, milk, iogurt, wine"
         />
-        <div id="search-help" className="hidden">
-          Search using comma, i.e.: beer, olive oil, milk, iogurt, wine
-        </div>
         <Suggestions
           className={"top-10"}
           searchTerm={searchTerm}

@@ -44,8 +44,9 @@ export default function MobileSearchBar() {
     >
       <div className="w-full h-full relative text-gray-600 text-sm">
         <input
-					name="mobile-search-bar"
-          type="text"
+          aria-label="Search using comma, i.e.: beer, olive oil, milk, iogurt, wine"
+          name="mobile-search-bar"
+          type="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}

@@ -27,6 +27,16 @@ const variants = {
   },
 };
 
+const imagesAlts = [
+	"now serving sunday brunch, an avocado salad with egg and toast in the background",
+	"grocergo blog, discover healthy recipes and food tips for the whole family on our blog",
+	"space you spa and sauna, located on every grocergo store",
+	"back to school, find everything you need to ace your classes",
+	"valentine's day, find that perfect gift for your love",
+	"gourmet restaurant and bar, located on every grocergo store",
+	"grocergo christmas, we have everything to make your holiday season merry and bright"
+]
+
 function Slides({ currentPage, direction, pages, setPage }: Props) {
 
 	useEffect(() => {
@@ -79,7 +89,7 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
         >
           <Image
             src={images[currentPage]}
-            alt="slide"
+            alt={imagesAlts[currentPage]}
             className="w-full slides"
             width={1920}
             height={663}

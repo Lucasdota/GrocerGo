@@ -138,12 +138,15 @@ const Form = () => {
             id="contact_name"
             name="contact_name"
             placeholder="john doe"
+            autoComplete="name"
             className="w-full border lg:text-base border-green-5 text-green-5 p-1 px-2 rounded-lg drop-shadow outline-none "
           />
           <div className="h-4 mt-0.5 ml-2 flex">
             <AnimatePresence>
               {nameError && (
                 <motion.span
+                  role="alert"
+                  aria-label="name field error"
                   key="nameError-span"
                   className="text-red-400 text-[0.75rem]"
                   initial={{ opacity: 0 }}
@@ -164,6 +167,7 @@ const Form = () => {
             onChange={validateEmail}
             id="contact_email"
             name="contact_email"
+            autoComplete="email"
             placeholder="johndoe@email.com"
             className="w-full border lg:text-base border-green-5 text-green-5 p-1 px-2 rounded-lg drop-shadow outline-none"
           />
@@ -171,6 +175,8 @@ const Form = () => {
             <AnimatePresence>
               {emailError && (
                 <motion.span
+                  role="alert"
+                  aria-label="email field error"
                   key="emailError-span"
                   className="text-red-400 text-[0.75rem]"
                   initial={{ opacity: 0 }}
@@ -200,6 +206,8 @@ const Form = () => {
             <AnimatePresence>
               {messageError && (
                 <motion.span
+                  role="alert"
+                  aria-label="message field error"
                   key="messageError-span"
                   className="text-red-400 text-[0.75rem]"
                   initial={{ opacity: 0 }}
@@ -215,6 +223,7 @@ const Form = () => {
 
         <div className="col-span-2">
           <button
+            aria-label="submit form"
             type="submit"
             className="py-2 px-4 rounded-lg lg:text-base text-green-5 w-fit mx-auto drop-shadow hover-bg2-effect outline outline-[1px] outline-green-5 active:translate-y-[3px] hover:text-white after:bg-green-5"
           >

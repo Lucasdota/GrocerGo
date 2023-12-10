@@ -185,11 +185,14 @@ const Form = () => {
           name="work_name"
           type="text"
           placeholder="john doe"
+					autoComplete="name"
         />
         <div className="h-4 flex mb-1 mt-0.5 ml-2">
           <AnimatePresence>
             {nameError && (
               <motion.span
+                role="alert"
+                aria-label="name field error"
                 key="nameError-span"
                 className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                 initial={{ opacity: 0 }}
@@ -214,12 +217,15 @@ const Form = () => {
           id="work_email"
           name="work_email"
           type="email"
+					autoComplete="email"
           placeholder="youremail@.com"
         />
         <div className="h-4 flex mb-1 mt-0.5 ml-2">
           <AnimatePresence>
             {emailError && (
               <motion.span
+                role="alert"
+                aria-label="email field error"
                 key="emailError-span"
                 className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                 initial={{ opacity: 0 }}
@@ -244,12 +250,15 @@ const Form = () => {
           onChange={validateCellphone}
           name="work_cellphone"
           type="tel"
+					autoComplete="tel"
           placeholder="123-456-7891"
         />
         <div className="h-4 flex mb-1 mt-0.5 ml-2">
           <AnimatePresence>
             {cellphoneError && (
               <motion.span
+                role="alert"
+                aria-label="cellphone field error"
                 className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                 key="cellphoneError-span"
                 initial={{ opacity: 0 }}
@@ -267,21 +276,20 @@ const Form = () => {
       <label htmlFor="work_resume">
         <div className="flex gap-2 items-center mt-4">
           <div className="text-gray-700 shadow text-sm font-bold cursor-pointer bg-white/40 px-4 py-2 rounded border border-neutral-200 active:translate-y-0.5 focus:shadow-outline hover:bg-white focus:bg-white transition duration-200 flex gap-2 items-center">
-            <span>
-              Upload your resume 
-            </span>
-						<BsDownload />
+            <span>Upload your resume</span>
+            <BsDownload />
           </div>
           <AnimatePresence mode="wait">
             {resumeUploaded ? (
               <motion.span
-								className="flex items-center gap-1 text-sm text-neutral-700"
+                className="flex items-center gap-1 text-sm text-neutral-700"
                 key="file-span"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <AiOutlineFileDone className="text-green-2 w-5 h-5" /> File uploaded!
+                <AiOutlineFileDone className="text-green-2 w-5 h-5" /> File
+                uploaded!
               </motion.span>
             ) : (
               <motion.p
@@ -308,6 +316,8 @@ const Form = () => {
           <AnimatePresence>
             {resumeError && (
               <motion.span
+                role="alert"
+                aria-label="resume field error"
                 className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                 key="resumeError-span"
                 initial={{ opacity: 0 }}
@@ -338,6 +348,8 @@ const Form = () => {
           <AnimatePresence>
             {messageError && (
               <motion.span
+                role="alert"
+                aria-label="message field error"
                 className="text-red-400 text-[0.75rem] md:text-[0.6rem] md:leading-4"
                 key="messageError-span"
                 initial={{ opacity: 0 }}
@@ -354,6 +366,7 @@ const Form = () => {
       {/* button */}
       <div className="flex items-center justify-between">
         <button
+          aria-label="submit form"
           className="bg-green-4 hover:bg-green-4/90 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
         >

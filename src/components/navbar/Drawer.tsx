@@ -118,6 +118,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
   return (
     <div className="relative z-50 select-none h-full">
       <button
+				aria-label="open menu"
         role="drawer"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
