@@ -32,6 +32,22 @@ body {
   min-width: 305px;
 }
 
+.homepage-farm-bg {
+	background-image: url('/images/firstcards/grapes-bg.webp')
+}
+
+@media (max-width: 768px) {
+	.homepage-farm-bg {
+		background-image: url('/images/firstcards/mobile-grapes-bg.webp')
+	}
+}
+
+.free-delivery-banner-homepage {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.9), transparent);
+}
+
+
+
 /* HOMEPAGE HERO SLIDER */
 .slides {
   -webkit-user-drag: none;
@@ -164,10 +180,6 @@ body {
     inset #409a3c 0 0 0 10px, inset #429d5c 0 0 0 11px, inset #7ec200 0 0 0 16px,
     inset #48e462 0 0 0 17px, inset #c3facb 0 0 0 21px, inset #bff7d6 0 0 0 22px;
   text-shadow: 3px 3px 1px #48e4623d;
-}
-
-.free-delivery-banner-homepage {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent);
 }
 
 /* HOMEPAGE - moving blobs svg bg */

@@ -8,7 +8,6 @@ const FirstCards = () => {
   const [translateY, setTranslateY] = useState<number>(0);
 	const [isMobile, setIsMobile] = useState<boolean|undefined>(undefined);
 
-
 	const handleScroll = () => {
     setScrollY(window.scrollY);
   };
@@ -18,7 +17,7 @@ const FirstCards = () => {
 
     // Calculate translateY based on the scroll position
 		setScrollY(window.scrollY);
-    const parallaxMultiplier = 0.3; // Adjust this value for the desired parallax effect
+    const parallaxMultiplier = 0.33; // Adjust this value for the desired parallax effect
     const newTranslateY = scrollY * parallaxMultiplier;
     setTranslateY(newTranslateY);
 
@@ -73,20 +72,12 @@ const FirstCards = () => {
       </div>
 
 			{/* FARM BG AND BANNER */}
-      <div className="relative overflow-hidden flex items-center justify-center xs:bg-green-6">
-        <Image
-          src="/images/firstcards/farm-banner.webp"
-          width={1920}
-          height={904}
-          alt="farm"
-          className="w-full xs:bg-green-6"
-					loading="lazy"
-        />
-        <div
-          className="absolute w-[110%] -rotate-2 flex free-delivery-banner-homepage p-24 xxl:p-20 xl:p-16 lg:p-12 md:p-8 xs:p-4 md:!transform-none mb-[40%] xxl:mb-[45%] xl:mb-[50%] lg:mb-[35%] md:mb-[0%]"
+      <div aria-label="farm background image" className="relative overflow-hidden flex items-center justify-center xs:bg-green-6 w-full homepage-farm-bg bg-cover bg-center h-[50dvh] lg:[50dvw] md:h-52">
+        <div role="banner"
+          className="absolute w-full flex free-delivery-banner-homepage p-16 lg:p-12 md:p-8 xs:p-4 md:!transform-none mb-[40%] xxl:mb-[45%] xl:mb-[50%] lg:mb-[35%] md:mb-[0%]"
           style={{ transform: `translateY(${translateY}px)` }}
         >
-          <p className="text-5xl xxl:text-4xl xl:text-3xl lg:text-2xl md:text-xl xs:text-lg xxs:text-sm text-center tracking-wider text-neutral-100 z-10 mx-auto font-sansita">
+          <p className="text-4xl xl:text-3xl lg:text-2xl md:text-xl xs:text-lg xxs:text-sm text-center tracking-wider text-neutral-100 z-10 mx-auto font-sansita">
             FREE DELIVERY ON PURCHASES OVER $99
           </p>
         </div>

@@ -11,7 +11,8 @@ import ThirdCards from "@/components/homepage/ThirdCards";
 import SnackbarComponent from "@/components/shared/SnackbarComponent";
 import Sections from "@/components/homepage/Sections";
 import SecondCards from "@/components/homepage/SecondCards/SecondCards";
-import { useState, useEffect } from "react";
+import LoadingBars from "../app/recipes/LoadingBars";
+import React, { useState, useEffect } from "react";
 
 const Homepage = () => {
   const [skeleton, setSkeleton] = useState(true);
@@ -56,7 +57,7 @@ const Homepage = () => {
           <FirstCards />
           <Sections />
 					{hasScrolled && (
-						<>
+						<React.Suspense fallback={<LoadingBars />}>
 							<TodaysOffers />
 							<BestBeverages />
 							<FullFridge />
@@ -65,7 +66,7 @@ const Homepage = () => {
 							<SecondCards />
 							<Partners />
 							<ThirdCards />
-						</>					
+						</React.Suspense>					
 					)}
           <SnackbarComponent />
         </>
