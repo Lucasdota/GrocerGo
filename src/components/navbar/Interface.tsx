@@ -16,15 +16,24 @@ const Interface = () => {
   const [isTop, setIsTop] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>();
+  const [isSmartphone, setIsSmartphone] = useState<boolean>(false);
 	const [blockScroll, allowScroll] = useScrollBlock();
 
-  //is mobile checker
+  //is mobile and smartphone checker
   useEffect(() => {
     const mediaQueryXl = window.matchMedia("(max-width: 1279px)");
+		const mediaQueryMd = window.matchMedia("(max-width: 767px)");
+
     if (mediaQueryXl.matches) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
+    }
+
+		if (mediaQueryMd.matches) {
+      setIsSmartphone(true);
+    } else {
+      setIsSmartphone(false);
     }
 
 		function handleMobile() {
@@ -35,20 +44,39 @@ const Interface = () => {
       }
 		}
 
+		function handleSmartphone() {
+			if (mediaQueryMd.matches) {
+        setIsSmartphone(true);
+      } else {
+        setIsSmartphone(false);
+      }
+		}
+
 		window.addEventListener("resize", handleMobile);
+		window.addEventListener("resize", handleSmartphone);
 		return () => {
-			window.addEventListener("resize", handleMobile);
+			window.removeEventListener("resize", handleMobile);
+			window.removeEventListener("resize", handleSmartphone);
 		}
   }, []);
-
   
+	//proper blockScroll when all categories menu is open
   useEffect(() => {
-    if (isOpen) {
-      blockScroll();
-    } else {
+    if (isOpen) {	
+			if (!isSmartphone) {			
+				blockScroll();	
+			} else {		
+				const html = document.documentElement;
+				const { body } = document;
+				html.style.position = "relative";
+				body.style.position = "relative";
+				html.style.overflow = "hidden";
+				body.style.overflow = "hidden";
+			}     		
+    } else {						
       allowScroll();
     }
-  }, [isOpen, blockScroll, allowScroll]);
+  }, [isOpen, isSmartphone, blockScroll, allowScroll]);
 
   useEffect(() => {
     if (window.scrollY < 31.61) {
@@ -76,7 +104,7 @@ const Interface = () => {
 
   return (
     <header
-      className={`navbar-header block w-full min-w-[320px] fixed top-0 z-50 shadow-md`}
+      className={`navbar-header block w-full min-w-[320px] fixed xl:static top-0 z-50 shadow-md`}
     >
       {isTop && <MiniNavbar />}
       {/* gray overlay prevents interactivity in other areas of the app when drawer is open */}
@@ -98,6 +126,7 @@ const Interface = () => {
           <MobileDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
           {/* LOGO */}
           <Link
+            aria-label="grocergo logo, click to go to the homepage"
             href="/"
             className={`font-bold font-sansita tracking-wide italic flex items-center text-green-5 text-2xl xl:h-full xl:items-end xl:pb-1`}
           >
@@ -105,7 +134,7 @@ const Interface = () => {
           </Link>
           <SearchBar />
           <Login />
-          <Cart />
+          <Cart isSmartphone={isSmartphone} />
         </div>
         <MobileSearchBar />
         <div className="xl:hidden flex h-[35%] justify-center items-center">

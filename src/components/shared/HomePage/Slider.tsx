@@ -105,7 +105,7 @@ const Slider = ({ section }: Props) => {
                     {card.name}
                   </h3>
                   <span
-                    className={`inline-block sm:text-base  text-green-4 font-extrabold text-2xl`}
+                    className={`inline-block sm:text-base text-green-4 font-extrabold text-2xl`}
                   >
                     $&nbsp;{card.price}
                   </span>
@@ -116,7 +116,7 @@ const Slider = ({ section }: Props) => {
                 image={card.image}
                 price={card.price}
                 text={"ADD TO CART"}
-                className={`w-full xs:text-[.65rem] xs:p-2 xxs:text-[.55rem] xxs:gap-0.5
+                className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}
               />
             </li>

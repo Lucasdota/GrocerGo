@@ -1,15 +1,13 @@
 import { useRef } from "react";
 
 const useScrollBlock = () => {
-  const scroll = useRef(false);
-
   const blockScroll = () => {
     if (typeof document === "undefined") return;
 		const header = document.querySelector(".navbar-header");
     const html = document.documentElement;
     const { body } = document;
 
-    if (!body || !body.style || scroll.current) return;
+    if (!body || !body.style) return;
 
     const scrollBarWidth = window.innerWidth - html.clientWidth;
     const bodyPaddingRight =
@@ -30,7 +28,7 @@ const useScrollBlock = () => {
     //prevents the html and navbar to flicker to the right when opening the drawer menu by adding a padding-right
     body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
     header.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
-    scroll.current = true;
+
   };
 
   const allowScroll = () => {
@@ -39,8 +37,9 @@ const useScrollBlock = () => {
 
     const html = document.documentElement;
     const { body } = document;
+		
 
-    if (!body || !body.style || !scroll.current) return;
+    if (!body || !body.style ) return;
 
     html.style.position = "";
     html.style.overflow = "";
@@ -48,7 +47,8 @@ const useScrollBlock = () => {
     body.style.overflow = "";
     body.style.paddingRight = "";
 		header.style.paddingRight = "";		
-    scroll.current = false;
+		
+		console.log("allowScroll");
   };
 
   return [blockScroll, allowScroll];

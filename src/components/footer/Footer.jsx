@@ -46,7 +46,11 @@ const Footer = () => {
         </svg>
       </div>
       {/* TOP PART */}
-      <nav aria-label="footer navigation" role="social" className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8">
+      <nav
+        aria-label="footer navigation"
+        role="social"
+        className="w-full bg-[#262626] text-sm xl:text-[0.75rem] md:text-[0.9rem] px-40 gg:px-32 xxl:px-24 xl:px-16 xxs:px-4 lg:pr-0 lg:pl-4 md:px-10 md:py-8 pt-8"
+      >
         <div className=" flex justify-between md:flex-col md:gap-12 md:justify-center max-w-[2560px] w-full mx-auto">
           {/* FIRST DIV */}
           <section className="mt-10">
@@ -279,16 +283,32 @@ const Footer = () => {
                 Our Channels
               </h4>
               <div className="flex gap-3 md:flex-row md:gap-4 flex-wrap">
-                <Link target="_blank" href="https://www.facebook.com/">
+                <Link
+                  target="_blank"
+                  aria-label="grocergo facebook page"
+                  href="https://www.facebook.com/"
+                >
                   <FaFacebook className="w-6 h-6 md:w-8 md:h-8" />
                 </Link>
-                <Link target="_blank" href="https://www.instagram.com/">
+                <Link
+                  target="_blank"
+                  aria-label="grocergo instagram profile"
+                  href="https://www.instagram.com/"
+                >
                   <FaInstagram className="w-6 h-6 md:w-8 md:h-8" />
                 </Link>
-                <Link target="_blank" href="https://www.youtube.com/">
+                <Link
+                  target="_blank"
+                  aria-label="grocergo youtube channel"
+                  href="https://www.youtube.com/"
+                >
                   <FaYoutube className="w-6 h-6 md:w-8 md:h-8" />
                 </Link>
-                <Link target="_blank" href="https://www.twitter.com/">
+                <Link
+                  target="_blank"
+                  aria-label="grocergo twitter account"
+                  href="https://www.twitter.com/"
+                >
                   <FaTwitter className="w-6 h-6 md:w-8 md:h-8" />
                 </Link>
               </div>
@@ -297,9 +317,9 @@ const Footer = () => {
           {/* FOURTH DIV */}
           <section className="w-1/4 gg:w-96 lg:w-80 md:w-96 sm:w-80 xs:w-64">
             <Link target="_blank" href="https://play.google.com/store">
-              <div className="bg-green-3 p-6 font-nunito w-full h-full text-white">
+              <div className="bg-green-4 p-6 font-nunito w-full h-full text-white">
                 <div className="border-2 w-full h-full border-white flex flex-col lg:gap-6 items-center justify-between p-6 rounded-lg">
-                  <div className="w-24 lg:w-16 lg:h-16 aspect-square bg-green-1 rounded-lg flex flex-col gap-2 lg:gap-1 items-center justify-center p-2">
+                  <div className="w-24 lg:w-16 lg:h-16 aspect-square bg-green-1/70 rounded-lg flex flex-col gap-2 lg:gap-1 items-center justify-center p-2">
                     <h4 className="text-center text-xl lg:text-sm leading-4 lg:leading-[12px] font-sansita">
                       Go
                       <br />

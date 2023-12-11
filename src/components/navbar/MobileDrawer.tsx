@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import MobileLogin from "./MobileLogin";
 import MobileCategories from "./drawer-links/MobileCategories";
 
-
 type Props = {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
@@ -79,7 +78,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
     const modal = document.querySelector(".mobile-modal");
     let closeHandler = (e: MouseEvent) => {
       if (!navContainer.current?.contains(e.target as Node) && isMobile) {
-        setIsOpen(false);
+				setIsOpen(false);
         button.forEach(
           (menu) =>
             function () {
@@ -119,7 +118,6 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
     <div className="z-50 hidden xl:block">
       <button
         aria-label="open menu"
-        role="drawer"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className={`group w-[130px] xs:w-[50px] pb-2 group ${
@@ -140,7 +138,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
           animate={isOpen ? "open" : "closed"}
           layout
           className={`w-64 h-[100vh] absolute left-0 top-0 select-none ${
-            firstLoad ? "hidden" : "block"
+            firstLoad ? "hidden" : null
           }`}
         >
           <MobileLogin setIsOpen={setIsOpen} />

@@ -9,7 +9,7 @@ const nunito = Nunito({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} pt-36 xl:pt-28`}>
+      <body className={`${nunito.className} pt-36 xl:pt-0`}>
         <AppContextProvider>
 					<Navbar />		
 					<ScrollToTop />		

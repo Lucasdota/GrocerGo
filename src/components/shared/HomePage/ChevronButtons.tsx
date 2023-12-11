@@ -126,12 +126,16 @@ const ChevronButtons = ({carousel, firstcard, firstDiv, lastDiv, divider}: Props
   return (
     <>
       <button
+        role="navigation"
+        aria-label="previous item"
         ref={arrowLeft}
         className="absolute left-0 group transition duration-100 shadow-[1px_1px_2px_rgba(0,0,0,0.1)] text-black/80 bg-neutral-200/30"
       >
         <BsChevronLeft className="group-active:scale-75 h-12 w-12 sm:h-10 sm:w-10 sm:p-3 p-4" />
       </button>
       <button
+        role="navigation"
+        aria-label="next item"
         ref={arrowRight}
         className="absolute group transition duration-100 right-0 shadow-[-1px_1px_2px_rgba(0,0,0,0.1)] text-black/80 bg-neutral-200/30"
       >

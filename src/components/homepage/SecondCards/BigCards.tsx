@@ -233,6 +233,7 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
 	return (
     <>
       <button
+				aria-label={`add ${first_title} + ${second_title} to cart`}
         onClick={handleClick}
         className="flex w-1/5 flex-col items-center gap-8 xxl:gap-2 xl:gap-4 group bg-color-transition p-8 gg:p-6 xs:px-0 xs:h-24 h-[26rem] gg:h-[25rem] xxl:h-[23rem] lg:w-full lg:h-32 lg:flex-row lg:justify-around lg:py-4 lg:relative rounded-lg text-gray-700 lg:border-transparent group drop-shadow lg:rounded-none"
       >
@@ -243,17 +244,17 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
 
         <div className="flex-col lg:flex-row justify-center text-center lg:absolute lg:mx-auto lg:flex lg:gap-28 md:gap-6 sm:gap-3 sm:ml-6 xs:ml-10 items-center">
           <div className="font-bold text-5xl gg:text-4xl xxl:text-2xl lg:text-4xl flex gap-1 items-center justify-center lg:w-10 md:w-16 sm:w-20 xs:w-12 xs:text-lg">
-            <span className="font-normal text-lg xxl:text-sm xs:text-[.7rem]">
+            <span className="font-normal text-lg xxl:text-sm xs:text-[.75rem]">
               $
             </span>
             {price}
-            <span className="text-lg xxl:text-sm xs:text-[.7rem]">
+            <span className="text-lg xxl:text-sm xs:text-[.75rem]">
               {decimal_price}
             </span>
           </div>
           <AddBtn
             className={
-              "bg-neutral-50/50 lg:mt-0 mt-6 px-5 py-2 gg:px-4 xxl:px-3 text-[0.75rem] gg:text-[.65rem] lg:px-4 sm:text-[0.5rem] sm:px-3 sm:h-6 xs:text-[.4rem] xs:h-5 xs:px-2 xxs:mr-2 text-green-5 font-black rounded"
+              "bg-neutral-50/50 lg:mt-0 mt-6 px-5 py-2 gg:px-4 xxl:px-3 text-[0.75rem] gg:text-[.65rem] lg:px-4 sm:text-[0.5rem] sm:px-3 sm:h-6 xs:h-5 xs:px-2 xxs:mr-2 text-green-5 font-black rounded"
             }
             text={"ADD TO CART"}
           />

@@ -68,10 +68,10 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
 
   return (
     <motion.aside
-			tabIndex={-1}
+      tabIndex={-1}
       key={"cart-drawer"}
       ref={cart_drawer}
-      className="fixed right-0 top-0 z-[70] h-full px-12 xs:px-8 pt-12 xs:py-8 pb-6 xs:pb-4 bg-white text-green-2 flex flex-col w-[27rem] xl:min-w-[25rem] xl:w-fit xs:min-w-full xs:w-full shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
+      className="fixed right-0 top-0 z-[70] h-full px-12 xs:px-8 pt-12 xs:py-8 pb-6 xs:pb-4 bg-white text-green-2 flex flex-col w-[27rem] xl:min-w-[25rem] xl:w-fit xs:min-w-[20rem] xs:w-full shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
@@ -118,8 +118,11 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
         />
       </header>
 
-      {/* divider */}
-      <div className="w-full h-[1px] rounded bg-neutral-100 mt-8 xs:mt-4 mb-4" />
+      {/* separator */}
+      <div
+        role="separator"
+        className="flex w-full h-[1px] rounded bg-neutral-100 mt-8 xs:mt-4 mb-4"
+      />
 
       {/* itens */}
       <DrawerItens
@@ -134,7 +137,7 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
           <p>SUBTOTAL</p>
           <p>${totalPrice.toFixed(2)}</p>
         </div>
-        <div className="w-full flex justify-between font-bold text-[0.75rem] xs:text-[0.7rem]">
+        <div className="w-full flex justify-between font-bold text-[0.75rem]">
           <p>Delivery</p>
           <p>Calculated at Checkout</p>
         </div>
@@ -142,7 +145,7 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
 
       {/* checkout button */}
       <button className="w-full flex justify-center rounded-full bg-green-2 active:translate-y-[1px] transition duration-100">
-        <p className="font-black text-white tracking-wider text-[0.75rem] xs:text-[0.7rem] p-2">
+        <p className="font-black text-white tracking-wider text-[0.75rem] p-2">
           CHECKOUT
         </p>
       </button>

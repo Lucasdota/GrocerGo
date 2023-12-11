@@ -4,8 +4,10 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const FirstCards = () => {
-	const [scrollY, setScrollY] = useState(0);
-  const [translateY, setTranslateY] = useState(0);
+	const [scrollY, setScrollY] = useState<number>(0);
+  const [translateY, setTranslateY] = useState<number>(0);
+	const [isMobile, setIsMobile] = useState<boolean|undefined>(undefined);
+
 
 	const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -26,6 +28,30 @@ const FirstCards = () => {
     };
   }, [scrollY]);
 
+	useEffect(() => {
+		const mediaQueryXl = window.matchMedia("(max-width: 1279px)");
+
+		if (mediaQueryXl.matches) {
+			setIsMobile(true)
+		} else {
+			setIsMobile(false)
+		}
+
+		function handleResize() {
+			if (mediaQueryXl.matches) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+		}
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize)
+		}
+
+	}, [isMobile])
+
   return (
     <motion.section
       className="w-full xs:space-y-2 -mt-12 md:mt-0 flex flex-col relative"
@@ -34,7 +60,7 @@ const FirstCards = () => {
       transition={{ duration: 0.1 }}
     >
       {/* DESCRIP */}
-      <div className="px-4 md:p-6 py-40 lg:py-20 first-card-homepage flex relative z-10">
+      <div className={`px-4 md:p-6 py-40 lg:py-20 flex relative z-10 ${isMobile ? "bg-green-6" : "first-card-homepage"}`}>
         <p className="text-neutral-100 text-2xl lg:text-xl xs:text-base font-semibold mx-auto w-1/2 xl:w-3/5 lg:w-4/5 md:w-full p-10 whitespace-normal bg-green-6 cool-border -rotate-2 border-2 border-green-5 md:rotate-0 drop-shadow-lg">
           &quot;&nbsp;&nbsp;Discover a diverse selection of fresh produce,
           pantry essentials, and more, all at affordable prices. With speedy and
@@ -77,13 +103,13 @@ const FirstCards = () => {
           </p>
         </div>
 
-        <div className="bg-neutral-100 w-2 rounded-xl h-20 md:h-2 sm:h-1.5 xs:h-1 md:w-3/5" />
+        <div role="separator" className="bg-neutral-100 w-2 rounded-xl h-20 md:h-2 sm:h-1.5 xs:h-1 md:w-3/5" />
 
         <div className="flex items-center justify-center xs:whitespace-normal w-fit mx-auto h-full gap-8 md:gap-4">
           <h3 className="text-green-1 brightness-125 font-bold text-3xl lg:text-2xl sm:text-xl xs:text-sm antialiased font-sansita tracking-wide">
             ATTENTION
           </h3>
-          <p className="text-lg lg:text-base sm:text-sm xs:text-[0.65rem] text-neutral-50 antialiased font-sansita tracking-wide">
+          <p className="text-lg lg:text-base sm:text-sm text-neutral-50 antialiased font-sansita tracking-wide">
             Now we may ask for a <br />
             <span className="text-green-1 brightness-125 font-extrabold">
               Security Code*

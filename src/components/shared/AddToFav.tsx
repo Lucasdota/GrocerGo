@@ -71,6 +71,9 @@ const AddToFav = ({ title }: Props) => {
 
   return (
     <button
+      role="checkbox"
+      aria-checked={currentUserFavs?.itens.includes(title)}
+      aria-label="add to favorite"
       onClick={handleClick}
       className={`${
         currentUserFavs?.itens.includes(title) ? "opacity-100" : null

@@ -108,7 +108,7 @@ export default function Slider() {
                   </h3>
                   <div>
                     <span
-                      className={`inline-block sm:text-[.7rem] sm:mr-1 font-normal text-sm text-red-500 line-through mr-2`}
+                      className={`inline-block sm:text-[.75rem] sm:mr-1 font-normal text-sm text-red-500 line-through mr-2`}
                     >
                       2.39
                     </span>
@@ -125,7 +125,7 @@ export default function Slider() {
                 image={"/images/products/offers/lemon-juice.png"}
                 price={2.09}
                 text={"ADD TO CART"}
-                className={`w-full xs:text-[.65rem] xs:p-2 xxs:text-[.55rem] xxs:gap-0.5
+                className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}
               />
             </li>
@@ -218,7 +218,7 @@ const GenerateCards = ({ image, alt, title, old_price, price }: Props) => {
           </h3>
           <div>
             <span
-              className={`inline-block sm:text-[.7rem] sm:mr-1 font-normal text-sm text-red-500 line-through mr-2`}
+              className={`inline-block sm:text-[.75rem] sm:mr-1 font-normal text-sm text-red-500 line-through mr-2`}
             >
               {old_price.toFixed(2)}
             </span>
@@ -235,7 +235,7 @@ const GenerateCards = ({ image, alt, title, old_price, price }: Props) => {
         image={image}
         price={price}
         text={"ADD TO CART"}
-        className={`w-full xs:text-[.65rem] xs:p-2 xxs:text-[.55rem] xxs:gap-0.5
+        className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}
       />
     </li>

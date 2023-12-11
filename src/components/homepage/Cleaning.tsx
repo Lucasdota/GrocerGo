@@ -19,11 +19,23 @@ const Cleaning = (props: Props) => {
         visible: { opacity: 1, x: 0 },
       }}
     >
-      <Link href="/sections/cleaning" className="self-start">
+      <Link
+        href="/sections/cleaning"
+        id="cleaning-carousel"
+        className="self-start"
+      >
         <h3 className="text-5xl mb-3 md:text-3xl lg:px-2 self-start font-sansita font-bold tracking-wide text-gray-800">
           Cleaning
         </h3>
       </Link>
+      <button
+        onClick={() =>
+          document.getElementById("offers-carousel")?.focus()
+        }
+        className="opacity-0 absolute"
+      >
+        Return to the first carousel
+      </button>
       <Slider section="cleaning" />
     </motion.section>
   );

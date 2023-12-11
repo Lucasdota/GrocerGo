@@ -49,6 +49,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
     let handler = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) {
         setIsOpen(false);
+
         button.forEach(
           (menu) =>
             function () {
@@ -64,6 +65,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
     let pressESC = (e: KeyboardEvent) => {
       if (isOpen && e.code === "Escape") {
         setIsOpen(false);
+
         button.forEach(
           (menu) =>
             function () {
@@ -118,8 +120,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
   return (
     <div className="relative z-50 select-none h-full">
       <button
-				aria-label="open menu"
-        role="drawer"
+        aria-label="open menu"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center group gap-3 px-8 h-full justify-center w-auto after:bg-neutral-300/50 hover-bg-effect ${
@@ -153,7 +154,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
       {/* DRAWER */}
       {isOpen && (
         <motion.nav
-					tabIndex={-1}
+          tabIndex={-1}
           layout
           ref={navRef}
           variants={swipeDown}

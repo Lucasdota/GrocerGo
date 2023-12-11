@@ -89,7 +89,7 @@ function GenerateCards({image, alt, title, price, partner}: CardsProps) {
 	return (
     <li className="w-1/6 xl:w-full flex flex-col justify-between text-center border group">
       <Link
-        href=""
+        href="https://www.linkedin.com/in/lucas-dota-trombini/"
         className="border-b bg-white flex flex-col items-center justify-center"
       >
         <h3 className="font-bold px-5 pt-8 h-32 line-clamp-4 md:text-sm md:h-20 sm:h-28 xs:h-fit text-gray-800">
@@ -101,7 +101,7 @@ function GenerateCards({image, alt, title, price, partner}: CardsProps) {
           width={300}
           height={300}
           loading="lazy"
-					onLoad={HandleImageLoad}
+          onLoad={HandleImageLoad}
           className="p-10 md:p-6 xl:w-52 md:w-36 sm:w-44 xs:w-36 drop-shadow transition-opacity opacity-0 duration-[.3s]"
         />
         <span className="p-3 border-t font-extrabold text-gray-700">

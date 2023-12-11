@@ -3,40 +3,53 @@ import { ImCart } from "@react-icons/all-files/im/ImCart";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import CartDrawer from "./CartDrawer";
-import { useScrollBlock } from "@/app/hooks/useScrollBlock";
 import { AnimatePresence, motion } from "framer-motion";
+import { useScrollBlock } from "@/app/hooks/useScrollBlock";
+
+type Props = {
+  isSmartphone: boolean
+};
 
 //local storage acting like a server
-export default function Cart ()  {
+export default function Cart({ isSmartphone }: Props) {
   const {
     setLoginPopUp,
     currentUserCart,
     setCurrentUserCart,
     totalCartItens,
     setTotalCartItens,
-    setCurrentUserFavs
+    setCurrentUserFavs,
   } = useAppContext();
   const [drawer, setDrawer] = useState<boolean>(false);
   const { data: session } = useSession();
   const { email } = session?.user || {};
-  const [scrollBlock, allowScroll] = useScrollBlock();
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   function handleClick() {
     if (!session) {
       setLoginPopUp(true);
     } else {
-      setDrawer(true);	
+      setDrawer(true);
     }
   }
 
-  //block scroll when drawer is on
+  //proper blockScroll when cart drawer is open
   useEffect(() => {
     if (drawer) {
-      scrollBlock();
+      if (!isSmartphone) {
+        blockScroll();
+      } else {
+        const html = document.documentElement;
+        const { body } = document;
+        html.style.position = "relative";
+        body.style.position = "relative";
+        html.style.overflow = "hidden";
+        body.style.overflow = "hidden";
+      }
     } else {
       allowScroll();
     }
-  }, [drawer, scrollBlock, allowScroll]);
+  }, [drawer, isSmartphone, blockScroll, allowScroll]);
 
   // get/set local storage "cart"
   useEffect(() => {
@@ -121,7 +134,7 @@ export default function Cart ()  {
       >
         <button
           onClick={handleClick}
-          aria-label="cart"
+          aria-label="open cart"
           className="h-full w-full rounded-none xl:mb-2 flex items-center justify-center xl:justify-end xl:items-end after:bg-neutral-300/50 hover-bg-effect z-40 xl:z-0 xl:after:bg-transparent"
         >
           <div className="relative w-6 h-6 xl:mr-2">
@@ -142,6 +155,7 @@ export default function Cart ()  {
         {/* gray overlay */}
         {drawer && (
           <motion.div
+						aria-label="gray transparent overlay"
             key={"cart-drawer-overlay"}
             className="fixed left-0 top-0 h-full w-full bg-black/30 z-[60]"
             initial={{ opacity: 0 }}
@@ -150,7 +164,9 @@ export default function Cart ()  {
           />
         )}
         {/* animated drawer */}
-        {drawer && <CartDrawer drawer={drawer} setDrawer={setDrawer} email={email!} />}
+        {drawer && (
+          <CartDrawer drawer={drawer} setDrawer={setDrawer} email={email!} />
+        )}
       </AnimatePresence>
     </>
   );

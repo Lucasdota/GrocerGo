@@ -14,11 +14,34 @@ import SecondCards from "@/components/homepage/SecondCards/SecondCards";
 import { useState, useEffect } from "react";
 
 const Homepage = () => {
-	const [skeleton, setSkeleton] = useState(true);
+  const [skeleton, setSkeleton] = useState(true);
+	const [hasScrolled, setHasScrolled] = useState(false);
 
-	useEffect(() => {
+  useEffect(() => {
     setSkeleton(false);
   }, [setSkeleton]);
+
+  //delaying the rendering of some components until the user has scrolled down a certain distance can improve the initial page load performance. This technique is often referred to as "lazy loading" or "deferred loading."
+  useEffect(() => {
+		if (window.scrollY > 100) {
+      setHasScrolled(true);
+    }
+
+    const scrollCheck = () => {
+      if (window.scrollY > 100) {
+        setHasScrolled(true);
+        // Remove the event listener once the condition is met
+        window.removeEventListener("scroll", scrollCheck);
+      }
+    };
+
+    window.addEventListener("scroll", scrollCheck);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollCheck);
+    };
+  }, []);
 
   return (
     <>
@@ -32,15 +55,19 @@ const Homepage = () => {
           <HeroSlider />
           <FirstCards />
           <Sections />
-          <TodaysOffers />
-          <BestBeverages />
-          <FullFridge />
-          <Essentials />
-          <Cleaning />
-          <SecondCards />
-          <Partners />
-          <ThirdCards />
-          <SnackbarComponent />       
+					{hasScrolled && (
+						<>
+							<TodaysOffers />
+							<BestBeverages />
+							<FullFridge />
+							<Essentials />
+							<Cleaning />
+							<SecondCards />
+							<Partners />
+							<ThirdCards />
+						</>					
+					)}
+          <SnackbarComponent />
         </>
       )}
     </>
