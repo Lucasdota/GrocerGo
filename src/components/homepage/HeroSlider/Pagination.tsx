@@ -23,7 +23,7 @@ function Pagination({ currentPage, setPage, pages, autoSlide, setAutoSlide }: Pr
       className="lg:hidden flex justify-center absolute bottom-4 xl:bottom-10 bg-black/20 backdrop-blur-md p-0.5 px-1 shadow-[inset_0_0px_12px_rgba(0,0,0,0.1)] rounded-full border border-neutral-300/40 antialiased"
       layout
     >
-      <button onClick={() => PlayStop()} className='border-r mr-0.5 pr-0.5 border-neutral-300/40'>
+      <button role="navigation" aria-label={`play/pause autoslide functionality, Status true means on. Status: ${autoSlide}`} onClick={() => PlayStop()} className='border-r mr-0.5 pr-0.5 border-neutral-300/40'>
         {autoSlide ? (
           <BsFillPauseFill className="text-neutral-400" />
         ) : (

@@ -120,7 +120,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
   return (
     <div className="relative z-50 select-none h-full">
       <button
-        aria-label="open menu"
+        aria-label="all categories"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center group gap-3 px-8 h-full justify-center w-auto after:bg-neutral-300/50 hover-bg-effect ${

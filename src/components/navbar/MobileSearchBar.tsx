@@ -61,8 +61,10 @@ export default function MobileSearchBar() {
         />
       </div>
       <button
+        role="search"
+        aria-label="search product"
         onClick={handleSearch}
-        className="flex border-l border-black/10 gap-2 items-center px-6 py-2 bg-green-3 rounded-r-sm text-white text-[0.7rem] group"
+        className="flex border-l border-black/10 gap-2 items-center px-6 py-2 bg-green-4 rounded-r-sm text-white text-[0.7rem] group"
       >
         <BsSearch
           className="text-white group-hover:-scale-x-100 transition duration-100 group-active:scale-90"

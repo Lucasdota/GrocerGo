@@ -122,7 +122,7 @@ export default function Slider() {
               </Link>
               <AddToCart
                 name={"100% Lemon Juice"}
-                image={"/images/products/offers/lemon-juice.png"}
+                image={"/images/products/offers/lemon-juice.webp"}
                 price={2.09}
                 text={"ADD TO CART"}
                 className={`w-full xs:p-2 xxs:gap-0.5
@@ -179,7 +179,6 @@ type Props = {
 };
 
 const GenerateCards = ({ image, alt, title, old_price, price }: Props) => {
-  //if the title has any space, replaces with dashes
   //if the title has any space, replaces with dashes
   const url = UrlizeWords(title);
 

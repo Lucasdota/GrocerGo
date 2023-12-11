@@ -51,6 +51,8 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
     <div className="w-full relative aspect-[4/1.38] flex items-center">
       {/* ARROW BUTTONS */}
       <button
+        role="navigation"
+        aria-label="previous slide"
         className="absolute active:scale-75 group-hover:opacity-100 opacity-0 transition duration-300 left-0 xl:opacity-100 py-10 px-5 lg:px-3 sm:px-0 z-10"
         onClick={() => {
           if (currentPage === 0) {
@@ -63,6 +65,8 @@ function Slides({ currentPage, direction, pages, setPage }: Props) {
         <BsChevronLeft className="rounded-full h-12 w-12 xxl:h-12 xl:h-10 lg:h-8 md:h-6 xxs:h-5 xxs:w-5 text-white/90 drop-shadow-[0_3px_3px_rgb(0,0,0,.2)]" />
       </button>
       <button
+        role="navigation"
+        aria-label="next slide"
         className="absolute active:scale-75 group-hover:opacity-100 opacity-0 transition duration-300 right-0 xl:opacity-100 py-10 px-5 lg:px-3 sm:px-0 z-10"
         onClick={() => {
           if (currentPage === pages.length - 1) {

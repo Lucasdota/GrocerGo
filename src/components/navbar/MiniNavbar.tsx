@@ -22,7 +22,7 @@ const item = {
 export default function MiniNavbar() {
   return (
     <nav
-      className="xl:hidden block h-8 text-[0.65rem] text-white w-full bg-green-3"
+      className="xl:hidden block h-8 text-[0.65rem] text-white w-full bg-green-4"
     >
       <motion.div
         variants={container}
@@ -33,7 +33,7 @@ export default function MiniNavbar() {
         <motion.div variants={item} className="h-full">
           <Link
             href="/insurance"
-            className="h-full px-7 py-2 flex hover:bg-green-4  font-sans tracking-wide drop-shadow transition duration-100"
+            className="h-full px-7 py-2 flex hover:bg-green-5  font-sans tracking-wide drop-shadow transition duration-100"
           >
             Insurance
           </Link>
@@ -42,7 +42,7 @@ export default function MiniNavbar() {
         <motion.div variants={item} className="h-full">
           <Link
             href="/contact-us"
-            className="h-full px-7 py-2 flex hover:bg-green-4  font-sans tracking-wide drop-shadow transition duration-100"
+            className="h-full px-7 py-2 flex hover:bg-green-5  font-sans tracking-wide drop-shadow transition duration-100"
           >
             Contact Us
           </Link>
@@ -51,7 +51,7 @@ export default function MiniNavbar() {
         <motion.div variants={item} className="h-full">
           <Link
             href="/our-stores"
-            className="h-full px-7 py-2 flex hover:bg-green-4  font-sans tracking-wide drop-shadow transition duration-100"
+            className="h-full px-7 py-2 flex hover:bg-green-5  font-sans tracking-wide drop-shadow transition duration-100"
           >
             Our Stores
           </Link>
@@ -60,7 +60,7 @@ export default function MiniNavbar() {
         <motion.div variants={item} className="h-full">
           <Link
             href="/how-to-buy"
-            className="h-full px-7 py-2 flex hover:bg-green-4  font-sans tracking-wide drop-shadow transition duration-100"
+            className="h-full px-7 py-2 flex hover:bg-green-5  font-sans tracking-wide drop-shadow transition duration-100"
           >
             How To Buy
           </Link>
@@ -69,7 +69,7 @@ export default function MiniNavbar() {
         <motion.div variants={item} className="h-full">
           <Link
             href="/credit-card"
-            className="h-full px-7 py-2 flex relative group bg-green-4 hover:bg-green-5 hover:brightness-125 font-sans tracking-wide drop-shadow"
+            className="h-full px-7 py-2 flex relative group hover:bg-green-5 font-sans tracking-wide drop-shadow"
           >
             GrocerGo Credit Card
           </Link>
