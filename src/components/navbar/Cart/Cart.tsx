@@ -124,7 +124,7 @@ export default function Cart({ isSmartphone }: Props) {
 
   useEffect(() => {
     if (!currentUserCart) return;
-    setTotalCartItems(currentUserCart.items.length);
+    setTotalCartItems(currentUserCart.items?.length);
   });
 
   return (
