@@ -177,7 +177,7 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
 	const {
     currentUserCart,
     setCurrentUserCart,
-    setTotalCartItens,
+    setTotalCartItems,
 		setLoginPopUp
   } = useAppContext();
   const { data: session } = useSession();
@@ -196,13 +196,13 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
 
     const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
-    const findItem = currentUserCart!.itens!.find(
+    const findItem = currentUserCart!.items!.find(
       (item: any) => item.name === alt
     );
     if (findItem) {
       // If the item is already in the cart, increase its quantity
       const updatedCart = currentUserCart;
-      updatedCart!.itens.map((item: any) => {
+      updatedCart!.items.map((item: any) => {
         if (item.name === alt) {
           item.quantity += 1;
         }
@@ -211,7 +211,7 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
       //updates localCart	to apply to the local storage
       localCart.map((obj: any) => {
         if (obj.userEmail === email) {
-          obj.itens.map((item: any) => {
+          obj.items.map((item: any) => {
             if (item.name === alt) {
               item.quantity += 1;
             }
@@ -229,18 +229,18 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
       };
 
       const updatedCart = currentUserCart;
-      updatedCart!.itens.push(newItem);
+      updatedCart!.items.push(newItem);
 
       setCurrentUserCart(updatedCart);
 
       //updates localCart	to apply to the local storage
       localCart.map((obj: any) => {
         if (obj.userEmail === email) {
-          obj.itens.push(newItem);
+          obj.items.push(newItem);
         }
       });
     }
-    setTotalCartItens(currentUserCart!.itens.length);
+    setTotalCartItems(currentUserCart!.items.length);
     localStorage.setItem("cart", JSON.stringify(localCart));
   }
 
