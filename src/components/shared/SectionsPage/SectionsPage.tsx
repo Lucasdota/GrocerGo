@@ -108,9 +108,9 @@ const SectionPage = ({section, subtitle, imgLink} : Props) => {
         <Image
           src={imgLink}
           alt="section image"
-          priority
           width={1920}
           height={1080}
+					loading="lazy"
 					onLoad={HandleImageLoad}
           className="w-[30rem] xl:w-[24rem] md:w-[18rem] xs:hidden transition-opacity opacity-0 duration-[.3s]"
         />

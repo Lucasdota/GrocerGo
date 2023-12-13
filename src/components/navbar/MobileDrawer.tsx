@@ -169,7 +169,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
             <ul className="flex flex-col mb-6 xl:mt-6">
               <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
               <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
-                <li className="hover:bg-neutral-300 px-6 py-2">Chef</li>
+                <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
               </Link>
               <Link
                 onClick={() => setIsOpen(false)}
@@ -186,6 +186,15 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
               </Link>
               <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
                 <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/recipes">
+                <li className="hover:bg-neutral-300 px-6 py-2">Recipes</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/catalog">
+                <li className="hover:bg-neutral-300 px-6 py-2">Catalog</li>
+              </Link>
+              <Link onClick={() => setIsOpen(false)} href="/my-favorites">
+                <li className="hover:bg-neutral-300 px-6 py-2">My Favorites</li>
               </Link>
             </ul>
 

@@ -12,7 +12,7 @@ import HandleImageLoad from "@/components/shared/HandleImageLoad";
 const GenerateCards = () => {
 	const [reRender, setReRender] = useState<boolean>(false);
   const { currentUserFavs } = useAppContext();
-	//used to avoid duplicated itens, because catalog has the same product in different sections
+	//used to avoid duplicated items, because catalog has the same product in different sections
   const products: string[] = [];	
 
 	useEffect(() => {
@@ -20,7 +20,7 @@ const GenerateCards = () => {
 		//state changes when an item is removed in the RemoveItem component
 	}, [reRender])
 
-	if (!currentUserFavs || currentUserFavs.itens.length < 1) {
+	if (!currentUserFavs || currentUserFavs.items.length < 1) {
 		return (
 			<li className="left-1/2 absolute -translate-x-1/2">
         <p className="text-gray-700 text-2xl">No favorited items.</p>
@@ -30,7 +30,7 @@ const GenerateCards = () => {
 
   return (
 		<>
-			{currentUserFavs?.itens.map((product: string, index: number) =>
+			{currentUserFavs?.items.map((product: string, index: number) =>
 				catalog.map((obj) =>
 					obj.products.map((obj2) => {
 						if (obj2.name === product && !products.includes(obj2.name)) {
@@ -97,11 +97,11 @@ const Card = ({ section, obj, reRender, setReRender }: Props) => {
         <div
           className={`mt-4 sm:mt-2 sm:py-2  font-bold w-full py-4 leading-6 flex  flex-col`}
         >
-          <h3
+          <p
             className={`flex items-center justify-center h-14 sm:text-sm sm:h-12 whitespace-normal text-gray-700`}
           >
             {obj.name}
-          </h3>
+          </p>
           <div>
             <span
               className={`inline-block sm:text-[.7rem] sm:mr-1 text-red-500 ${
@@ -124,6 +124,7 @@ const Card = ({ section, obj, reRender, setReRender }: Props) => {
           image={obj.image}
           price={obj.price}
           text={"ADD TO CART"}
+					section={section}
           className={`w-full xs:text-[.65rem] xs:p-2 xxs:text-[.55rem] xxs:gap-0.5 rounded-lg shrink-0 gap-1 font-black text-[0.75rem] p-2.5 bg-green-4 text-neutral-50`}
         />
       </div>

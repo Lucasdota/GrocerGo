@@ -12,9 +12,9 @@ const page = () => {
       className="text-white w-full px-64 xxl:px-28 xl:px-20 lg:px-10 md:px-0 max-w-[2560px] 
 		 mx-auto relative"
     >
-      <header className="bg-green-5 h-60 md:h-48 flex justify-between rounded-b-[3rem] md:rounded-b-none">
-        <div className="m-16 md:m-8">
-          <h1 className="text-3xl lg:text-2xl md:text-xl tracking-wide font-sansita">
+      <header className="bg-green-5 h-60 md:h-fit md:gap-12 flex justify-between rounded-b-[3rem] md:rounded-b-none">
+        <div className="m-16 md:m-6">
+          <h1 className="text-3xl lg:text-2xl tracking-wide font-sansita">
             Catalog
           </h1>
           <p className="md:text-sm md:whitespace-normal tracking-wide font-sansita text-neutral-100">

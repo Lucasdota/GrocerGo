@@ -68,6 +68,7 @@ const GenerateCards = ({
         name={title}
         image={image}
         price={price}
+				section={section}
         text={"ADD TO CART"}
         className={`w-full rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] p-2.5 xs:w-fit xs:px-8 xs:mx-auto`}
       />

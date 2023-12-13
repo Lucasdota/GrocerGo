@@ -107,9 +107,9 @@ export default function GoogleMaps({ selectedState, storeLocations }: MapsData) 
               lng: storeLocations[selectedMarkerIndex].lng,
             }}
             onCloseClick={() => setSelectedMarkerIndex(null)}
-            aria-label="Store Information"
           >
             <div
+							aria-label="store informations"
               id="info-window-label"
               className="text-stone-500 font-semibold m-1 marker-text p-1"
             >

@@ -152,12 +152,12 @@ const MobileCarousel = (props: Props) => {
           className="card snap-start hidden flex-col items-center w-[300px] xxs:w-60 px-6 xxs:px-2 gap-4 pb-1"
         >
           <div className="flex gap-1 whitespace-normal">
-            <span className="text-neutral-50 drop-shadow bg-green-3 w-14 h-9 xs:w-12 rounded flex items-center justify-center">
+            <span className="text-neutral-50 drop-shadow bg-green-4 w-14 h-9 xs:w-12 rounded flex items-center justify-center">
               9
             </span>
             <h4 className="leading-5 xs:text-sm">
               Tap in{" "}
-              <span className="text-green-3">
+              <span className="text-green-4">
                 &quot;Finalize Purchase&quot;{" "}
               </span>
               and you&quot;re good to go!
@@ -178,12 +178,12 @@ const MobileCarousel = (props: Props) => {
             className="card snap-start flex flex-col items-center w-[300px] xxs:w-60 px-6 xxs:px-2 gap-4 pb-1"
           >
             <div className="flex gap-1 whitespace-normal font-nunito">
-              <span className="text-neutral-50 drop-shadow bg-green-3 w-14 xs:w-12 h-9 rounded flex items-center justify-center">
+              <span className="text-neutral-50 drop-shadow bg-green-4 w-14 xs:w-12 h-9 rounded flex items-center justify-center">
                 {item.id}
               </span>
               <h4 className="leading-5 xs:text-sm">
                 Tap in{" "}
-                <span className="text-green-3">
+                <span className="text-green-4">
                   &quot;Finalize Purchase&quot;{" "}
                 </span>
                 and you&quot;re good to go!
@@ -205,12 +205,12 @@ const MobileCarousel = (props: Props) => {
           className="card snap-start hidden flex-col items-center w-[300px] xxs:w-60 px-6 xxs:px-2 gap-4 pb-1"
         >
           <div className="flex gap-1 whitespace-normal font-nunito">
-            <span className="text-neutral-50 drop-shadow bg-green-3 w-14 h-9 xs:w-12 rounded flex items-center justify-center">
+            <span className="text-neutral-50 drop-shadow bg-green-4 w-14 h-9 xs:w-12 rounded flex items-center justify-center">
               1
             </span>
             <h4 className="leading-5 xs:text-sm">
               Tap in{" "}
-              <span className="text-green-3">
+              <span className="text-green-4">
                 &quot;Finalize Purchase&quot;{" "}
               </span>
               and you&quot;re good to go!
@@ -228,12 +228,16 @@ const MobileCarousel = (props: Props) => {
       </ul>
       {/* CHEVRON BUTTONS */}
       <button
+        role="navigation"
+        aria-label="previous slide"
         ref={arrowLeft}
         className="absolute -left-5 xxs:-left-10 bottom-40 group transition duration-100 text-neutral-500"
       >
         <BsChevronLeft className="group-active:scale-75 h-14 w-14 sm:h-12 sm:w-12 p-3" />
       </button>
       <button
+        role="navigation"
+        aria-label="next slide"
         ref={arrowRight}
         className="absolute group transition duration-100 -right-5 xxs:-right-10 bottom-40 text-neutral-500"
       >

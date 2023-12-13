@@ -18,17 +18,17 @@ const RemoveItem = ({ product, reRender, setReRender }: Props) => {
     const updatedCart = currentUserFavs;
     const jsonCart = localStorage.getItem("favorites");
     const localFavs = JSON.parse(jsonCart!);
-		updatedCart?.itens.map((item) => {
+		updatedCart?.items.map((item) => {
 			if (item === product) {
-				updatedCart?.itens.splice(updatedCart?.itens.indexOf(item), 1);
+				updatedCart?.items.splice(updatedCart?.items.indexOf(item), 1);
 			}
 		});
 		setCurrentUserFavs(updatedCart!);
 		localFavs.map((obj: any) => {
 			if (obj.userEmail === email) {
-				obj.itens.map((item: string) => {
+				obj.items.map((item: string) => {
 					if (item === product) {
-						obj.itens.splice(obj.itens.indexOf(item), 1);
+						obj.items.splice(obj.items.indexOf(item), 1);
 					}
 				});
 			}
@@ -38,8 +38,8 @@ const RemoveItem = ({ product, reRender, setReRender }: Props) => {
   }
 
   return (
-    <button onClick={() => removeItem()} className="absolute right-4 top-4">
-      {currentUserFavs?.itens.includes(product) ? (
+    <button id="removeItem" aria-label="remove item from favorites" onClick={() => removeItem()} className="absolute right-4 top-4">
+      {currentUserFavs?.items.includes(product) ? (
         <IoIosCloseCircle className="text-red-400 w-5 h-5" />
       ) : (
         <AiFillPlusCircle className="text-green-400 w-5 h-5" />

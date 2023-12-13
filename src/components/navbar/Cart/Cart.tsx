@@ -16,8 +16,8 @@ export default function Cart({ isSmartphone }: Props) {
     setLoginPopUp,
     currentUserCart,
     setCurrentUserCart,
-    totalCartItens,
-    setTotalCartItens,
+    totalCartItems,
+    setTotalCartItems,
     setCurrentUserFavs,
   } = useAppContext();
   const [drawer, setDrawer] = useState<boolean>(false);
@@ -68,7 +68,7 @@ export default function Cart({ isSmartphone }: Props) {
         } else {
           const newObj = {
             userEmail: email,
-            itens: [],
+            items: [],
           };
           setCurrentUserCart(newObj);
           localCart.push(newObj);
@@ -78,11 +78,11 @@ export default function Cart({ isSmartphone }: Props) {
         const newArray = [
           {
             userEmail: email,
-            itens: [],
+            items: [],
           },
         ];
         localStorage.setItem("cart", JSON.stringify(newArray));
-        setCurrentUserCart({ userEmail: email, itens: [] });
+        setCurrentUserCart({ userEmail: email, items: [] });
       }
     }
   }, [setCurrentUserCart, email, session]);
@@ -103,7 +103,7 @@ export default function Cart({ isSmartphone }: Props) {
         } else {
           const newObj = {
             userEmail: email,
-            itens: [],
+            items: [],
           };
           setCurrentUserFavs(newObj);
           localFavs.push(newObj);
@@ -113,18 +113,18 @@ export default function Cart({ isSmartphone }: Props) {
         const newArray = [
           {
             userEmail: email,
-            itens: [],
+            items: [],
           },
         ];
         localStorage.setItem("favorites", JSON.stringify(newArray));
-        setCurrentUserFavs({ userEmail: email, itens: [] });
+        setCurrentUserFavs({ userEmail: email, items: [] });
       }
     }
   }, [email, session, setCurrentUserFavs]);
 
   useEffect(() => {
     if (!currentUserCart) return;
-    setTotalCartItens(currentUserCart.itens.length);
+    setTotalCartItems(currentUserCart.items.length);
   });
 
   return (
@@ -139,13 +139,14 @@ export default function Cart({ isSmartphone }: Props) {
         >
           <div className="relative w-6 h-6 xl:mr-2">
             <ImCart className="w-full h-full text-green-3" />
-            {totalCartItens !== 0 && (
+            {totalCartItems !== 0 && (
               <motion.span
+								aria-label="total items in the cart"
                 className={`px-1 py-[1px] flex justify-center items-center font-sans rounded-lg text-[0.61rem] bg-green-4 text-white absolute -top-2 -right-2`}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
               >
-                {totalCartItens}
+                {totalCartItems}
               </motion.span>
             )}
           </div>

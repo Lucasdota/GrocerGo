@@ -12,7 +12,7 @@ const Discounts = () => {
       <div className="flex mx-auto w-full justify-between xl:grid grid-cols-2 grid-rows-2 xl:gap-12 xl:w-[33rem] sm:w-full sm:flex sm:flex-col sm:items-center">
         {/* FIRST */}
         <div className="w-60 h-fit bg-white rounded-t-lg drop-shadow-xl flex flex-col items-center">
-          <div className="h-12 w-full bg-green-3 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
+          <div className="h-12 w-full bg-green-4 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
             +20% OFF
           </div>
           <div className="px-10 py-8  flex flex-col items-center gap-6 w-full">
@@ -30,7 +30,7 @@ const Discounts = () => {
         </div>
         {/* SECOND */}
         <div className="w-60 h-fit bg-white rounded-t-lg drop-shadow-xl flex flex-col items-center">
-          <div className="h-12 w-full bg-green-3 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
+          <div className="h-12 w-full bg-green-4 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
             +20% OFF
           </div>
           <div className="px-10 py-8  flex flex-col items-center gap-6 w-full">
@@ -47,7 +47,7 @@ const Discounts = () => {
         </div>
         {/* THIRD */}
         <div className="w-60 h-fit bg-white rounded-t-lg drop-shadow-xl flex flex-col items-center">
-          <div className="h-12 w-full bg-green-3 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
+          <div className="h-12 w-full bg-green-4 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
             +20% OFF
           </div>
           <div className="px-10 py-8  flex flex-col items-center gap-6 w-full">
@@ -66,7 +66,7 @@ const Discounts = () => {
         </div>
         {/* FOURTH */}
         <div className="w-60 h-fit bg-white rounded-t-lg drop-shadow-xl flex flex-col items-center">
-          <div className="h-12 w-full bg-green-3 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
+          <div className="h-12 w-full bg-green-4 font-bold text-white rounded-t-lg flex items-center justify-center tracking-widest">
             +20% OFF
           </div>
           <div className="px-10 py-8  flex flex-col items-center gap-6 w-full">

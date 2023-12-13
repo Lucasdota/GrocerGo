@@ -153,11 +153,11 @@ const Carousel = (props: Props) => {
           className="card snap-start hidden flex-col items-center w-[448px] xs:w-96 xxs:w-80 xs:px-6 px-12 gap-4 pb-1"
         >
           <div className="flex gap-1 whitespace-normal">
-            <span className="text-neutral-50 drop-shadow bg-green-3 w-20 h-9 rounded flex items-center justify-center">
+            <span className="text-neutral-50 drop-shadow bg-green-4 w-20 h-9 rounded flex items-center justify-center">
               9
             </span>
             <h4 className="leading-5 xs:text-sm">
-              <span className="text-green-3">Done!</span> Your purchase is
+              <span className="text-green-4">Done!</span> Your purchase is
               currently being processed, and soon you will receive the
               notification &quot;Your Order is Finalized/Order Scheduled&quot;
             </h4>
@@ -177,11 +177,11 @@ const Carousel = (props: Props) => {
             className="card snap-start flex flex-col items-center w-[448px] xs:w-96 xxs:w-80 xs:px-6 px-12 gap-4 pb-1"
           >
             <div className="flex gap-1 whitespace-normal font-nunito">
-              <span className="text-neutral-50 drop-shadow bg-green-3 w-20 h-9 rounded flex items-center justify-center">
+              <span className="text-neutral-50 drop-shadow bg-green-4 w-20 h-9 rounded flex items-center justify-center">
                 {item.id}
               </span>
               <h4 className="leading-5 xs:text-sm">
-                <span className="text-green-3">Done!</span> Your purchase is
+                <span className="text-green-4">Done!</span> Your purchase is
                 currently being processed, and soon you will receive the
                 notification &quot;Your Order is Finalized/Order Scheduled&quot;
               </h4>
@@ -201,11 +201,11 @@ const Carousel = (props: Props) => {
           className="card snap-start hidden flex-col items-center w-[448px] xs:w-96 xxs:w-80 xs:px-6 px-12 gap-4 pb-1"
         >
           <div className="flex gap-1 whitespace-normal font-nunito">
-            <span className="text-neutral-50 drop-shadow bg-green-3 w-20 h-9 rounded flex items-center justify-center">
+            <span className="text-neutral-50 drop-shadow bg-green-4 w-20 h-9 rounded flex items-center justify-center">
               1
             </span>
             <h4 className="leading-5 xs:text-sm">
-              <span className="text-green-3">Done!</span> Your purchase is
+              <span className="text-green-4">Done!</span> Your purchase is
               currently being processed, and soon you will receive the
               notification &quot;Your Order is Finalized/Order Scheduled&quot;
             </h4>
@@ -222,12 +222,16 @@ const Carousel = (props: Props) => {
       </ul>
       {/* CHEVRON BUTTONS */}
       <button
+        role="navigation"
+        aria-label="previous slide"
         ref={arrowLeft}
         className="absolute -left-5 xs:left-2 bottom-20 xs:bottom-16 xxs:bottom-14 group transition duration-100 text-neutral-500"
       >
         <BsChevronLeft className="group-active:scale-75 h-14 w-14 sm:h-12 sm:w-12 xxs:h-10 xxs:w-10 p-3" />
       </button>
       <button
+        role="navigation"
+        aria-label="next slide"
         ref={arrowRight}
         className="absolute group transition duration-100 -right-5 xs:right-2 bottom-20 xs:bottom-16 xxs:bottom-14 text-neutral-500"
       >

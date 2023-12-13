@@ -26,6 +26,7 @@ const Delivery = () => {
       {/* CARDS */}
       <div className="flex flex-col w-full font-nunito md:text-sm">
         <div className="flex gap-8 mb-8 flex-wrap w-full justify-center">
+          {/* first */}
           <div id="first-card" className="md:w-full">
             <div className="w-[678px] md:w-full overflow-hidden bg-white rounded-xl flex md:flex-col drop-shadow-xl">
               <div className="w-1/5 md:w-full bg-green-5 rounded-l-xl md:rounded-t-xl md:rounded-l-none md:py-4 flex flex-col px-4 pt-6">
@@ -39,7 +40,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
-                  role="accordion"
+                  id="flash-delivery"
+                  aria-label="click to expand details"
                   aria-expanded={firstIsOpen}
                   onClick={() => setFirstIsOpen(!firstIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
@@ -60,23 +62,28 @@ const Delivery = () => {
                 </button>
                 <AnimatePresence>
                   {firstIsOpen && (
-                    <motion.p
-                      className="text-neutral-500 text-left leading-6 whitespace-normal"
+                    <motion.div
+                      id="flash-delivery-details"
+                      aria-labelledby="flash-delivery"
+                      role="region"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      This delivery option is available in select stores and has
-                      a limit of up to 10 items per order. Please check the
-                      availability of this option in your region.
-                    </motion.p>
+                      <p className="text-neutral-500 text-left leading-6 whitespace-normal">
+                        This delivery option is available in select stores and
+                        has a limit of up to 10 items per order. Please check
+                        the availability of this option in your region.
+                      </p>
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             </div>
           </div>
 
+          {/* second */}
           <div id="second-card" className="md:w-full">
             <div className="w-[678px] md:w-full overflow-hidden bg-white rounded-xl flex md:flex-col drop-shadow-xl whitespace-normal min-h-[140px]">
               <div className="w-1/5 md:w-full bg-green-5 rounded-l-xl md:rounded-t-xl md:rounded-l-none md:py-4 flex flex-col px-4 pt-6">
@@ -91,7 +98,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
-                  role="accordion"
+                  id="right-on"
+                  aria-label="click to expand details"
                   aria-expanded={secondIsOpen}
                   onClick={() => setSecondIsOpen(!secondIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
@@ -112,18 +120,23 @@ const Delivery = () => {
                 </button>
                 <AnimatePresence>
                   {secondIsOpen && (
-                    <motion.p
-                      className="text-neutral-500 text-left leading-6"
+                    <motion.div
+                      id="right-on-details"
+                      aria-labelledby="right-on"
+                      role="region"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      Visit the GrocerGo website or app and select the
-                      &apos;Right On&apos; option, available for purchases until
-                      5:00 PM, with a limit of up to 20 units per order. Please
-                      check the availability of this option in your region.
-                    </motion.p>
+                      <p className="text-neutral-500 text-left leading-6">
+                        Visit the GrocerGo website or app and select the
+                        &apos;Right On&apos; option, available for purchases
+                        until 5:00 PM, with a limit of up to 20 units per order.
+                        Please check the availability of this option in your
+                        region.
+                      </p>
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -131,6 +144,7 @@ const Delivery = () => {
           </div>
         </div>
         <div className="flex gap-8 flex-wrap w-full justify-center">
+          {/* third */}
           <div id="third-card" className="md:w-full">
             <div className="w-[678px] md:w-full overflow-hidden bg-white rounded-xl flex md:flex-col drop-shadow-xl">
               <div className="w-1/5 md:w-full bg-green-5 rounded-l-xl md:rounded-t-xl md:rounded-l-none md:py-4 flex flex-col px-4 pt-6">
@@ -143,7 +157,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
-                  role="accordion"
+                  id="express-delivery"
+                  aria-label="click to expand details"
                   aria-expanded={thirdIsOpen}
                   onClick={() => setThirdIsOpen(!thirdIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
@@ -166,25 +181,30 @@ const Delivery = () => {
                 </button>
                 <AnimatePresence>
                   {thirdIsOpen && (
-                    <motion.p
-                      className="text-neutral-500 text-left leading-6"
+                    <motion.div
+                      id="express-delivery-details"
+                      aria-labelledby="express-delivery"
+                      role="region"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      In this option, there is no limit on items, allowing you
-                      to secure everything for your substantial purchase.
-                      Furthermore, we deliver orders to all cities where
-                      GrocerGo operates, including inland areas, coastal
-                      regions, and mountainous areas.
-                    </motion.p>
+                      <p className="text-neutral-500 text-left leading-6">
+                        In this option, there is no limit on items, allowing you
+                        to secure everything for your substantial purchase.
+                        Furthermore, we deliver orders to all cities where
+                        GrocerGo operates, including inland areas, coastal
+                        regions, and mountainous areas.
+                      </p>
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             </div>
           </div>
 
+          {/* fourth */}
           <div id="fourth-card" className="md:w-full">
             <div className="w-[678px] md:w-full overflow-hidden bg-white rounded-xl flex md:flex-col drop-shadow-xl">
               <div className="w-1/5 md:w-full bg-green-5 rounded-l-xl md:rounded-t-xl md:rounded-l-none md:py-4 flex flex-col px-4 pt-7">
@@ -197,7 +217,8 @@ const Delivery = () => {
               </div>
               <div className="w-4/5 md:w-full flex flex-col items-center px-10 py-7 md:px-6 md:py-4">
                 <button
-                  role="accordion"
+                  id="click-and-collect"
+                  aria-label="click to expand details"
                   aria-expanded={fourthIsOpen}
                   onClick={() => setFourthIsOpen(!fourthIsOpen)}
                   className={`leading-7 md:leading-6 md:mx-auto md:text-center w-full ${
@@ -220,17 +241,21 @@ const Delivery = () => {
                 <AnimatePresence>
                   {fourthIsOpen && (
                     <motion.p
-                      className="text-neutral-500 text-left leading-6"
+                      id="click-and-collect-details"
+                      aria-labelledby="click-and-collect"
+                      role="region"                     
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      Make your purchase on the GrocerGo website or app, select
+											<p className="text-neutral-500 text-left leading-6">
+Make your purchase on the GrocerGo website or app, select
                       the Click and Collect option, and upon approval, we will
                       send an email, push notification, or SMS informing you of
                       the availability for pickup. Please note that this option
                       has a limit of 150 items per purchase.
+											</p>                    
                     </motion.p>
                   )}
                 </AnimatePresence>

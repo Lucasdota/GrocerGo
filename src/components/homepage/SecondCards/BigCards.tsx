@@ -11,6 +11,7 @@ const firstDivData = [
     id: 1,
     image: "/images/products/snacks/chips.webp",
     alt: "Potato Chips",
+    section: "snacks",
     first_title: "Potato",
     second_title: "Chips",
     fullPrice: 1.99,
@@ -21,6 +22,7 @@ const firstDivData = [
     id: 2,
     image: "/images/products/snacks/soft-drink.webp",
     alt: "Soda",
+    section: "snacks",
     first_title: "Soft",
     second_title: "Soda",
     fullPrice: 1.8,
@@ -31,6 +33,7 @@ const firstDivData = [
     id: 3,
     image: "/images/products/cheeses-and-dairy/parmesan.webp",
     alt: "Parmesan Cheese",
+    section: "cheeses-and-dairy",
     first_title: "Parmesan",
     second_title: "Cheese",
     fullPrice: 3.8,
@@ -41,6 +44,7 @@ const firstDivData = [
     id: 4,
     image: "/images/products/full-fridge/prosciutto.webp",
     alt: "Prosciutto Di Parma",
+    section: "full-fridge",
     first_title: "Prosciutto",
     second_title: "Di Parma",
     fullPrice: 4.99,
@@ -51,9 +55,10 @@ const firstDivData = [
     id: 5,
     image: "/images/products/canneds/peach.webp",
     alt: "Canned Peach",
+    section: "canneds",
     first_title: "Canned",
     second_title: "Peach",
-		fullPrice: 3.40,
+    fullPrice: 3.4,
     price: "3",
     decimal_price: ".70",
   },
@@ -64,6 +69,7 @@ const secondDivData = [
     id: 1,
     image: "/images/products/cheeses-and-dairy/gouda.webp",
     alt: "Gouda Cheese",
+    section: "cheeses-and-dairy",
     first_title: "Gouda",
     second_title: "Cheese",
     fullPrice: 3.75,
@@ -74,6 +80,7 @@ const secondDivData = [
     id: 2,
     image: "/images/products/fishery/tilapia.webp",
     alt: "Tilapia",
+    section: "fishery",
     first_title: "Southern",
     second_title: "Tilapia",
     fullPrice: 5.08,
@@ -84,6 +91,7 @@ const secondDivData = [
     id: 3,
     image: "/images/products/frozen/yogurt.webp",
     alt: "Strawberry Yogurt",
+    section: "frozen",
     first_title: "Strawberry",
     second_title: "Yogurt",
     fullPrice: 2.09,
@@ -94,6 +102,7 @@ const secondDivData = [
     id: 4,
     image: "/images/products/beverages/grapes-juice.webp",
     alt: "100% Grape Juice",
+    section: "beverages",
     first_title: "100%",
     second_title: "Grape Juice",
     fullPrice: 2.79,
@@ -104,9 +113,10 @@ const secondDivData = [
     id: 5,
     image: "/images/products/rotisserie/peking-duck.webp",
     alt: "Roasted Duck",
+    section: "rotisserie",
     first_title: "Roasted",
     second_title: "Duck",
-		fullPrice: 16.09,
+    fullPrice: 16.09,
     price: "16",
     decimal_price: ".09",
   },
@@ -123,6 +133,7 @@ export default function BigCards (props: Props)  {
             key={card.id}
             image={card.image}
             alt={card.alt}
+            section={card.section}
             fullPrice={card.fullPrice}
             first_title={card.first_title}
             second_title={card.second_title}
@@ -137,6 +148,7 @@ export default function BigCards (props: Props)  {
             key={card.id}
             image={card.image}
             alt={card.alt}
+            section={card.section}
             fullPrice={card.fullPrice}
             first_title={card.first_title}
             second_title={card.second_title}
@@ -152,6 +164,7 @@ export default function BigCards (props: Props)  {
 type CardsProps = {
 	image: string;
 	alt: string;
+	section: string;
 	fullPrice: number;
 	first_title: string;
 	second_title: string;
@@ -159,7 +172,7 @@ type CardsProps = {
 	decimal_price: string
 }
 
-function GenerateCards ({image, alt, fullPrice, first_title, second_title, price, decimal_price}: CardsProps) {
+function GenerateCards ({image, alt, section, fullPrice, first_title, second_title, price, decimal_price}: CardsProps) {
 	const [popUp, setPopUp] = useState<boolean>(false);
 	const {
     currentUserCart,
@@ -211,6 +224,7 @@ function GenerateCards ({image, alt, fullPrice, first_title, second_title, price
         name: alt,
         image: image,
         price: fullPrice,
+				section: section,
         quantity: 1,
       };
 

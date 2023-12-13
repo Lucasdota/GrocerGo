@@ -13,6 +13,7 @@ const SearchBar = ({ query, setQuery, handleSearch, loading }: Props) => {
       <h2 className="font-semibold">Search recipes by ingredients:</h2>
       <form onSubmit={handleSearch} className="h-9 relative flex items-center">
         <input
+					aria-label="search recipes by ingredients"
           spellCheck="false"
           type="text"
           placeholder="Enter an ingredient"
@@ -21,6 +22,7 @@ const SearchBar = ({ query, setQuery, handleSearch, loading }: Props) => {
           className="rounded-xl pl-10 pr-3 py-1.5 text-white bg-gradient-to-br from-[#494949] to-[#313131] placeholder-neutral-200 focus:outline-none text-sm shadow h-full w-[13.7rem]"
         />
         <button
+					aria-label="search"
           onClick={handleSearch}
           disabled={loading}
           className="rounded-r-xl h-full shadow bg-transparent absolute bottom-0 left-[0.8rem] group"

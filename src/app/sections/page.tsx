@@ -98,7 +98,6 @@ const cardsData = [
 ];
 
 const page = () => {
-
 	cardsData.sort((a, b) => {
     const titleA = a.title.toUpperCase(); // Convert to uppercase for case-insensitive sorting
     const titleB = b.title.toUpperCase();

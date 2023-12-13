@@ -53,6 +53,7 @@ const ProductsPage = ({ product, section }: Product) => {
             No products found.
           </h1>
           <button
+						aria-label="go back to previous url"
             onClick={() => router.back()}
             className="hover-bg2-effect text-neutral-100 bg-green-4 after:bg-green-3 hover:text-neutral-100 outline outline-[2px] outline-green-3 hover:outline-green-4 font-bold text-2xl  px-4 py-1.5 rounded-lg drop-shadow-md"
           >
@@ -82,6 +83,7 @@ const ProductsPage = ({ product, section }: Product) => {
     >
       <section className="bg-white p-16 flex flex-col gap-36 xl:gap-16 md:px-4 md:gap-8 xl:p-8 relative lg:pt-14">
         <button
+				aria-label="go back to previous url"
           onClick={() => window.history.back()}
           className="absolute top-5 flex items-center gap-1 group shadow p-1 rounded-full bg-neutral-50"
         >
@@ -230,6 +232,7 @@ const ProductsPage = ({ product, section }: Product) => {
               image={obj.image}
               price={obj.price}
               quantity={quantity}
+							section={section}
             />
             <p className="leading-5 text-gray-800 xl:whitespace-normal sm:text-sm">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.

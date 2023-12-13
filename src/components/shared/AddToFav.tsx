@@ -31,23 +31,23 @@ const AddToFav = ({ title }: Props) => {
 		const updatedCart = currentUserFavs;
     const jsonCart = localStorage.getItem("favorites");
     const localFavs = JSON.parse(jsonCart!);
-    const findItem = currentUserFavs!.itens.find(
+    const findItem = currentUserFavs!.items.find(
       (item: any) => item === title
     );
     if (findItem) { // If the item is already in the favorites, removes it
 			setSnackbarSeverity(true);
       setSnackbarText(`${title} removed from your favorites.`);
-			updatedCart?.itens.map((item) => {
+			updatedCart?.items.map((item) => {
 				if (item === title) {
-					updatedCart?.itens.splice(updatedCart?.itens.indexOf(item), 1)
+					updatedCart?.items.splice(updatedCart?.items.indexOf(item), 1)
 				}
 			});
 			setCurrentUserFavs(updatedCart!);
 			localFavs.map((obj: any) => {
 				if (obj.userEmail === email) {
-					obj.itens.map((item: string) => {
+					obj.items.map((item: string) => {
 						if (item === title) {
-							obj.itens.splice(obj.itens.indexOf(item), 1)
+							obj.items.splice(obj.items.indexOf(item), 1)
 						}
 					})
 				}
@@ -58,11 +58,11 @@ const AddToFav = ({ title }: Props) => {
 			setSnackbarSeverity(false);
       setSnackbarText(`${title} added to your favorites.`);
 
-			updatedCart?.itens.push(title);
+			updatedCart?.items.push(title);
 			setCurrentUserFavs(updatedCart!);
 			localFavs.map((obj: any) => {
 				if (obj.userEmail === email) {
-					obj.itens.push(title);
+					obj.items.push(title);
 				}
 			});
 			localStorage.setItem("favorites", JSON.stringify(localFavs));
@@ -72,14 +72,14 @@ const AddToFav = ({ title }: Props) => {
   return (
     <button
       role="checkbox"
-      aria-checked={currentUserFavs?.itens.includes(title)}
+      aria-checked={currentUserFavs?.items.includes(title)}
       aria-label="add to favorite"
       onClick={handleClick}
       className={`${
-        currentUserFavs?.itens.includes(title) ? "opacity-100" : null
+        currentUserFavs?.items.includes(title) ? "opacity-100" : null
       } absolute top-4 right-4 opacity-0 transition-[opacity] duration-200 group-hover:opacity-100 lg:opacity-100 focus:opacity-100`}
     >
-      {currentUserFavs?.itens.includes(title) ? (
+      {currentUserFavs?.items.includes(title) ? (
         <BsHeartFill className="fill-green-2/80 w-5 h-5 xxs:w-4 xxs:h-4" />
       ) : (
         <BsHeart className="fill-gray-400/80 w-5 h-5 xxs:w-4 xxs:h-4" />

@@ -45,6 +45,7 @@ const Interface = () => {
         alt="background carts"
         width={1920}
         height={2880}
+				loading="lazy"
         className="w-full h-full opacity-60 object-cover absolute top-0 left-0 -z-10"
       />
       <motion.header
@@ -96,6 +97,7 @@ function GenerateCards({ item }: CardsProps) {
   return (
     <li className="shadow rounded-lg hover:scale-105 transition duration-200 bg-neutral-100">
       <Link
+				aria-label={`go to ${item.name} page`}
         href={`/specials/${url}`}
         className="flex md:flex-col md:items-center gap-8 p-8"
       >

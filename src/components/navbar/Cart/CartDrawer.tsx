@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import LeafLine from '../../../../public/images/others/leaf-string.webp';
 import Truck from "../../../../public/images/others/truck.webp";
-import DrawerItens from './DrawerItens';
+import DrawerItems from './DrawerItems';
 import { useAppContext } from '@/app/api/AppContext';
 import { IoMdClose } from "react-icons/io";
 
@@ -88,8 +88,8 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
       <header className="flex flex-col items-center">
         <h1 className="font-black text-3xl xs:text-2xl mb-8 xs:mb-4 tracking-wider">
           YOUR CART
-          {currentUserCart!.itens.length > 0 &&
-            `(${currentUserCart!.itens.length})`}
+          {currentUserCart!.items.length > 0 &&
+            `(${currentUserCart!.items.length})`}
         </h1>
         <p className="font-bold xs:text-sm xs:text-center">
           {freeDeliveryPrice === 99
@@ -124,11 +124,12 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
         className="flex w-full h-[1px] rounded bg-neutral-100 mt-8 xs:mt-4 mb-4"
       />
 
-      {/* itens */}
-      <DrawerItens
+      {/* items */}
+      <DrawerItems
         email={email}
         totalPrice={totalPrice}
         setTotalPrice={setTotalPrice}
+        setDrawer={setDrawer}
       />
 
       {/* total price */}

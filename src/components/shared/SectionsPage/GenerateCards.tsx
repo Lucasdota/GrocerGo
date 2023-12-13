@@ -1,42 +1,31 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import AddToCart from "@/components/shared/AddToCart";
-import AddToFav from '@/components/shared/AddToFav';
+import AddToFav from "../AddToFav";
+import { BiSolidOffer } from "react-icons/bi";
+import UrlizeWords from "@/components/shared/UrlizeWords";
 
 type Props = {
+  section: string;
   uiGrid: boolean;
   image: string;
   alt: string;
   title: string;
   old_price: number | undefined;
   price: number;
-  section?: string;
 };
 
 const GenerateCards = ({
+  section,
   image,
   alt,
   title,
   old_price,
   price,
   uiGrid,
-  section,
 }: Props) => {
-  //if the title has any space, replaces it with dashes
-  const stringWithHyphens = title.toLocaleLowerCase().replace(/\s+/g, "-");
-  const stringWithoutNumbersAndSpecialChars = stringWithHyphens.replace(
-    /[^a-zA-Z-]/g,
-    ""
-  );
-  const linkTitle =
-    stringWithoutNumbersAndSpecialChars.charAt(0) === "-"
-      ? stringWithoutNumbersAndSpecialChars.replace(
-          stringWithoutNumbersAndSpecialChars.charAt(0),
-          ""
-        )
-      : stringWithoutNumbersAndSpecialChars;
-
-	const fixedSection = section ? section : "undefined";		
+  //if the title has any space, replaces with dashes
+  const url = UrlizeWords(title);
 
   return (
     <li
@@ -45,8 +34,13 @@ const GenerateCards = ({
       } h-fit w-full flex bg-white text-center p-4 rounded-lg transition duration-200 ease-in-out relative after:absolute after:w-full after:h-full after:shadow-[0_5px_20px_rgba(0,0,0,.15)] after:opacity-0 after:transition-[opacity] after:duration-200 after:ease-in-out after:hover:opacity-100 product-card after:z-[-1] after:top-0 after:left-0 group`}
     >
       <AddToFav title={title} />
+      <BiSolidOffer
+        className={`absolute text-red-400 w-6 h-6 top-4 left-4 xxs:w-5 xxs:h-5 ${
+          old_price === 0 ? "hidden" : null
+        }`}
+      />
       <Link
-        href={`/sections/${section}/${linkTitle}`}
+        href={`/sections/${section}/${url}`}
         className={`${
           uiGrid
             ? "rounded-t-lg flex-col"
@@ -83,14 +77,14 @@ const GenerateCards = ({
               uiGrid
                 ? "flex items-center justify-center h-14 sm:text-sm sm:h-12"
                 : "md:text-base"
-            } whitespace-normal `}
+            } whitespace-normal`}
           >
             {title}
           </h3>
           <span
             className={`${
               uiGrid ? "hidden" : "block"
-            } xl:text-base md:text-sm xs:whitespace-normal`}
+            } xl:text-base md:text-sm xs:whitespace-normal mr-4`}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
             mollitia.
@@ -99,9 +93,9 @@ const GenerateCards = ({
             <span
               className={`${
                 uiGrid ? "inline-block sm:text-[.7rem] sm:mr-1" : "hidden"
-              } ${
-                old_price === 0 ? "hidden" : "inline-block"
-              } font-normal text-sm text-red-500 line-through mr-2`}
+              } font-normal text-sm text-red-500 line-through mr-2 ${
+                old_price === 0 ? "hidden" : ""
+              }`}
             >
               {old_price?.toFixed(2)}
             </span>
@@ -117,8 +111,8 @@ const GenerateCards = ({
       </Link>
       <div
         className={`${
-          uiGrid ? "w-full" : "ml-4 w-52 h-full xs:w-full"
-        } flex flex-col gap-2`}
+          uiGrid ? "w-full" : "w-52 h-full xs:w-full"
+        } flex flex-col gap-2 `}
       >
         <p
           className={`${
@@ -126,19 +120,19 @@ const GenerateCards = ({
           } font-extrabold text-2xl w-full h-full text-green-4 flex items-center justify-center`}
         >
           <span
-            className={`${
-              old_price === 0 ? "hidden" : "inline-block"
-            } font-normal text-sm text-red-500 line-through mr-2 md:text-[.7rem]`}
+            className={`font-normal text-sm text-red-500 line-through mr-2 md:text-[.7rem] ${
+              old_price === 0 ? "hidden" : ""
+            }`}
           >
             {old_price?.toFixed(2)}
           </span>
-          $&nbsp;{price?.toFixed(2)}
+          $&nbsp;{price.toFixed(2)}
         </p>
         <AddToCart
           name={title}
           image={image}
           price={price}
-          section={fixedSection}
+          section={section}
           text={"ADD TO CART"}
           className={`${
             uiGrid
@@ -151,4 +145,4 @@ const GenerateCards = ({
   );
 };
 
-export default GenerateCards
+export default GenerateCards;

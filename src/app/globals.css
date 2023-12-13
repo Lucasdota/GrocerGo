@@ -6,6 +6,7 @@
 @import "./styles/hover-bg.css";
 @import "./styles/hover-bg2.css";
 @import "./styles/drawer.css";
+@import "./styles/homepage-animations.css";
 
 *,
 *::after,
@@ -36,6 +37,7 @@ body {
 	background-image: url('/images/firstcards/grapes-bg.webp')
 }
 
+/* smaller image when in mobile to improve initial load speed */
 @media (max-width: 768px) {
 	.homepage-farm-bg {
 		background-image: url('/images/firstcards/mobile-grapes-bg.webp')
@@ -45,8 +47,6 @@ body {
 .free-delivery-banner-homepage {
   background-image: radial-gradient(rgba(0, 0, 0, 0.9), transparent);
 }
-
-
 
 /* HOMEPAGE HERO SLIDER */
 .slides {

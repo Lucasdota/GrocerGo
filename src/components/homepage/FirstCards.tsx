@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -52,14 +51,13 @@ const FirstCards = () => {
 	}, [isMobile])
 
   return (
-    <motion.section
-      className="w-full xs:space-y-2 -mt-12 md:mt-0 flex flex-col relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.1 }}
-    >
+    <section className="w-full xs:space-y-2 -mt-12 md:mt-0 flex flex-col relative fadeIn">
       {/* DESCRIP */}
-      <div className={`px-4 md:p-6 py-40 lg:py-20 flex relative z-10 ${isMobile ? "bg-green-6" : "first-card-homepage"}`}>
+      <div
+        className={`px-4 md:p-6 py-40 lg:py-20 flex relative z-10 ${
+          isMobile ? "bg-green-6" : "first-card-homepage"
+        }`}
+      >
         <p className="text-neutral-100 text-2xl lg:text-xl xs:text-base font-semibold mx-auto w-1/2 xl:w-3/5 lg:w-4/5 md:w-full p-10 whitespace-normal bg-green-6 cool-border -rotate-2 border-2 border-green-5 md:rotate-0 drop-shadow-lg">
           &quot;&nbsp;&nbsp;Discover a diverse selection of fresh produce,
           pantry essentials, and more, all at affordable prices. With speedy and
@@ -71,9 +69,13 @@ const FirstCards = () => {
         </p>
       </div>
 
-			{/* FARM BG AND BANNER */}
-      <div aria-label="farm background image" className="relative overflow-hidden flex items-center justify-center xs:bg-green-6 w-full homepage-farm-bg bg-cover bg-center h-[50dvh] lg:[50dvw] md:h-52">
-        <div role="banner"
+      {/* FARM BG AND BANNER */}
+      <div
+        aria-label="farm background image"
+        className="relative overflow-hidden flex items-center justify-center xs:bg-green-6 w-full homepage-farm-bg bg-cover bg-center h-[50dvh] lg:[50dvw] md:h-52"
+      >
+        <div
+          role="banner"
           className="absolute w-full flex free-delivery-banner-homepage p-16 lg:p-12 md:p-8 xs:p-4 md:!transform-none mb-[40%] xxl:mb-[45%] xl:mb-[50%] lg:mb-[35%] md:mb-[0%]"
           style={{ transform: `translateY(${translateY}px)` }}
         >
@@ -94,7 +96,10 @@ const FirstCards = () => {
           </p>
         </div>
 
-        <div role="separator" className="bg-neutral-100 w-2 rounded-xl h-20 md:h-2 sm:h-1.5 xs:h-1 md:w-3/5" />
+        <div
+          role="separator"
+          className="bg-neutral-100 w-2 rounded-xl h-20 md:h-2 sm:h-1.5 xs:h-1 md:w-3/5"
+        />
 
         <div className="flex items-center justify-center xs:whitespace-normal w-fit mx-auto h-full gap-8 md:gap-4">
           <h3 className="text-green-1 brightness-125 font-bold text-3xl lg:text-2xl sm:text-xl xs:text-sm antialiased font-sansita tracking-wide">
@@ -125,7 +130,7 @@ const FirstCards = () => {
           ></path>
         </svg>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -10,14 +10,15 @@ type Props = {
   name: string;
 	image: string;
   price: number;
+	section: string
 };
 
-const AddToCart = ({ text, className, name, image, price }: Props) => {
+const AddToCart = ({ text, className, name, image, price, section }: Props) => {
 	const [popUp, setPopUp] = useState<boolean>(false);
 	const {
     currentUserCart,
     setCurrentUserCart,
-    setTotalCartItens,
+    setTotalCartItems,
     setLoginPopUp,
   } = useAppContext();
 	const { data: session } = useSession();
@@ -36,13 +37,13 @@ const AddToCart = ({ text, className, name, image, price }: Props) => {
 
 		const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
-    const findItem = currentUserCart!.itens!.find(
+    const findItem = currentUserCart!.items!.find(
       (item: any) => item.name === name
     );
     if (findItem) {
       // If the item is already in the cart, increase its quantity
 			const updatedCart = currentUserCart;
-			updatedCart!.itens.map((item: any) => {
+			updatedCart!.items.map((item: any) => {
         if (item.name === name) {
           item.quantity += 1;
         }
@@ -51,7 +52,7 @@ const AddToCart = ({ text, className, name, image, price }: Props) => {
       //updates localCart	to apply to the local storage
       localCart.map((obj: any) => {
         if (obj.userEmail === email) {
-          obj.itens.map((item: any) => {
+          obj.items.map((item: any) => {
             if (item.name === name) {
               item.quantity += 1;
             }
@@ -65,21 +66,22 @@ const AddToCart = ({ text, className, name, image, price }: Props) => {
         image: image,
         price: price,
         quantity: 1,
+				section: section
       };
 
 			const updatedCart = currentUserCart;
-			updatedCart!.itens.push(newItem);
+			updatedCart!.items.push(newItem);
 
       setCurrentUserCart(updatedCart)
 
       //updates localCart	to apply to the local storage
       localCart.map((obj: any) => {
         if (obj.userEmail === email) {
-          obj.itens.push(newItem);
+          obj.items.push(newItem);
         }
       });
     }
-		setTotalCartItens(currentUserCart!.itens.length);
+		setTotalCartItems(currentUserCart!.items.length);
     localStorage.setItem("cart", JSON.stringify(localCart));
   }
 

@@ -98,7 +98,6 @@ const cardsData = [
 ];
 
 export default function Sections() {
-	
 	cardsData.sort((a, b) => {
     const titleA = a.title.toUpperCase(); // Convert to uppercase for case-insensitive sorting
     const titleB = b.title.toUpperCase();
@@ -113,24 +112,14 @@ export default function Sections() {
   });
 
   return (
-    <motion.section
-      className="w-full flex items-center justify-center mt-10 md:mt-6 lg:px-2 px-64 gg:px-44 xxl:px-28 xl:px-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      variants={{
-        hidden: { opacity: 0, y: -50 },
-        visible: { opacity: 1, y: 0 },
-      }}
-    >
+    <section className="w-full flex items-center justify-center mt-10 md:mt-6 lg:px-2 px-64 gg:px-44 xxl:px-28 xl:px-20 fadeIn">
       {/* CARDS */}
       <ul className="text-lg font-bold sm:text-4xl w-full grid grid-cols-9 md:grid-cols-6 xs:grid-cols-3 gap-y-4 md:gap-y-2 xs:gap-y-1">
         {cardsData.map((card) => (
           <GenerateCards key={card.id} image={card.image} title={card.title} />
         ))}
       </ul>
-    </motion.section>
+    </section>
   );
 }
 

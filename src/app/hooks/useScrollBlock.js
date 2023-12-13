@@ -1,5 +1,3 @@
-import { useRef } from "react";
-
 const useScrollBlock = () => {
   const blockScroll = () => {
     if (typeof document === "undefined") return;
@@ -47,8 +45,7 @@ const useScrollBlock = () => {
     body.style.overflow = "";
     body.style.paddingRight = "";
 		header.style.paddingRight = "";		
-		
-		console.log("allowScroll");
+
   };
 
   return [blockScroll, allowScroll];

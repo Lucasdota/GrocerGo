@@ -9,11 +9,12 @@ type Props = {
   image: string;
   price: number;
   quantity: number;
+	section: string
 };
 
-const AddBtn = ({ name, image, price, quantity }: Props) => {
-	const [popUp, setPopUp] = useState<boolean>(false);
-	const {
+const AddBtn = ({ name, image, price, quantity, section }: Props) => {
+  const [popUp, setPopUp] = useState<boolean>(false);
+  const {
     currentUserCart,
     setCurrentUserCart,
     setTotalCartItens,
@@ -22,16 +23,16 @@ const AddBtn = ({ name, image, price, quantity }: Props) => {
   const { data: session } = useSession();
   const { email } = session?.user || {};
 
-	function handleClick() {
-		if (!session) {
+  function handleClick() {
+    if (!session) {
       setLoginPopUp(true);
       return;
-    } 
+    }
 
-		setPopUp(true);
-		setTimeout(() => {
-			setPopUp(false)
-		}, 3000)
+    setPopUp(true);
+    setTimeout(() => {
+      setPopUp(false);
+    }, 3000);
 
     const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
@@ -64,6 +65,7 @@ const AddBtn = ({ name, image, price, quantity }: Props) => {
         image: image,
         price: price,
         quantity: quantity,
+        section: section
       };
 
       const updatedCart = currentUserCart;
@@ -83,17 +85,17 @@ const AddBtn = ({ name, image, price, quantity }: Props) => {
   }
 
   return (
-		<>
-			<button
-				onClick={handleClick}
-				className="bg-green-4 text-white font-black text-[0.75rem] w-36 h-10 gap-2 active:translate-y-[1px]"
-			>
-				ADD TO CART
-			</button>
-			<AnimatePresence>
-				{popUp && <AddPopUp name={name} setPopUp={setPopUp} />}
-			</AnimatePresence>			
-		</>
+    <>
+      <button
+        onClick={handleClick}
+        className="bg-green-4 text-white font-black text-[0.75rem] w-36 h-10 gap-2 active:translate-y-[1px]"
+      >
+        ADD TO CART
+      </button>
+      <AnimatePresence>
+        {popUp && <AddPopUp name={name} setPopUp={setPopUp} />}
+      </AnimatePresence>
+    </>
   );
 };
 

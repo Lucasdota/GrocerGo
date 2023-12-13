@@ -173,7 +173,7 @@ const Form = () => {
 
 	return (
     <fieldset>
-      <legend className="text-2xl lg:text-lg font-semibold text-green-2 mb-3">
+      <legend className="text-2xl lg:text-lg font-semibold text-green-4 mb-3">
         How to Apply
       </legend>
       <p className="text-green-5 whitespace-normal lg:text-base">

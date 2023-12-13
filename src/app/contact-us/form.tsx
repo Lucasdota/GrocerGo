@@ -120,7 +120,7 @@ const Form = () => {
 
   return (
     <section>
-      <h2 className="text-2xl font-semibold text-green-2 mb-4 lg:text-lg lg:mb-3">
+      <h2 className="text-2xl font-semibold text-green-4 mb-4 lg:text-lg lg:mb-3">
         Contact Form
       </h2>
       <form

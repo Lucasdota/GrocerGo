@@ -30,7 +30,7 @@ const Cards = () => {
           className={`px-4 py-2 min-w-[5rem] brightness-110 transition-transform duration-700 hover:duration-300 border rounded-lg text-sm ${
             card === "international"
               ? "bg-gradient-to-r from-green-4 to-green-5 text-white border-transparent"
-              : "bg-transparent text-green-3 border-green-3 hover:translate-y-1"
+              : "bg-transparent text-green-4 border-green-4 hover:translate-y-1"
           }`}
         >
           International
@@ -40,7 +40,7 @@ const Cards = () => {
           className={`px-4 py-2 min-w-[5rem] ease-out brightness-110 transition-transform duration-700 hover:duration-300 border rounded-lg text-sm ${
             card === "platinum"
               ? "bg-gradient-to-r from-[#505278] to-[#27293d] text-white border-transparent"
-              : "bg-transparent text-green-3 border-green-3 hover:translate-y-1"
+              : "bg-transparent text-green-4 border-green-4 hover:translate-y-1"
           }`}
         >
           Platinum
@@ -50,7 +50,7 @@ const Cards = () => {
           className={`px-4 py-2 min-w-[5rem] ease-out brightness-110 transition-transform duration-700 hover:duration-300 border rounded-lg text-sm ${
             card === "black"
               ? "bg-gradient-to-r from-[#333333] to-black text-white border-transparent"
-              : "bg-transparent text-green-3 border-green-3 hover:translate-y-1"
+              : "bg-transparent text-green-4 border-green-4 hover:translate-y-1"
           }`}
         >
           Black
@@ -86,7 +86,7 @@ const Cards = () => {
               <div className="flex gap-2 md:flex-col md:text-center">
                 <div className="space-y-4 md:flex md:flex-col md:items-center">
                   <div>
-                    <h5 className="flex items-center gap-2 text-green-3 font-bold text-left md:justify-center">
+                    <h5 className="flex items-center gap-2 text-green-4 font-bold text-left md:justify-center">
                       <AiOutlinePercentage className="w-7 h-7" />
                       +20% discount
                     </h5>
@@ -96,12 +96,12 @@ const Cards = () => {
                       exclusive brands (MiBaloon, Conquer, and NinjaIn).
                     </p>
                   </div>
-                  <h5 className="flex items-center gap-2 text-left text-green-3 font-bold">
+                  <h5 className="flex items-center gap-2 text-left text-green-4 font-bold">
                     <FaCcMastercard className="w-7 h-7" />
                     Credit Card benefits¹
                   </h5>
                   <div>
-                    <h5 className="flex items-center gap-2 text-left text-green-3 font-bold md:justify-center">
+                    <h5 className="flex items-center gap-2 text-left text-green-4 font-bold md:justify-center">
                       <RiBillLine className="w-7 h-7" />
                       100% digital billing
                     </h5>
@@ -159,7 +159,7 @@ const Cards = () => {
               <div className="flex gap-2 md:flex-col md:text-center">
                 <div className="space-y-4 md:flex md:flex-col md:items-center">
                   <div>
-                    <h5 className="flex items-center gap-2 text-green-3 font-bold text-left md:justify-center">
+                    <h5 className="flex items-center gap-2 text-green-4 font-bold text-left md:justify-center">
                       <AiOutlinePercentage className="w-7 h-7" />
                       +20% discount
                     </h5>
@@ -170,7 +170,7 @@ const Cards = () => {
                     </p>
                   </div>
                   <div>
-                    <h5 className="flex items-center gap-2 text-green-3 font-bold text-left md:justify-center">
+                    <h5 className="flex items-center gap-2 text-green-4 font-bold text-left md:justify-center">
                       <AiOutlineStar className="w-7 h-7" />
                       Loyalty program
                     </h5>
@@ -178,12 +178,12 @@ const Cards = () => {
                       Use your points for cashback and for airline miles.
                     </p>
                   </div>
-                  <h5 className="flex items-center gap-2 text-left text-green-3 font-bold">
+                  <h5 className="flex items-center gap-2 text-left text-green-4 font-bold">
                     <FaCcMastercard className="w-7 h-7" />
                     Credit Card benefits²
                   </h5>
                   <div>
-                    <h5 className="flex items-center gap-2 text-left text-green-3 font-bold md:justify-center">
+                    <h5 className="flex items-center gap-2 text-left text-green-4 font-bold md:justify-center">
                       <RiBillLine className="w-7 h-7" />
                       100% digital billing
                     </h5>

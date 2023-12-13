@@ -60,7 +60,7 @@ function Container () {
         return (
           splitTerms &&
           splitTerms.some((word2) => {
-            // Added null/undefined check
+            // null/undefined check
             if (word2.toLowerCase() === word.toLowerCase()) {
               if (!uniqueProductNames.includes(product.name)) {
                 product.section = section.section; // adds section to use it in the GenerateCards Link

@@ -67,7 +67,7 @@ const Recipes = () => {
 	}, [search])
 
   return (
-    <section className="w-full bg-neutral-100/90 md:p-10 xs:p-6 shadow min-h-screen p-20 pb-40">
+    <section className="w-full bg-neutral-100/90 md:p-10 xs:p-6 shadow min-h-screen p-20 pt-12 pb-40">
       <AnimatePresence mode="wait">
         {clicked === "main" && urlHasId === null ? (
           <motion.div

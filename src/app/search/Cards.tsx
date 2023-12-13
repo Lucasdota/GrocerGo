@@ -211,14 +211,14 @@ const Cards = ({
 
           {/* ui buttons */}
           <div className="flex gap-6 items-center xxl:gap-2">
-            <button onClick={() => setUiGrid(false)}>
+            <button aria-label="display items in lines" onClick={() => setUiGrid(false)}>
               <AiOutlineBars
                 className={`${
                   !uiGrid ? "text-green-3" : "text-gray-600"
                 } w-7 h-7`}
               />
             </button>
-            <button onClick={() => setUiGrid(true)}>
+            <button aria-label="display items in a grid" onClick={() => setUiGrid(true)}>
               <PiSquaresFourLight
                 className={`${
                   uiGrid ? "text-green-3" : "text-gray-600"

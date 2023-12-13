@@ -38,17 +38,24 @@ function GeneratePosts({ post, setOnPost }: Props) {
   return (
     <div className="w-full h-64 font-serif bg-neutral-100 rounded-lg drop-shadow relative p-6 flex flex-col items-center justify-between text-gray-800 overflow-hidden">
       <div className="flex w-full justify-between mb-6 xxs:flex-col">
-        <h3 className="text-xl tracking-wide font-semibold sm:text-base">{post.title}</h3>
+        <h3 className="text-xl tracking-wide font-semibold sm:text-base">
+          {post.title}
+        </h3>
         <p className="text-gray-400 text-sm italic tracking-widest sm:text-[0.7rem]">
           {post.date}
         </p>
       </div>
-      <p className="w-full tracking-wide whitespace-normal sm:text-sm">{post.text}</p>
+      <p className="w-full tracking-wide whitespace-normal sm:text-sm">
+        {post.text}
+      </p>
       <div className="absolute w-full h-full top-0 bg-blog-posts flex flex-col justify-end pb-4 px-6">
         <div className="w-full flex justify-between">
           <div className="flex items-center font-mono gap-2">
             <div className="flex items-center">
-              <button onClick={() => checkLike("liked")}>
+              <button
+                aria-label="like this post"
+                onClick={() => checkLike("liked")}
+              >
                 <BiSolidLike
                   className={`w-6 h-6 mr-1 ${
                     like === "liked" ? "text-green-3" : "text-gray-400"
@@ -64,7 +71,10 @@ function GeneratePosts({ post, setOnPost }: Props) {
               </span>
             </div>
             <div className="flex items-center">
-              <button onClick={() => checkLike("disliked")}>
+              <button
+                aria-label="dislike this post"
+                onClick={() => checkLike("disliked")}
+              >
                 <BiSolidDislike
                   className={`w-6 h-6 mr-1 ${
                     like === "disliked" ? "text-red-400" : "text-gray-400"

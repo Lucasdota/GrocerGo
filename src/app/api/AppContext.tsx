@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useState, ReactNode, SyntheticEvent } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 
 interface AppContextProps {
@@ -17,23 +17,24 @@ interface AppContextProps {
   setCurrentUserFavs: (value: CurrentUserFavsType) => void;
   currentUserCart: CurrentUserCartType | undefined;
   setCurrentUserCart: (value: CurrentUserCartType | undefined) => void;
-  totalCartItens: number;
-  setTotalCartItens: (value: number) => void;
+  totalCartItems: number;
+  setTotalCartItems: (value: number) => void;
 }
 
 interface CurrentUserCartType {
   userEmail: string | null | undefined;
-  itens: {
+  items: {
     name: string;
     image: string;
     price: number;
     quantity: number;
+		section: string
   }[];
 }
 
 interface CurrentUserFavsType {
 	userEmail: string | null | undefined;
-	itens: string[]
+	items: string[]
 }
 
 interface AppContextProviderProps {
@@ -55,8 +56,8 @@ const AppContext = createContext<AppContextProps>({
   setCurrentUserFavs: () => undefined,
   currentUserCart: undefined,
   setCurrentUserCart: () => undefined,
-  totalCartItens: 0,
-  setTotalCartItens: () => 0,
+  totalCartItems: 0,
+  setTotalCartItems: () => 0,
 });
 
 export function useAppContext() {
@@ -73,7 +74,7 @@ export default function AppContextProvider({ children }: AppContextProviderProps
     useState<CurrentUserFavsType|undefined>(undefined);
   const [currentUserCart, setCurrentUserCart] =
     useState < CurrentUserCartType|undefined>(undefined);
-  const [totalCartItens, setTotalCartItens] = useState<number>(0);
+  const [totalCartItems, setTotalCartItems] = useState<number>(0);
 
   return (
     <AppContext.Provider
@@ -92,8 +93,8 @@ export default function AppContextProvider({ children }: AppContextProviderProps
         setCurrentUserFavs,
         currentUserCart,
         setCurrentUserCart,
-        totalCartItens,
-        setTotalCartItens
+        totalCartItems,
+        setTotalCartItems
       }}
     >
       <SessionProvider>{children}</SessionProvider>

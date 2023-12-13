@@ -55,9 +55,9 @@ const Footer = () => {
           {/* FIRST DIV */}
           <section className="mt-10">
             <div className="flex flex-col mb-6 gap-1 md:mb-0">
-              <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
+              <h2 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Institucional
-              </h4>
+              </h2>
               <div className="flex flex-col flex-wrap gap-1 md:flex-row md:gap-4">
                 <Link
                   href="/who-we-are"
@@ -86,9 +86,9 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex flex-col gap-1 md:hidden">
-              <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
+              <h2 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Searched Words
-              </h4>
+              </h2>
               <div className="flex flex-col gap-1">
                 <Link
                   href="/search?/apple"
@@ -121,9 +121,9 @@ const Footer = () => {
           {/* SECOND DIV */}
           <section className="mt-10 mb-10 md:mb-0 md:mt-0 lg:hidden md:block">
             <div className="flex flex-col gap-1">
-              <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
+              <h2 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Categories
-              </h4>
+              </h2>
               <div className="flex flex-col gap-1 md:flex-row md:gap-4 flex-wrap">
                 <Link
                   href="/sections/bakery"
@@ -236,13 +236,13 @@ const Footer = () => {
               </div>
             </div>
           </section>
-          <div className="mt-10 md:mt-0 mb-14 w-[0.15rem] h-96 lg:h-80 md:h-64 sm:h-52 bg-neutral-700 md:hidden" />
+          <div role='separator' className="mt-10 md:mt-0 mb-14 w-[0.15rem] h-96 lg:h-80 md:h-64 sm:h-52 bg-neutral-700 md:hidden" />
           {/* THIRD DIV */}
           <section className="mt-10 md:mt-0">
             <div className="flex flex-col mb-6 gap-1">
-              <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
+              <h2 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Callcenter
-              </h4>
+              </h2>
               <div className="flex flex-col gap-1 md:flex-row md:gap-4 flex-wrap">
                 <Link href="tel:5559997777">555 999 7777</Link>
 
@@ -279,9 +279,9 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <h4 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
+              <h2 className="text-green-1 brightness-125 text-xl xl:text-lg md:text-3xl mb-3">
                 Our Channels
-              </h4>
+              </h2>
               <div className="flex gap-3 md:flex-row md:gap-4 flex-wrap">
                 <Link
                   target="_blank"
@@ -319,12 +319,12 @@ const Footer = () => {
             <Link target="_blank" href="https://play.google.com/store">
               <div className="bg-green-4 p-6 font-nunito w-full h-full text-white">
                 <div className="border-2 w-full h-full border-white flex flex-col lg:gap-6 items-center justify-between p-6 rounded-lg">
-                  <div className="w-24 lg:w-16 lg:h-16 aspect-square bg-green-1/70 rounded-lg flex flex-col gap-2 lg:gap-1 items-center justify-center p-2">
-                    <h4 className="text-center text-xl lg:text-sm leading-4 lg:leading-[12px] font-sansita">
+                  <div className="w-24 lg:w-16 lg:h-16 aspect-square bg-green-3 rounded-lg flex flex-col gap-2 lg:gap-1 items-center justify-center p-2">
+                    <h3 className="text-center text-xl lg:text-sm leading-4 lg:leading-[12px] font-sansita">
                       Go
                       <br />
                       Grocer
-                    </h4>
+                    </h3>
                     <Image
                       src={Cart}
                       alt="cart"
@@ -388,9 +388,9 @@ const Footer = () => {
             <div className="flex flex-wrap items-center gap-4 mb-4 md:mb-8">
               <Link
                 href="/credit-card"
-                className="font-bold italic font-sansita w-20 h-7 flex items-center text-green-5 text-xl bg-clip-text"
+                className="font-bold italic font-sansita w-20 h-7 flex items-center text-green-3 text-xl bg-clip-text"
               >
-                Grocer<span className="text-green-3">Go</span>
+                Grocer<span className="text-green-1">Go</span>
               </Link>
               <Image
                 src="/images/footer/alelo.webp"

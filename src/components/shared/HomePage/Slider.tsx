@@ -115,6 +115,7 @@ const Slider = ({ section }: Props) => {
                 name={card.name}
                 image={card.image}
                 price={card.price}
+								section="beverages"
                 text={"ADD TO CART"}
                 className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}

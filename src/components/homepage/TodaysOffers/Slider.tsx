@@ -125,6 +125,7 @@ export default function Slider() {
                 image={"/images/products/offers/lemon-juice.webp"}
                 price={2.09}
                 text={"ADD TO CART"}
+								section="offers"
                 className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}
               />
@@ -234,6 +235,7 @@ const GenerateCards = ({ image, alt, title, old_price, price }: Props) => {
         image={image}
         price={price}
         text={"ADD TO CART"}
+				section="offers"
         className={`w-full xs:p-2 xxs:gap-0.5
 					rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] px-2.5 py-1`}
       />

@@ -30,9 +30,9 @@ const myAccountPage = () => {
           className="w-[30rem] xl:w-[24rem] md:w-[18rem] xs:hidden"
         />
         <div className="m-16 md:m-8 text-right">
-          <h1 className=" italic text-green-1 brightness-125 text-4xl lg:text-2xl tracking-wide font-sansita">
+          <h2 className=" italic text-green-1 brightness-125 text-4xl lg:text-2xl tracking-wide font-sansita">
             My&nbsp;<span className="text-white brightness-100">Account</span>
-          </h1>
+          </h2>
           <p className="text-white text-xl lg:text-lg md:whitespace-normal tracking-wider font-sansita">
             Your account&apos;s settings.
           </p>

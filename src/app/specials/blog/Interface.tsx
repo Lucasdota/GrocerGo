@@ -12,7 +12,6 @@ const Interface = () => {
 					width={1920}
 					height={1279}
           className="w-full h-full object-cover absolute top-0"
-          priority
         />
         {/* BOTTOM CURVE */}
         <div className="absolute bottom-0 w-full overflow-hidden leading-none rotate-180">

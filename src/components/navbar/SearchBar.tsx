@@ -76,7 +76,6 @@ export default function SearchBar() {
         />
       </div>
       <button
-				role="search"
 				aria-label="search product"
         onClick={handleSearch}
         className="flex  gap-2 items-center px-6 py-2 bg-green-4 rounded-r-sm text-white text-[0.7rem] group"

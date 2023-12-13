@@ -6,19 +6,34 @@ const Regulations = () => {
     <div className="px-20 md:px-10 w-full bg-green-4 text-neutral-50 pb-[9.5rem]">
       <div className="mx-auto max-w-[2560px]">
         <div className="flex justify-around lg:flex-wrap md:whitespace-normal">
-          <Link href="" className="p-12 lg:p-6">
+          <Link
+            href="https://grocergo.vercel.app/credit-card"
+            className="p-12 lg:p-6"
+          >
             Contract
           </Link>
-          <Link href="" className="p-12 lg:p-6">
+          <Link
+            href="https://grocergo.vercel.app/credit-card"
+            className="p-12 lg:p-6"
+          >
             Tariff
           </Link>
-          <Link href="" className="p-12 lg:p-6">
+          <Link
+            href="https://grocergo.vercel.app/credit-card"
+            className="p-12 lg:p-6"
+          >
             International Card Regulation
           </Link>
-          <Link href="" className="p-12 lg:p-6">
+          <Link
+            href="https://grocergo.vercel.app/credit-card"
+            className="p-12 lg:p-6"
+          >
             Platinum Card Regulation
           </Link>
-          <Link href="" className="p-12 lg:p-6">
+          <Link
+            href="https://grocergo.vercel.app/credit-card"
+            className="p-12 lg:p-6"
+          >
             Black Card Regulation
           </Link>
         </div>

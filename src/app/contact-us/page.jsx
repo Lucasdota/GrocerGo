@@ -33,7 +33,7 @@ const ContactUs = () => {
       </header>
       <main className="w-[60%] gg:w-[90%] xxl:w-4/5 xl:w-[90%] lg:w-[90%] mx-auto p-8 md:px-4 md:w-full">
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-green-2 mb-4 lg:text-lg lg:mb-3">
+          <h2 className="text-2xl font-semibold text-green-4 mb-4 lg:text-lg lg:mb-3">
             Get in Touch
           </h2>
           <p className="text-green-5 md:whitespace-normal lg:text-base">

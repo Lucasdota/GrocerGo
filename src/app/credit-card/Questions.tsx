@@ -116,7 +116,8 @@ const Accordion = ({ i, isExpanded, toggleAccordion, question, answer}: Accordio
 	return (
     <>
       <button
-        role="accordion"
+        id={question}
+				aria-label="click to expand accordion and see the answer"	
         aria-expanded={isExpanded}
         onClick={() => toggleAccordion(i.id)}
         className={`p-5 w-full text-left border-none outline-none transition duration-400 ease-in flex justify-between items-center leading-6 sm:text-sm sm:whitespace-normal ${
@@ -133,6 +134,9 @@ const Accordion = ({ i, isExpanded, toggleAccordion, question, answer}: Accordio
       <AnimatePresence>
         {isExpanded && (
           <motion.div
+						id={`${i.id}`}
+						aria-labelledby={question}
+						role="region"
             key="content"
             initial="collapsed"
             animate="open"

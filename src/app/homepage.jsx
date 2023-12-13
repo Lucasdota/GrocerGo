@@ -1,6 +1,6 @@
 "use client"
 import HeroSlider from "@/components/homepage/HeroSlider/HeroSlider";
-import BestBeverages from "@/components/homepage/BestBeverages";
+import Beverages from "@/components/homepage/Beverages";
 import TodaysOffers from "@/components/homepage/TodaysOffers/TodaysOffers";
 import FullFridge from "@/components/homepage/FullFridge";
 import Essentials from "@/components/homepage/Essentials";
@@ -11,7 +11,6 @@ import ThirdCards from "@/components/homepage/ThirdCards";
 import SnackbarComponent from "@/components/shared/SnackbarComponent";
 import Sections from "@/components/homepage/Sections";
 import SecondCards from "@/components/homepage/SecondCards/SecondCards";
-import LoadingBars from "../app/recipes/LoadingBars";
 import React, { useState, useEffect } from "react";
 
 const Homepage = () => {
@@ -57,16 +56,16 @@ const Homepage = () => {
           <FirstCards />
           <Sections />
 					{hasScrolled && (
-						<React.Suspense fallback={<LoadingBars />}>
-							<TodaysOffers />
-							<BestBeverages />
-							<FullFridge />
-							<Essentials />
-							<Cleaning />
-							<SecondCards />
-							<Partners />
-							<ThirdCards />
-						</React.Suspense>					
+					<>
+						<TodaysOffers />
+						<Beverages />
+						<FullFridge />
+						<Essentials />
+						<Cleaning />
+						<SecondCards />
+						<Partners />
+						<ThirdCards />								
+					</>
 					)}
           <SnackbarComponent />
         </>
