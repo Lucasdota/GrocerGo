@@ -269,7 +269,7 @@ const Interface = (props: Props) => {
           Visit us in major cities across the country.
         </p>
       </header>
-      <main className="bg-green-5 p-16 md:p-8 pb-[8.5rem]">
+      <main className="bg-green-5 p-16 md:p-8 pb-[8.5rem] min-h-screen">
         <section>
           <motion.div
             className="drop-shadow-sm h-[60dvh] xs:h-[40dvh] w-full"
