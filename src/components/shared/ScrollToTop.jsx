@@ -42,11 +42,11 @@ const ScrollToTop = () => {
         <motion.button
           key="scroll-button"
           onClick={() => window.scrollTo(0, 0)}
-          className={`lg:hidden right-6 bg-green-2/80 z-[100] antialiased p-2 rounded-full active:translate-y-0.5 
-					${addedPopUp ? "bottom-20" : "bottom-6"} ${cartDrawerOn ? "hidden" : "fixed"}
+          className={`lg:hidden right-6 bottom-6 bg-green-2/80 z-[100] antialiased p-2 rounded-full active:translate-y-0.5 
+					 ${cartDrawerOn ? "hidden" : "fixed"}
 					`}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, y: addedPopUp ? -60 : 0 }}
           exit={{ opacity: 0 }}
         >
           <ImArrowUp className="text-neutral-100" />

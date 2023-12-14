@@ -11,10 +11,10 @@ const AddToCartPopUp = () => {
       {addedPopUp && (
         <motion.div
           key={"addtocart-snackbar"}
-          className="fixed bottom-6 right-6 z-[60] bg-[#EDF7ED] shadow-[rgba(0,0,0,0.35)_0px_5px_15px] py-[0.6rem] px-[1.15rem] rounded-lg flex gap-4 items-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 30 }}
+          className="fixed bottom-6 md:bottom-2 md:right-2 right-6 z-[60] bg-[#EDF7ED] shadow-[rgba(0,0,0,0.35)_0px_5px_15px] py-[0.65rem] px-[1.20rem] rounded flex gap-4 items-center"
+          initial={{ opacity: 0, scale: .6 }}
+          animate={{ opacity: 1, scale: 1}}
+          exit={{ opacity: 0, scale: .8, transition: { duration: 0.1 } }}
         >
           <MdOutlineDoneOutline className="text-green-4 w-4 h-4" />
           <p className="text-green-5 text-[0.98rem] font-sans">

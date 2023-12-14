@@ -131,7 +131,7 @@ type CardsProps = {
 function GenerateCards({ image, title }: CardsProps) {
 	const url = title.replace(/ +/g, "-").replace("&", "and");
   return (
-    <li className="w-full h-full flex flex-col items-center justify-center group">
+    <li aria-label={`click to go to ${title}'s page section`} className="w-full h-full flex flex-col items-center justify-center group">
       <Link
         href={`/sections/${url.toLocaleLowerCase()}`}
         className="group flex items-center justify-center group"
