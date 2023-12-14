@@ -26,21 +26,23 @@ const SnackbarComponent = (props: Props) => {
   };
 
   return (
-    <Snackbar
-      open={snackbar}
-      autoHideDuration={3000}
-      onClose={handleClose}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-    >
-      <SnackbarAlert
-        severity={snackbarSeverity ? "info" : "success"}
-      >
-        {snackbarText}
-      </SnackbarAlert>
-    </Snackbar>
+		<div aria-label="added to favorites pop-up" className="md:hidden">
+			<Snackbar
+				open={snackbar}
+				autoHideDuration={3000}
+				onClose={handleClose}
+				anchorOrigin={{
+					vertical: "bottom",
+					horizontal: "left",
+				}}
+			>
+				<SnackbarAlert
+					severity={snackbarSeverity ? "info" : "success"}
+				>
+					{snackbarText}
+				</SnackbarAlert>
+			</Snackbar>
+		</div>
   );
 };
 

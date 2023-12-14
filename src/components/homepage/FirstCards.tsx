@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const FirstCards = () => {
 	const [scrollY, setScrollY] = useState<number>(0);
