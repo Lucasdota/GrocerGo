@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Categories from "./drawer-links/Categories";
 
 type Props = {
@@ -49,7 +49,6 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
     let handler = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) {
         setIsOpen(false);
-
         button.forEach(
           (menu) =>
             function () {
@@ -65,7 +64,6 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
     let pressESC = (e: KeyboardEvent) => {
       if (isOpen && e.code === "Escape") {
         setIsOpen(false);
-
         button.forEach(
           (menu) =>
             function () {
@@ -142,7 +140,7 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
           ></span>
         </div>
         <span className="xl:hidden text-green-5 font-semibold text-sm group-hover:brightness-150 transition duration-300 ease-out whitespace-nowrap">
-          All categories
+          All sections
         </span>
         <span
           className={`absolute -bottom-[.59rem] group-hover:w-full
@@ -152,46 +150,51 @@ export default function Drawer ({isOpen, isTop, setIsOpen}: Props)  {
         />
       </button>
       {/* DRAWER */}
-      {isOpen && (
-        <motion.nav
-          tabIndex={-1}
-          layout
-          ref={navRef}
-          variants={swipeDown}
-          animate={isOpen ? "open" : "closed"}
-          className={`absolute -left-8 top-[100%] w-64 z-50 bg-neutral-200 text-[0.95rem] py-4 overflow-y-auto overflow-x-hidden text-green-5 modal ${
-            firstLoad ? "hidden" : "block"
-          } ${isTop ? "h-[calc(100vh-9rem)]" : "h-[calc(100vh-7rem)]"}
-			`}
-        >
-          <ul className="flex flex-col mb-6 xl:mt-6 ">
-            <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
-            <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
-              <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
-            </Link>
-            <Link
-              onClick={() => setIsOpen(false)}
-              href="/specials/delivery-rotisserie"
-            >
-              <li className="hover:bg-neutral-300 px-6 py-2">
-                Delivery Rotisserie
-              </li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/specials/blog">
-              <li className="hover:bg-neutral-300 px-6 py-2">GrocerGo Blog</li>
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
-              <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
-            </Link>
-          </ul>
+			<AnimatePresence mode="wait">
+				{isOpen && (
+					<motion.nav
+						key="desktop-menu-drawer"
+						tabIndex={-1}
+						layout
+						ref={navRef}
+						variants={swipeDown}
+						initial="closed"
+						animate="open"
+						exit="closed"
+						className={`absolute -left-8 top-[100%] w-64 z-50 bg-neutral-200 text-[0.95rem] py-4 overflow-y-auto overflow-x-hidden text-green-5 modal ${
+							firstLoad ? "hidden" : "block"
+						} ${isTop ? "h-[calc(100vh-9rem)]" : "h-[calc(100vh-7rem)]"}
+				`}
+					>
+						<ul className="flex flex-col mb-6 xl:mt-6 ">
+							<h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
+							<Link onClick={() => setIsOpen(false)} href="/specials/chefs">
+								<li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
+							</Link>
+							<Link
+								onClick={() => setIsOpen(false)}
+								href="/specials/delivery-rotisserie"
+							>
+								<li className="hover:bg-neutral-300 px-6 py-2">
+									Delivery Rotisserie
+								</li>
+							</Link>
+							<Link onClick={() => setIsOpen(false)} href="/specials/blog">
+								<li className="hover:bg-neutral-300 px-6 py-2">GrocerGo Blog</li>
+							</Link>
+							<Link onClick={() => setIsOpen(false)} href="/specials/space-you">
+								<li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
+							</Link>
+						</ul>
 
-          {/* CATEGORIES */}
-          <ul className="flex flex-col text-green-5">
-            <h2 className="text-xl font-semibold mb-6 ml-6 ">Categories</h2>
-            <Categories setIsOpen={setIsOpen} />
-          </ul>
-        </motion.nav>
-      )}
+						{/* SECTIONS */}
+						<ul className="flex flex-col text-green-5">
+							<h2 className="text-xl font-semibold mb-6 ml-6 ">Sections</h2>
+							<Categories setIsOpen={setIsOpen} />
+						</ul>
+					</motion.nav>
+				)}
+			</AnimatePresence>
     </div>
   );
 };

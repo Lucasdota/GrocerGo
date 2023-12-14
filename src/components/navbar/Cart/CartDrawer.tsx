@@ -71,7 +71,7 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
       tabIndex={-1}
       key={"cart-drawer"}
       ref={cart_drawer}
-      className="fixed right-0 top-0 z-[70] h-full px-12 xs:px-8 pt-12 xs:py-8 pb-6 xs:pb-4 bg-white text-green-2 flex flex-col w-[27rem] xl:min-w-[25rem] xl:w-fit xs:min-w-[20rem] xs:w-full shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
+      className="fixed right-0 top-0 z-[999] h-full px-12 xs:px-8 pt-12 xs:py-8 pb-6 xs:pb-4 bg-white text-green-2 flex flex-col w-[27rem] xl:min-w-[25rem] xl:w-fit xs:min-w-[20rem] xs:w-full shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
@@ -130,6 +130,12 @@ const CartDrawer = ({ drawer, setDrawer, email }: Props) => {
         totalPrice={totalPrice}
         setTotalPrice={setTotalPrice}
         setDrawer={setDrawer}
+      />
+
+      {/* separator */}
+      <div
+        role="separator"
+        className="flex w-full h-[1px] rounded bg-neutral-100 mt-4 xs:mt-4 mb-4"
       />
 
       {/* total price */}

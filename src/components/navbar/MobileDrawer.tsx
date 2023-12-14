@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import MobileLogin from "./MobileLogin";
 import MobileCategories from "./drawer-links/MobileCategories";
 
@@ -19,7 +19,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const navContainer = useRef<HTMLElement>(null);
   const [firstLoad, setFirstLoad] = useState<boolean>(true);
   const [isMobile, setIsMobile] = useState<boolean>();
-	
+
   //is mobile checker
   useEffect(() => {
     const mediaQueryXl = window.matchMedia("(max-width: 1279px)");
@@ -78,7 +78,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
     const modal = document.querySelector(".mobile-modal");
     let closeHandler = (e: MouseEvent) => {
       if (!navContainer.current?.contains(e.target as Node) && isMobile) {
-				setIsOpen(false);
+        setIsOpen(false);
         button.forEach(
           (menu) =>
             function () {
@@ -91,7 +91,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
       }
     };
 
-		let pressESC = (e: KeyboardEvent) => {
+    let pressESC = (e: KeyboardEvent) => {
       if (isOpen && e.code === "Escape") {
         setIsOpen(false);
         button.forEach(
@@ -107,12 +107,33 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
     };
 
     document.addEventListener("mousedown", closeHandler);
-		document.addEventListener("keydown", pressESC);
+    document.addEventListener("keydown", pressESC);
     return () => {
       document.removeEventListener("mousedown", closeHandler);
-			document.removeEventListener("keydown", pressESC);
+      document.removeEventListener("keydown", pressESC);
     };
   });
+
+  //trap the keyboard focus only in the drawer when it's on
+  useEffect(() => {
+    const mobileHandleFocus = (event: FocusEvent) => {
+      // Check if the target is a Node
+      if (event.target instanceof Node) {
+        if (navContainer.current && !navContainer.current.contains(event.target)) {
+          // Prevent focusing outside the drawer
+          navContainer.current.focus();
+        }
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("focusin", mobileHandleFocus);
+    }
+
+    return () => {
+      document.removeEventListener("focusin", mobileHandleFocus);
+    };
+  }, [isOpen]);
 
   return (
     <div className="z-50 hidden xl:block">
@@ -131,81 +152,91 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         </div>
       </button>
       {/* DRAWER */}
-      {isOpen && (
-        <motion.nav
-          ref={navContainer}
-          variants={swipeDown}
-          animate={isOpen ? "open" : "closed"}
-          layout
-          className={`w-64 h-[100vh] absolute left-0 top-0 select-none ${
-            firstLoad ? "hidden" : null
-          }`}
-        >
-          <MobileLogin setIsOpen={setIsOpen} />
-          <motion.div
-            ref={mobileNavRef}
-            className={`w-full z-50 bg-neutral-200 text-[0.95rem] py-4 xl:py-0 xl:pb-4 overflow-y-auto overflow-x-hidden text-green-5 mobile-modal h-[calc(100vh-7rem)]`}
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.nav
+            ref={navContainer}
+						tabIndex={-1}
+            variants={swipeDown}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            layout
+            className={`w-64 h-[100vh] absolute left-0 top-0 select-none ${
+              firstLoad ? "hidden" : null
+            }`}
           >
-            <ul className="flex flex-col mb-6 xl:mt-6">
-              <h2 className="text-xl font-semibold mb-6 ml-6">Menu</h2>
-              <Link onClick={() => setIsOpen(false)} href="/insurance">
-                <li className="hover:bg-neutral-300 px-6 py-2">Insurance</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/contact-us">
-                <li className="hover:bg-neutral-300 px-6 py-2">Contact Us</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/our-stores">
-                <li className="hover:bg-neutral-300 px-6 py-2">Our Stores</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/how-to-buy">
-                <li className="hover:bg-neutral-300 px-6 py-2">How To Buy</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/credit-card">
-                <li className="hover:bg-neutral-300 px-6 py-2">
-                  GrocerGo Credit Card
-                </li>
-              </Link>
-            </ul>
-            <ul className="flex flex-col mb-6 xl:mt-6">
-              <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
-              <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
-                <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
-              </Link>
-              <Link
-                onClick={() => setIsOpen(false)}
-                href="/specials/delivery-rotisserie"
-              >
-                <li className="hover:bg-neutral-300 px-6 py-2">
-                  Delivery Rotisserie
-                </li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/specials/blog">
-                <li className="hover:bg-neutral-300 px-6 py-2">
-                  GrocerGo Blog
-                </li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/specials/space-you">
-                <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/recipes">
-                <li className="hover:bg-neutral-300 px-6 py-2">Recipes</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/catalog">
-                <li className="hover:bg-neutral-300 px-6 py-2">Catalog</li>
-              </Link>
-              <Link onClick={() => setIsOpen(false)} href="/my-favorites">
-                <li className="hover:bg-neutral-300 px-6 py-2">My Favorites</li>
-              </Link>
-            </ul>
+            <MobileLogin setIsOpen={setIsOpen} />
+            <motion.div
+              ref={mobileNavRef}
+              className={`w-full z-50 bg-neutral-200 text-[0.95rem] py-4 xl:py-0 xl:pb-4 overflow-y-auto overflow-x-hidden text-green-5 mobile-modal h-[calc(100vh-7rem)]`}
+            >
+              <ul className="flex flex-col mb-6 xl:mt-6">
+                <h2 className="text-xl font-semibold mb-6 ml-6">Menu</h2>
+                <Link onClick={() => setIsOpen(false)} href="/insurance">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Insurance</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/contact-us">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Contact Us</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/our-stores">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Our Stores</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/how-to-buy">
+                  <li className="hover:bg-neutral-300 px-6 py-2">How To Buy</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/credit-card">
+                  <li className="hover:bg-neutral-300 px-6 py-2">
+                    GrocerGo Credit Card
+                  </li>
+                </Link>
+              </ul>
+              <ul className="flex flex-col mb-6 xl:mt-6">
+                <h2 className="text-xl font-semibold mb-6 ml-6">Specials</h2>
+                <Link onClick={() => setIsOpen(false)} href="/specials/chefs">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Chefs</li>
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/specials/delivery-rotisserie"
+                >
+                  <li className="hover:bg-neutral-300 px-6 py-2">
+                    Delivery Rotisserie
+                  </li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/specials/blog">
+                  <li className="hover:bg-neutral-300 px-6 py-2">
+                    GrocerGo Blog
+                  </li>
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/specials/space-you"
+                >
+                  <li className="hover:bg-neutral-300 px-6 py-2">Space You</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/recipes">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Recipes</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/catalog">
+                  <li className="hover:bg-neutral-300 px-6 py-2">Catalog</li>
+                </Link>
+                <Link onClick={() => setIsOpen(false)} href="/my-favorites">
+                  <li className="hover:bg-neutral-300 px-6 py-2">
+                    My Favorites
+                  </li>
+                </Link>
+              </ul>
 
-            {/* CATEGORIES */}
-            <ul className="flex flex-col text-green-5">
-              <h2 className="text-xl font-semibold mb-6 ml-6">Categories</h2>
-              <MobileCategories setIsOpen={setIsOpen} />
-            </ul>
-          </motion.div>
-        </motion.nav>
-      )}
+              {/* SECTIONS */}
+              <ul className="flex flex-col text-green-5">
+                <h2 className="text-xl font-semibold mb-6 ml-6">Sections</h2>
+                <MobileCategories setIsOpen={setIsOpen} />
+              </ul>
+            </motion.div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

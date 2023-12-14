@@ -28,7 +28,7 @@ const Interface = () => {
       }
     }
 
-    const myInterval = setTimeout(myTimer, 5000);
+    const myInterval = setTimeout(myTimer, 8000);
     return () => {
       clearTimeout(myInterval);
     };

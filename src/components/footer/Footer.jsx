@@ -321,9 +321,9 @@ const Footer = () => {
                 <div className="border-2 w-full h-full border-white flex flex-col lg:gap-6 items-center justify-between p-6 rounded-lg">
                   <div className="w-24 lg:w-16 lg:h-16 aspect-square bg-green-3 rounded-lg flex flex-col gap-2 lg:gap-1 items-center justify-center p-2">
                     <h3 className="text-center text-xl lg:text-sm leading-4 lg:leading-[12px] font-sansita">
-                      Go
-                      <br />
                       Grocer
+                      <br />
+                      Go
                     </h3>
                     <Image
                       src={Cart}

@@ -173,26 +173,33 @@ type CardsProps = {
 }
 
 function GenerateCards ({image, alt, section, fullPrice, first_title, second_title, price, decimal_price}: CardsProps) {
-	const [popUp, setPopUp] = useState<boolean>(false);
 	const {
     currentUserCart,
     setCurrentUserCart,
     setTotalCartItems,
-		setLoginPopUp
+    setLoginPopUp,
+    setAddedPopUp,
+    setAddedItemName,
+    handleAddToCartTimeout,
+    cancelTimeout,
   } = useAppContext();
   const { data: session } = useSession();
   const { email } = session?.user || {};
 
 	function handleClick() {
-		if (!session) {
-			setLoginPopUp(true)
-			return;
-		} 
+    if (!session) {
+      setLoginPopUp(true);
+      return;
+    }
 
-    setPopUp(true);
-    setTimeout(() => {
-      setPopUp(false);
-    }, 3000);
+    //pass name to added to cart pop up in global state
+    setAddedItemName(alt);
+    //cancel timeout function so the pop up can stays for more 3s if another add to cart button is clicked
+    cancelTimeout();
+    //activates the pop up
+    setAddedPopUp(true);
+    //calls the timeout function
+    handleAddToCartTimeout();
 
     const jsonCart = localStorage.getItem("cart");
     const localCart = JSON.parse(jsonCart!);
@@ -224,7 +231,7 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
         name: alt,
         image: image,
         price: fullPrice,
-				section: section,
+        section: section,
         quantity: 1,
       };
 
@@ -245,49 +252,44 @@ function GenerateCards ({image, alt, section, fullPrice, first_title, second_tit
   }
 
 	return (
-    <>
-      <button
-				aria-label={`add ${first_title} + ${second_title} to cart`}
-        onClick={handleClick}
-        className="flex w-1/5 flex-col items-center gap-8 xxl:gap-2 xl:gap-4 group bg-color-transition p-8 gg:p-6 xs:px-0 xs:h-24 h-[26rem] gg:h-[25rem] xxl:h-[23rem] lg:w-full lg:h-32 lg:flex-row lg:justify-around lg:py-4 lg:relative rounded-lg text-gray-700 lg:border-transparent group drop-shadow lg:rounded-none"
-      >
-        <div className="text-center text-2xl gg:text-xl xxl:text-[1.2rem] xl:text-[1.1rem] lg:text-xl lg:absolute lg:left-12 lg:text-left sm:text-[1rem] xs:left-3 xs:text-[0.8rem]">
-          <h3 className="font-bold">{first_title}</h3>
-          <h3 className=" md:-mt-2 xs:-mt-3">{second_title}</h3>
-        </div>
+		<button
+			aria-label={`add ${first_title} + ${second_title} to cart`}
+			onClick={handleClick}
+			className="flex w-1/5 flex-col items-center gap-8 xxl:gap-2 xl:gap-4 group bg-color-transition p-8 gg:p-6 xs:px-0 xs:h-24 h-[26rem] gg:h-[25rem] xxl:h-[23rem] lg:w-full lg:h-32 lg:flex-row lg:justify-around lg:py-4 lg:relative rounded-lg text-gray-700 lg:border-transparent group drop-shadow lg:rounded-none"
+		>
+			<div className="text-center text-2xl gg:text-xl xxl:text-[1.2rem] xl:text-[1.1rem] lg:text-xl lg:absolute lg:left-12 lg:text-left sm:text-[1rem] xs:left-3 xs:text-[0.8rem]">
+				<h3 className="font-bold">{first_title}</h3>
+				<h3 className=" md:-mt-2 xs:-mt-3">{second_title}</h3>
+			</div>
 
-        <div className="flex-col lg:flex-row justify-center text-center lg:absolute lg:mx-auto lg:flex lg:gap-28 md:gap-6 sm:gap-3 sm:ml-6 xs:ml-10 items-center">
-          <div className="font-bold text-5xl gg:text-4xl xxl:text-2xl lg:text-4xl flex gap-1 items-center justify-center lg:w-10 md:w-16 sm:w-20 xs:w-12 xs:text-lg">
-            <span className="font-normal text-lg xxl:text-sm xs:text-[.75rem]">
-              $
-            </span>
-            {price}
-            <span className="text-lg xxl:text-sm xs:text-[.75rem]">
-              {decimal_price}
-            </span>
-          </div>
-          <AddBtn
-            className={
-              "bg-neutral-50/50 lg:mt-0 mt-6 px-5 py-2 gg:px-4 xxl:px-3 text-[0.75rem] gg:text-[.65rem] lg:px-4 sm:text-[0.5rem] sm:px-3 sm:h-6 xs:h-5 xs:px-2 xxs:mr-2 text-green-5 font-black rounded"
-            }
-            text={"ADD TO CART"}
-          />
-        </div>
+			<div className="flex-col lg:flex-row justify-center text-center lg:absolute lg:mx-auto lg:flex lg:gap-28 md:gap-6 sm:gap-3 sm:ml-6 xs:ml-10 items-center">
+				<div className="font-bold text-5xl gg:text-4xl xxl:text-2xl lg:text-4xl flex gap-1 items-center justify-center lg:w-10 md:w-16 sm:w-20 xs:w-12 xs:text-lg">
+					<span className="font-normal text-lg xxl:text-sm xs:text-[.75rem]">
+						$
+					</span>
+					{price}
+					<span className="text-lg xxl:text-sm xs:text-[.75rem]">
+						{decimal_price}
+					</span>
+				</div>
+				<AddBtn
+					className={
+						"bg-neutral-50/50 lg:mt-0 mt-6 px-5 py-2 gg:px-4 xxl:px-3 text-[0.75rem] gg:text-[.65rem] lg:px-4 sm:text-[0.5rem] sm:px-3 sm:h-6 xs:h-5 xs:px-2 xxs:mr-2 text-green-5 font-black rounded"
+					}
+					text={"ADD TO CART"}
+				/>
+			</div>
 
-        <Image
-          src={image}
-          width={320}
-          height={500}
-          alt={alt}
-          loading="lazy"
-					onLoad={HandleImageLoad}
-          className="max-w-[160px] xgg:max-w-[170px] gg:p-8 gg:pt-0 px-6 xxl:p-8 lg:p-0 lg:w-20 lg:h-20 sm:w-14 sm:h-14 xs:w-10 xs:h-10 lg:absolute lg:right-12 xs:right-6 transition-all scale-90 group-hover:scale-100 ease-out drop-shadow opacity-0 duration-[.3s]"
-        />
-      </button>
-      <AnimatePresence>
-        {popUp && <AddToCartPopUp name={alt} setPopUp={setPopUp} />}
-      </AnimatePresence>
-    </>
+			<Image
+				src={image}
+				width={320}
+				height={500}
+				alt={alt}
+				loading="lazy"
+				onLoad={HandleImageLoad}
+				className="max-w-[160px] xgg:max-w-[170px] gg:p-8 gg:pt-0 px-6 xxl:p-8 lg:p-0 lg:w-20 lg:h-20 sm:w-14 sm:h-14 xs:w-10 xs:h-10 lg:absolute lg:right-12 xs:right-6 transition-all scale-90 group-hover:scale-100 ease-out drop-shadow opacity-0 duration-[.3s]"
+			/>
+		</button>
   );	
 }
 

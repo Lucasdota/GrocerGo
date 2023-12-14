@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, SetStateAction } from "react";
 import { SessionProvider } from "next-auth/react";
 
 interface AppContextProps {
@@ -19,6 +19,14 @@ interface AppContextProps {
   setCurrentUserCart: (value: CurrentUserCartType | undefined) => void;
   totalCartItems: number;
   setTotalCartItems: (value: number) => void;
+  addedPopUp: boolean;
+  setAddedPopUp: (value: boolean) => void;
+  addedItemName: string;
+  setAddedItemName: (value: string) => void;
+  handleAddToCartTimeout: () => void;
+  cancelTimeout: () => void;
+  cartDrawerOn: boolean;
+  setCartDrawerOn: (value: boolean) => void
 }
 
 interface CurrentUserCartType {
@@ -58,6 +66,14 @@ const AppContext = createContext<AppContextProps>({
   setCurrentUserCart: () => undefined,
   totalCartItems: 0,
   setTotalCartItems: () => 0,
+  addedPopUp: false,
+  setAddedPopUp: () => false,
+  addedItemName: "",
+  setAddedItemName: () => "",
+  handleAddToCartTimeout: () => null,
+  cancelTimeout: () => null,
+  cartDrawerOn: false,
+	setCartDrawerOn: () => false
 });
 
 export function useAppContext() {
@@ -65,16 +81,32 @@ export function useAppContext() {
 }
 
 export default function AppContextProvider({ children }: AppContextProviderProps) {
+  //global states
   const [snackbar, setSnackbar] = useState<boolean>(false);
   const [snackbarText, setSnackbarText] = useState<string>("");
   const [snackbarSeverity, setSnackbarSeverity] = useState<boolean>(false);
   const [loginPopUp, setLoginPopUp] = useState<boolean>(false);
-  const [loggedIn, setLoggedIn] = useState<boolean|undefined>(undefined);
-	const [currentUserFavs, setCurrentUserFavs] =
-    useState<CurrentUserFavsType|undefined>(undefined);
-  const [currentUserCart, setCurrentUserCart] =
-    useState < CurrentUserCartType|undefined>(undefined);
+  const [loggedIn, setLoggedIn] = useState<boolean | undefined>(undefined);
+  const [currentUserFavs, setCurrentUserFavs] = useState<
+    CurrentUserFavsType | undefined
+  >(undefined);
+  const [currentUserCart, setCurrentUserCart] = useState<
+    CurrentUserCartType | undefined
+  >(undefined);
   const [totalCartItems, setTotalCartItems] = useState<number>(0);
+  const [addedPopUp, setAddedPopUp] = useState<boolean>(false);
+  const [addedItemName, setAddedItemName] = useState<string>("");
+  const [popUpTimer, setPopUpTimer] = useState<NodeJS.Timeout | null>(null);
+	const [cartDrawerOn, setCartDrawerOn] = useState<boolean>(false);
+
+  //add to cart pop up timer
+  const handleAddToCartTimeout = () => {
+    setPopUpTimer(setTimeout(() => setAddedPopUp(false), 3000));
+  };
+  //cleanup function add to cart pop up
+  const cancelTimeout = () => {
+    clearTimeout(popUpTimer!);
+  };
 
   return (
     <AppContext.Provider
@@ -94,7 +126,15 @@ export default function AppContextProvider({ children }: AppContextProviderProps
         currentUserCart,
         setCurrentUserCart,
         totalCartItems,
-        setTotalCartItems
+        setTotalCartItems,
+        addedPopUp,
+        setAddedPopUp,
+        addedItemName,
+        setAddedItemName,
+        handleAddToCartTimeout,
+        cancelTimeout,
+        cartDrawerOn,
+        setCartDrawerOn,
       }}
     >
       <SessionProvider>{children}</SessionProvider>

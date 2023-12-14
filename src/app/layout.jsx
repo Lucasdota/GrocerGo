@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import AppContextProvider from "@/app/api/AppContext";
 import { Nunito } from "next/font/google";
 import ScrollToTop from "@/components/shared/ScrollToTop";
+import AddToCartPopUp from "@/components/shared/AddToCartPopUp";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -11,10 +12,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${nunito.className} pt-36 xl:pt-0`}>
         <AppContextProvider>
-					<Navbar />		
+					<Navbar />	
+					<AddToCartPopUp />		
 					<ScrollToTop />		
 					{children}					
-					<Footer /> 				
+					<Footer />							
         </AppContextProvider>
       </body>
     </html>

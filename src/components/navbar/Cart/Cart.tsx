@@ -19,8 +19,9 @@ export default function Cart({ isSmartphone }: Props) {
     totalCartItems,
     setTotalCartItems,
     setCurrentUserFavs,
+		cartDrawerOn,
+		setCartDrawerOn
   } = useAppContext();
-  const [drawer, setDrawer] = useState<boolean>(false);
   const { data: session } = useSession();
   const { email } = session?.user || {};
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -29,13 +30,13 @@ export default function Cart({ isSmartphone }: Props) {
     if (!session) {
       setLoginPopUp(true);
     } else {
-      setDrawer(true);
+      setCartDrawerOn(true);
     }
   }
 
   //proper blockScroll when cart drawer is open
   useEffect(() => {
-    if (drawer) {
+    if (cartDrawerOn) {
       if (!isSmartphone) {
         blockScroll();
       } else {
@@ -49,7 +50,7 @@ export default function Cart({ isSmartphone }: Props) {
     } else {
       allowScroll();
     }
-  }, [drawer, isSmartphone, blockScroll, allowScroll]);
+  }, [cartDrawerOn, isSmartphone, blockScroll, allowScroll]);
 
   // get/set local storage "cart"
   useEffect(() => {
@@ -141,7 +142,7 @@ export default function Cart({ isSmartphone }: Props) {
             <ImCart className="w-full h-full text-green-3" />
             {totalCartItems !== 0 && (
               <motion.span
-								aria-label="total items in the cart"
+                aria-label="total items in the cart"
                 className={`px-1 py-[1px] flex justify-center items-center font-sans rounded-lg text-[0.61rem] bg-green-4 text-white absolute -top-2 -right-2`}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -154,9 +155,9 @@ export default function Cart({ isSmartphone }: Props) {
       </div>
       <AnimatePresence>
         {/* gray overlay */}
-        {drawer && (
+        {cartDrawerOn && (
           <motion.div
-						aria-label="gray transparent overlay"
+            aria-label="gray transparent overlay"
             key={"cart-drawer-overlay"}
             className="fixed left-0 top-0 h-full w-full bg-black/30 z-[60]"
             initial={{ opacity: 0 }}
@@ -165,8 +166,12 @@ export default function Cart({ isSmartphone }: Props) {
           />
         )}
         {/* animated drawer */}
-        {drawer && (
-          <CartDrawer drawer={drawer} setDrawer={setDrawer} email={email!} />
+        {cartDrawerOn && (
+          <CartDrawer
+            drawer={cartDrawerOn}
+            setDrawer={setCartDrawerOn}
+            email={email!}
+          />
         )}
       </AnimatePresence>
     </>

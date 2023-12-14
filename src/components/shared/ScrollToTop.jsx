@@ -2,10 +2,12 @@
 import { ImArrowUp } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAppContext } from "@/app/api/AppContext";
 
 const ScrollToTop = () => {
   const [scrollAboveMid, setScrollAboveMid] = useState(undefined);
 	const [scrollbarHeight, setScrollbarHeight] = useState(undefined);
+	const { addedPopUp, cartDrawerOn } = useAppContext();
 
   useEffect(() => {		
 		if (document.documentElement.scrollHeight > 4000) {
@@ -40,7 +42,9 @@ const ScrollToTop = () => {
         <motion.button
           key="scroll-button"
           onClick={() => window.scrollTo(0, 0)}
-          className="lg:hidden fixed right-6 bottom-6 bg-green-2/80 z-[100] antialiased p-2 rounded-full active:translate-y-0.5"
+          className={`lg:hidden right-6 bg-green-2/80 z-[100] antialiased p-2 rounded-full active:translate-y-0.5 
+					${addedPopUp ? "bottom-20" : "bottom-6"} ${cartDrawerOn ? "hidden" : "fixed"}
+					`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
