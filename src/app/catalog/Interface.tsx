@@ -13,7 +13,7 @@ const Interface = () => {
 
 	return (
     <section className="border-x md:border-none text-gray-800 min-h-[80dvh] shadow w-[90%] mx-auto p-8 md:px-4 xs:px-0 xs:pt-4 md:w-full pb-44 space-y-4 bg-green-5">
-      <div className="xs:px-4">
+      <div className="xs:px-4 md:py-4">
         <label htmlFor="cards" id="select-card" className="mr-2 font-semibold text-neutral-100">
           Select a card:
         </label>

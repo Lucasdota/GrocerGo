@@ -12,7 +12,7 @@ const Content = () => {
 	const { data: session } = useSession();
 
   return (
-      <section className="bg-neutral-100 min-h-screen p-12 lg:p-6 pb-40 flex items-start justify-center">
+      <section className="bg-neutral-100 min-h-screen p-12 lg:p-6 lg:pb-40 pb-40 flex items-start justify-center">
         {session ? (
           <Informations setCopiedSnackbar={setCopiedSnackbar} />
         ) : (

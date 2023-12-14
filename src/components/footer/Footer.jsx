@@ -315,7 +315,7 @@ const Footer = () => {
             </div>
           </section>
           {/* FOURTH DIV */}
-          <section className="w-1/4 gg:w-96 lg:w-80 md:w-96 sm:w-80 xs:w-64">
+          <section className="w-1/4 gg:w-96 lg:w-80 lg:mr-4 lg:mb-3 md:mb-0 md:mr-0 md:w-96 sm:w-full">
             <Link target="_blank" href="https://play.google.com/store">
               <div className="bg-green-4 p-6 font-nunito w-full h-full text-white">
                 <div className="border-2 w-full h-full border-white flex flex-col lg:gap-6 items-center justify-between p-6 rounded-lg">

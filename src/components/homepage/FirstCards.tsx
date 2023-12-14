@@ -51,7 +51,7 @@ const FirstCards = () => {
 	}, [isMobile])
 
   return (
-    <section className="w-full xs:space-y-2 -mt-12 md:mt-0 flex flex-col relative fadeIn">
+    <section className="w-full -mt-12 md:mt-0 flex flex-col relative fadeIn">
       {/* DESCRIP */}
       <div
         className={`px-4 md:p-6 py-40 lg:py-20 flex relative z-10 ${

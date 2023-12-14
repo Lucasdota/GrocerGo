@@ -143,7 +143,7 @@ const GenerateCards = ({
           className={`${
             uiGrid
               ? "w-full xs:text-[.65rem] xs:p-2 xxs:text-[.55rem] xxs:gap-0.5"
-              : "place-self-end w-full md:text-[.5rem] xs:w-1/2 xs:place-self-center"
+              : "place-self-end w-full md:text-[.65rem] xs:w-1/2 xs:place-self-center"
           } rounded-lg bg-green-4 shrink-0 text-neutral-50 gap-1 font-black text-[0.75rem] p-2.5`}
         />
       </div>

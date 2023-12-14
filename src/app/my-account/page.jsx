@@ -19,7 +19,7 @@ const myAccountPage = () => {
         alt="laptop white background"
         className="w-full h-full opacity-50 object-cover fixed top-0 left-0 -z-10"
       />
-      <header className="bg-green-5 h-80 xl:h-64 md:h-48 flex justify-between xs:justify-center">
+      <header className="bg-green-5 h-80 xl:h-64 md:h-fit flex justify-between xs:justify-center">
         <Image
           loading="eager"
 					priority

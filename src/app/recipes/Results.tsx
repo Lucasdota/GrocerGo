@@ -23,7 +23,7 @@ const Results = ({ searched, setClicked }: Props) => {
   }
 
   return (
-    <div className="grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8 gap-y-0 md:gap-y-4 md:gap-4 w-full place-content-center">
+    <div className="grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8 gap-y-0 md:gap-y-4 md:gap-4 md:pb-12 w-full place-content-center">
       {searched.map((recipe) => {
         const url = UrlizeWords(recipe.title);
         return (

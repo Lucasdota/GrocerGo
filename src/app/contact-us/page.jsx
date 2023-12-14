@@ -12,7 +12,7 @@ const ContactUs = () => {
 
 	return (
     <div className="w-full px-64 xxl:px-28 xl:px-20 lg:px-10 md:px-0 min-h-screen max-w-[2560px] mx-auto">
-      <header className="bg-green-5 h-80 xl:h-64 md:h-48 flex justify-between xs:justify-center rounded-br-[3rem] md:rounded-br-none">
+      <header className="bg-green-5 h-80 xl:h-64 md:h-fit flex justify-between xs:justify-center rounded-br-[3rem] md:rounded-br-none">
         <Image
           src="/images/mini-pages/contactus-1.webp"
           alt="contact us"
@@ -45,7 +45,7 @@ const ContactUs = () => {
       </main>
       <div
         className="flex flex-col items-center justify-center bg-green-5 h-80 xl:h-64 md:h-48 
-			rounded-tl-[3rem] md:rounded-tl-none md:p-4"
+			rounded-tl-[3rem] md:rounded-tl-none md:p-4 md:pb-12"
       >
         <p className="text-green-1 brightness-125 whitespace-normal text-center">
           For urgent matters,{" "}

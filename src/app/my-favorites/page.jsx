@@ -22,12 +22,12 @@ const Page = () => {
         loading="eager"
         className="absolute top-0 left-0 object-cover w-full h-full opacity-60 -z-10"
       />
-      <header className="bg-green-5 h-60 md:h-48 flex justify-between rounded-b-[3rem] md:rounded-b-none">
+      <header className="bg-green-5 h-60 md:h-fit flex justify-between rounded-b-[3rem] md:rounded-b-none">
         <div className="m-16 md:m-8">
-          <h1 className="text-3xl lg:text-2xl md:text-lg tracking-wide font-sansita">
+          <h2 className="text-3xl lg:text-2xl tracking-wide font-sansita">
             <span className="text-green-3 brightness-125">My</span> Favorites
-          </h1>
-          <p className="lg:text-sm md:text-sm md:whitespace-normal tracking-wide font-sansita">
+          </h2>
+          <p className="lg:text-base md:whitespace-normal tracking-wide font-sansita">
             Manage your whole favorited itens list.
           </p>
         </div>

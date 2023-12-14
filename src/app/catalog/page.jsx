@@ -17,7 +17,7 @@ const page = () => {
           <h1 className="text-3xl lg:text-2xl tracking-wide font-sansita">
             Catalog
           </h1>
-          <p className="md:text-sm md:whitespace-normal tracking-wide font-sansita text-neutral-100">
+          <p className="md:text-base md:whitespace-normal tracking-wide font-sansita text-neutral-100">
             See all of our products and check discounts applied by cards.
           </p>
         </div>

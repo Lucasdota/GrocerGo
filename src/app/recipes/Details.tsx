@@ -87,7 +87,7 @@ const Details = ({
         <ErrorMessage clicked={clicked} />
       ) : (
         <motion.div
-          className="gap-8 flex flex-col"
+          className="gap-8 flex flex-col md:pb-16"
           key={"details"}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -95,7 +95,7 @@ const Details = ({
           transition={{ duration: 0.1 }}
         >
           <BackBtn setClicked={setClicked} />
-          <h2 className="md:whitespace-normal text-center text-3xl text-gray-800 font-bold px-10">
+          <h2 className="md:whitespace-normal text-center text-3xl md:text-2xl text-gray-800 font-bold px-10">
             {recipe?.title}
           </h2>
 					<Image
