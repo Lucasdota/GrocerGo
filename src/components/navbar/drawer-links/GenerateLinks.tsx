@@ -8,13 +8,7 @@ type Props = {
 };
 
 const GenerateLinks = ({ section, setIsOpen }: Props) => {
-
   const filteredCatalog = catalog.filter((item) => item.section === section);
-
-  // If there are no matching items or the catalog is empty, display a message or component
-  if (filteredCatalog.length === 0) {
-    return <div>No items found.</div>;
-  }
 
   // Flatten the filteredCatalog array into an array of individual products
   const allProducts = filteredCatalog.flatMap((item) => item.products);
