@@ -1,4 +1,4 @@
-## GrocerGo Store Website
+## GrocerGo Store
 
 Website: [click here](https://grocergo.vercel.app/)
 
