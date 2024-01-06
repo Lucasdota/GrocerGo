@@ -34,4 +34,5 @@ This repository contains the source code for a professional and modern grocery s
 - Material-UI: ^5.14.9
 
 **License**
+
 This project is licensed under the MIT License - see the [license](https://en.wikipedia.org/wiki/MIT_License) webpage for details.
