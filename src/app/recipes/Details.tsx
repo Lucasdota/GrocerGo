@@ -25,7 +25,7 @@ const Details = ({
   const [recipe, setRecipe] = useState<Recipe | undefined>();
 	//guarantees the fetch method is only called once
   const apiKey = process.env.SPOONACULAR_API_KEY;
-	//gets the id frmo the url to use in the fetch method
+	//gets the id from the url to use in the fetch method
   const searchParams = useSearchParams();
 
   const getRecipeById = useCallback(async (id: string) => {	
